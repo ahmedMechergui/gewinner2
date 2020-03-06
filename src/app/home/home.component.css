@@ -1,0 +1,15 @@
+.show-on-sd {
+  display: none;
+}
+@media only screen and (max-width: 550px) {
+  .show-on-sd {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+.icon img{
+border-radius: 50%;
+  border: 1px solid red;
+}

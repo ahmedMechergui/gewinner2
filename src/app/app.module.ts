@@ -9,6 +9,8 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { TeamComponent } from './team/team.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     ContactUsComponent,
     HeaderComponent,
     FooterComponent,
+    TeamComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
