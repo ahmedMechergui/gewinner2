@@ -1,0 +1,22 @@
+.accessories-item img{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+
+.items {
+  padding: 18px 15px 0 15px;
+}
+
+
+.slick-track
+{
+  display: flex !important;
+}
+
+.slick-slide
+{
+  height: inherit !important;
+}
+

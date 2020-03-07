@@ -17,5 +17,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     document.getElementById('header').classList.remove('header-transparent');
     document.getElementById('logo').classList.remove('hide-on-sd');
   }
-
 }

@@ -8,7 +8,9 @@ interface Scripts {
 export const ScriptStore: Scripts[] = [
   {name: 'mainjs', src: '../assets/js/main.js'},
   {name: 'about-us', src: '../assets/js/about-us.js'},
-  {name: 'header', src: '../assets/js/header.js'}
+  {name: 'header', src: '../assets/js/header.js'},
+  {name: 'slick-carousel', src: '../assets/js/slick.min.js'},
+  {name: 'accessories-carousel', src: '../assets/js/accessories-carousel.js'}
 ];
 declare var document: any;
 
