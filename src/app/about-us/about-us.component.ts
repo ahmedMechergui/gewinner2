@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {DynamicScriptLoaderService} from '../dynamic-script-loader.service';
+import {Component, OnInit, Renderer2} from '@angular/core';
+import {ScriptsLoaderService} from '../scripts-loader.service';
 
 @Component({
   selector: 'app-about-us',
@@ -8,7 +8,7 @@ import {DynamicScriptLoaderService} from '../dynamic-script-loader.service';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor(private dynamicScriptLoader: DynamicScriptLoaderService) {
+  constructor(private scriptsLoader: ScriptsLoaderService, private rendered2: Renderer2) {
   }
 
   ngOnInit() {
@@ -16,10 +16,7 @@ export class AboutUsComponent implements OnInit {
   }
 
   loadScripts() {
-    // You can load multiple scripts by just providing the key as argument into load method of the service
-    this.dynamicScriptLoader.load('about-us').then(() => {
-      // Script Loaded Successfully
-    }).catch(error => console.log(error));
+    this.scriptsLoader.addScripts(this.rendered2, 'about-us');
   }
 
 }

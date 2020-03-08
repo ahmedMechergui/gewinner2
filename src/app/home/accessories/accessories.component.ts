@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {DynamicScriptLoaderService} from '../../dynamic-script-loader.service';
+import {Component, OnInit, Renderer2} from '@angular/core';
+import {ScriptsLoaderService} from '../../scripts-loader.service';
 
 @Component({
   selector: 'app-accessories',
@@ -7,19 +7,16 @@ import {DynamicScriptLoaderService} from '../../dynamic-script-loader.service';
   styleUrls: ['./accessories.component.css']
 })
 export class AccessoriesComponent implements OnInit {
-
-
-  constructor(private dynamicScriptLoader: DynamicScriptLoaderService) {
+  constructor(private renderer2: Renderer2, private scriptsLoader: ScriptsLoaderService) {
   }
+
 
   ngOnInit() {
     this.loadScripts();
+
   }
 
   loadScripts() {
-    // You can load multiple scripts by just providing the key as argument into load method of the service
-    this.dynamicScriptLoader.load('slick-carousel', 'accessories-carousel').then(() => {
-      // Script Loaded Successfully
-    }).catch(error => console.log(error));
+    this.scriptsLoader.addScripts(this.renderer2, 'slick.min', 'accessories-carousel');
   }
 }

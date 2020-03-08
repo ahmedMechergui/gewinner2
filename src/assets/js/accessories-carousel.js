@@ -1,4 +1,4 @@
-console.log('accessires carousel srcript loaded');
+// console.log('accessories carousel script loaded');
 $(function () {
   $('.accessories-slick-items').slick({
     infinite: true,
@@ -8,7 +8,7 @@ $(function () {
     nextArrow: '<div class="custom-arrow next-arrow" aria-label="Next" type="button"><i class="icofont-hand-drawn-right"></i></div>',
     prevArrow: '<div class="custom-arrow prev-arrow" aria-label="Next" type="button"><i class="icofont-hand-drawn-alt-left"></i></div>',
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1024,
@@ -31,9 +31,6 @@ $(function () {
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
   //   .on('setPosition', function (event, slick) {
