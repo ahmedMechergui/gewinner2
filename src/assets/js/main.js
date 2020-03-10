@@ -8,6 +8,7 @@
       $('#header').addClass('box-shadow');
     } else {
       $('#header').removeClass('header-scrolled');
+      $('#header').removeClass('box-shadow');
     }
   });
 
