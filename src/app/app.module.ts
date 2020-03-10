@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TeamComponent } from './team/team.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccessoriesComponent } from './home/accessories/accessories.component';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { AccessoriesComponent } from './home/accessories/accessories.component';
     TeamComponent,
     PageNotFoundComponent,
     AccessoriesComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,

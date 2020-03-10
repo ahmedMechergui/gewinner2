@@ -5,6 +5,7 @@
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
+      $('#header').addClass('box-shadow');
     } else {
       $('#header').removeClass('header-scrolled');
     }

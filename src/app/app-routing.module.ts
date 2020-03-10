@@ -5,6 +5,7 @@ import {AboutUsComponent} from './about-us/about-us.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {TeamComponent} from './team/team.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {NewsComponent} from './news/news.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
   {path: 'team', component: TeamComponent},
+  {path: 'news', component: NewsComponent},
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
 ];

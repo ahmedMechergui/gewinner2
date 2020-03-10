@@ -1,7 +1,7 @@
 <!-- ======= Header ======= -->
 <!-- header-transparent class is added only for home page -->
 <!--<header id="header" class="fixed-top header-transparent">-->
-<header id="header" class="fixed-top">
+<header id="header" class="fixed-top box-shadow">
   <div class="container">
 
     <div class="logo float-left" id="logo">
@@ -16,7 +16,7 @@
         <li><a href="partnership">PartnerShip</a></li>
         <li [routerLinkActive]="'active'"><a [routerLink]="'team'">Team</a></li>
         <li><a href="news">Join us</a></li>
-        <li><a href="news">News</a></li>
+        <li [routerLinkActive]="'active'"><a [routerLink]="'news'">News</a></li>
         <li [routerLinkActive]="'active'"><a [routerLink]="'contact'">Contact Us</a></li>
 
       </ul>

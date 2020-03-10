@@ -11,10 +11,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit() {
     document.getElementById('header').classList.add('header-transparent');
     document.getElementById('logo').classList.add('hide-on-sd');
+    document.getElementById('header').classList.remove('box-shadow');
   }
 
   ngOnDestroy(): void {
     document.getElementById('header').classList.remove('header-transparent');
     document.getElementById('logo').classList.remove('hide-on-sd');
+    document.getElementById('header').classList.add('box-shadow');
   }
 }
