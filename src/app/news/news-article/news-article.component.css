@@ -127,6 +127,7 @@
 .article-paragraph {
   font: 300 15px/28px "Poppins", sans-serif;
   letter-spacing: 0px;
+  text-indent: 50px;
   box-sizing: border-box;
   color: #677294;
   line-height: 30px;
