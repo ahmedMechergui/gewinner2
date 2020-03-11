@@ -13,6 +13,9 @@ import { TeamComponent } from './team/team.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AccessoriesComponent } from './home/accessories/accessories.component';
 import { NewsComponent } from './news/news.component';
+import { NewsArticleComponent } from './news/news-article/news-article.component';
+import { NewsBlogComponent } from './news/news-blog/news-blog.component';
+import { NewsSidebarComponent } from './news/news-sidebar/news-sidebar.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { NewsComponent } from './news/news.component';
     PageNotFoundComponent,
     AccessoriesComponent,
     NewsComponent,
+    NewsArticleComponent,
+    NewsBlogComponent,
+    NewsSidebarComponent,
   ],
   imports: [
     BrowserModule,

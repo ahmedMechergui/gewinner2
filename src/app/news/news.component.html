@@ -8,149 +8,16 @@
       <div class="row">
 
         <div class="col-lg-8 blog_grid_info" style="margin-bottom: 5px;">
-          <div class="row">
 
-            <div class="col-sm-6 margin-bottom">
-              <div class="news-item">
-                <a class="post-date">
-                  <h2>18<span>Oct</span></h2>
-                </a>
-                <a>
-                  <figure>
-                    <img
-                      alt="news image missing..." class="img-fluid mx-auto"
-                      src="assets/img/news/news-health-valley.jpg">
-                  </figure>
-                </a>
-                <div class="blog-content" style="width: 100%;">
-                  <a>
-                    <h5 class="blog-title">Tunisia e-Health Valley</h5>
-                  </a>
-                  <p>Today we meet to talk about something that is close to my heart. it's ... </p>
-                  <div class="post-info-bottom">
-                    <a class="read-more" href="#">
-                    <span class="hover-underline">
-                      Read More <i class="icofont-arrow-right"></i>
-                    </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <router-outlet></router-outlet>
 
-            <div class="col-sm-6 margin-bottom">
-              <div class="news-item">
-                <a class="post-date">
-                  <h2>09<span>Oct</span></h2>
-                </a>
-                <a>
-                  <figure>
-                    <img
-                      alt="new image missing" class="img-fluid mx-auto"
-                      src="assets/img/news/price-check.jpg">
-                  </figure>
-                </a>
-                <div class="blog-content" style="width: 100%;">
-                  <a>
-                    <h5 class="blog-title">We Are The Future</h5>
-                  </a>
-                  <p>Over a year ago, Gewinner started the moovobrain project ...</p>
-                  <div class="post-info-bottom">
-                    <a class="read-more" href="#">
-                    <span class="hover-underline">
-                      Read More <i class="icofont-arrow-right"></i>
-                    </span>
-                    </a>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 margin-bottom">
-              <div class="news-item"><a class="post-date">
-                <h2>22<span>Dec</span></h2>
-              </a>
-                <a>
-                  <figure>
-                    <img
-                      alt="" class="img-fluid mx-auto"
-                      src="assets/img/news/news-bws.jpg">
-                  </figure>
-                </a>
-                <div class="blog-content" style="width: 100%;">
-                  <a>
-                    <h5 class="blog-title">
-                      BWS : Bees Web Solutions
-                    </h5>
-                  </a>
-                  <p>
-                    On se rencontre Aujourd’hui pour parler de la technologie qui aura un ...
-                  </p>
-                  <div class="post-info-bottom">
-                    <a class="read-more" href="#">
-                    <span class="hover-underline">
-                      Read More <i class="icofont-arrow-right"></i>
-                    </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
 
 
         <div class="col-lg-4">
-          <div class="blog-sidebar pl-xl-4">
-
-            <div style="margin-top: 0px;">
-              <h3 class="quotes-title">Quotes</h3>
-              <div class="blog_list_item qutoe_post" style="height:100px">
-                <div class="quote-block">
-                  <div class="quote-content">
-                    <i class="icofont-quote-left"
-                       style=" font-size: 10px; color: #5e2ced;padding-bottom: 15px; display: inline-block;">
-                      <h6 class="quote-text">
-                        We ought to be thankful not for our eyes but for our ability to see
-                      </h6>
-                      <span class="author-name">Mokokoma Mokhonoana</span>
-                    </i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div style="margin-top: 15px;">
-              <h3 class="quotes-title">Future events <i class="icofont-megaphone-alt"></i></h3>
-              <div class="future-events-item">
-                <div class="media-body">
-                  <a href="#">
-                    <h3 class="future-event-title">Blockchain : La technologie de Bitcoin</h3>
-                  </a>
-                  <a class="future-event-date" href="#">
-                    Sunday, December 22, 2019, 7:13 PM
-                  </a>
-                </div>
-              </div>
-
-              <div class="future-events-item">
-                <div class="media-body">
-                  <a href="#">
-                    <h3 class="future-event-title">Volunteering Experience</h3>
-                  </a>
-                  <a class="future-event-date" href="#">
-                    Sunday, October 18, 2019, 5:00 PM
-                  </a>
-                </div>
-              </div>
-
-
-            </div>
-          </div>
+          <app-news-sidebar></app-news-sidebar>
         </div>
+
       </div>
     </div>
   </section>

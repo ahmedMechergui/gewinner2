@@ -1,0 +1,95 @@
+a {
+  outline: none;
+  cursor:default;
+}
+
+.blog-sidebar {
+  /*padding: 0 0 0 40px;*/
+  padding: 0;
+  margin-top: 0;
+}
+
+.quotes-title {
+  color: #282835;
+  font-size: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 30px;
+  font-weight: 900;
+}
+
+
+.quote-block {
+  height: 100px;
+  padding: 5px 10px 5px 20px;
+  box-shadow: 0 10px 30px 0 rgba(20, 3, 67, 0.08);
+  overflow: hidden;
+  border-left: 6px solid #273B86;
+  border-radius: 6px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.quote-block .quote-text {
+  white-space: pre-wrap;
+  font-size: 14px !important;
+  color: #525c7c !important;
+  font-style: italic;
+  line-height: 20px !important;
+  margin-bottom: 0 !important;
+  margin-top: 5px !important;
+  font-family: 'Vollkorn', serif !important;
+}
+
+.author-name {
+  color: #848ca5;
+  line-height: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 9px;
+  font-weight: 600;
+  margin-top: 5px;
+  display: initial;
+  float: right;
+}
+
+/* quote closing icon on the background */
+.quote-content:after {
+  content: "\efcd";
+  font-family: IcoFont;
+  font-weight: 900;
+  position: absolute;
+  right: 30px;
+  top: 7%;
+  color: #f2effd;
+  font-size: 100px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+
+.future-events-item {
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+.future-events-item .future-event-title {
+  font: 500 16px/22px "Poppins", sans-serif;
+  color: #222d39;
+  font-weight: bold;
+  margin-bottom: 0;
+  transition: 0.2s;
+}
+
+.future-events-item .future-event-title:hover {
+  color: #273B86;
+}
+
+.future-events-item .future-event-date {
+  color: #85859c;
+  font-weight: 400;
+  text-transform: uppercase;
+  font: 14px / 25px "Poppins", sans-serif;
+  padding-bottom: 5px;
+}
