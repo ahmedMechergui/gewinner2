@@ -1,0 +1,88 @@
+<main id="main">
+
+
+  <!-- ======= Contact Section ======= -->
+  <section class="contact" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
+
+    <h3 class="join-us-title">Your information!</h3>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <form [formGroup]="form" class="join-us-form" method="post">
+            <div class="form-row">
+
+              <div class="col-md-6 form-group">
+                <input autocomplete="off" class="form-control" formControlName="name" id="name" name="name"
+                       placeholder="Your Name" type="text"/>
+                <small *ngIf="form.get('name').invalid && form.get('name').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  please enter your name
+                </small>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <input autocomplete="off" class="form-control" formControlName="email" id="email" name="email"
+                       placeholder="Your Email" type="email"/>
+
+                <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  please enter a valid email
+                </small>
+
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input accept="application/pdf" class="custom-file-input" formControlName="cv"
+                           id="validatedCustomFile"
+                           required type="file">
+                    <label class="custom-file-label" for="validatedCustomFile">Upload your CV</label>
+                  </div>
+
+                  <small *ngIf="form.get('cv').invalid && form.get('cv').touched"
+                         class="form-text text-danger"
+                        style="position: relative;top: -7px">
+                    <i class="icofont-warning-alt"></i>
+                    please upload your CV in pdf format
+                  </small>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <select class="form-control" formControlName="applyType" id="sel1">
+                    <option value="job">Apply for a job</option>
+                    <option value="internship">Apply for an internship</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea class="form-control" formControlName="motivation" name="message"
+                        placeholder="Your motivation (Optional)"
+                        rows="5">
+              </textarea>
+            </div>
+
+            <div class="text-center">
+              <button [disabled]="form.invalid" type="submit">Apply Now</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>

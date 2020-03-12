@@ -8,6 +8,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NewsComponent} from './news/news.component';
 import {NewsBlogComponent} from './news/news-blog/news-blog.component';
 import {NewsArticleComponent} from './news/news-article/news-article.component';
+import {JoinUsComponent} from './join-us/join-us.component';
 
 
 const routes: Routes = [
@@ -19,9 +20,10 @@ const routes: Routes = [
   {
     path: 'news', component: NewsComponent, children: [
       {path: '', component: NewsBlogComponent, pathMatch: 'full'},
-      {path: ':id' , component: NewsArticleComponent}
+      {path: ':id', component: NewsArticleComponent}
     ]
   },
+  {path: 'join-us', component: JoinUsComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
