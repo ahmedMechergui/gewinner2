@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 a {
   cursor: pointer;
 }
@@ -5,12 +8,22 @@ a {
   padding-top: -30px !important;
   padding-bottom: 60px;
 }
+
+/*--------------------------------------------------------------
+# Article image
+--------------------------------------------------------------*/
+
 .max-height {
   max-height: 510px;
   width: 100% !important;
   object-fit: cover;
   border-radius: 6px;
 }
+
+/*--------------------------------------------------------------
+# Article box
+--------------------------------------------------------------*/
+
 .article-content {
   text-align: left;
   font: 300 15px/28px "Poppins", sans-serif;
@@ -24,10 +37,14 @@ a {
   padding: 25px 0px 0px;
 }
 
+/*--------------------------------------------------------------
+# Socials buttons : Responsive++
+--------------------------------------------------------------*/
+
 .social {
   box-sizing: border-box;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   box-shadow: 0 3px 0 0 rgba(12, 0, 46, 0.06);
   text-align: center;
@@ -39,50 +56,72 @@ a {
   justify-content: center;
   top: -40px;
   background: #fff;
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
   transition: 0.5s;
-  /*transition: 0.5s;*/
 }
-/*.social i{*/
-/*  transition: 0.5s;*/
-/*}*/
-/*.social:hover i{*/
-/*  color: white;*/
-/*  font-size: 35px;*/
-/*}*/
+.social i{
+  transition: 0.5s;
+}
+.social:hover i{
+  color: white;
+  font-size: 35px;
+}
 
 
-/*.twitter-share {*/
-/*  right: 250px;*/
+.twitter-share {
+  right: 250px;
 
-/*}*/
-/*.twitter-share i{*/
-/*  color: #00acee;*/
-/*}*/
-/*.twitter-share:hover{*/
-/*  background-color: #00acee;*/
-/*}*/
+}
+.twitter-share i{
+  color: #00acee;
+}
+.twitter-share:hover{
+  background-color: #00acee;
+}
 
-/*.linkedin-share {*/
-/*  right: 150px;*/
-/*}*/
-/*.linkedin-share i{*/
-/*  color: #0e76a8;*/
-/*}*/
-/*.linkedin-share:hover{*/
-/*  background-color: #0e76a8;*/
-/*}*/
+.linkedin-share {
+  right: 150px;
+}
+.linkedin-share i{
+  color: #0e76a8;
+}
+.linkedin-share:hover{
+  background-color: #0e76a8;
+}
 
-/*.facebook-share {*/
-/*  right: 50px;*/
-/*}*/
-/*.facebook-share i{*/
-/*  color:#3b5998;*/
-/*}*/
-/*.facebook-share:hover{*/
-/*  background-color: #3b5998;*/
-/*}*/
+.facebook-share {
+  right: 50px;
+}
+.facebook-share i{
+  color:#3b5998;
+}
+.facebook-share:hover{
+  background-color: #3b5998;
+}
+
+.socials-sm {
+  display: none;
+}
+.article-date {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 576px) {
+  .socials-lg {
+    display: none;
+  }
+
+  .article-date {
+    visibility: visible;
+  }
+  .article-date-sm{
+    display: none;
+  }
+  .socials-sm {
+    display: block;
+  }
+}
 
 
 .clr {
@@ -159,6 +198,9 @@ a {
   }
 }
 
+/*--------------------------------------------------------------
+# Aricle date : Responsive++
+--------------------------------------------------------------*/
 .article-date h2{
   text-align: center;
   box-sizing: border-box;
@@ -177,7 +219,9 @@ a {
 }
 
 
-
+/*--------------------------------------------------------------
+# Lower part
+--------------------------------------------------------------*/
 .article-author {
   font: 400 15px/25px "Poppins", sans-serif;
   color: #677294 ;
