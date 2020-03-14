@@ -36,8 +36,9 @@ export class JoinUsComponent implements OnInit {
     this.scriptLoader.addScripts(this.renderer2, 'join-us-fileUpload');
   }
 
-  check() {
-    console.log(this.form);
+
+  onSubmit() {
+    alert('You really expected this to works ?\n UI not interacting with a back-end yet.');
   }
 
 }

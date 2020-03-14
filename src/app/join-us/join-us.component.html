@@ -10,7 +10,7 @@
       <div class="row">
 
         <div class="col-lg-12">
-          <form [formGroup]="form" class="join-us-form" method="post">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="join-us-form" method="post">
             <div class="form-row">
 
               <div class="col-md-6 form-group">
