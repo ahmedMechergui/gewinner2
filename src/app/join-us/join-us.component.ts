@@ -38,7 +38,7 @@ export class JoinUsComponent implements OnInit {
 
 
   onSubmit() {
-    alert('You really expected this to works ?\n UI not interacting with a back-end yet.');
+    alert('User interface not interacting with a back-end yet.');
   }
 
 }

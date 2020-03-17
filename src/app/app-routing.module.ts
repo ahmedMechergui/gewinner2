@@ -9,6 +9,10 @@ import {NewsComponent} from './news/news.component';
 import {NewsBlogComponent} from './news/news-blog/news-blog.component';
 import {NewsArticleComponent} from './news/news-article/news-article.component';
 import {JoinUsComponent} from './join-us/join-us.component';
+import {SignInComponent} from './sign-in/sign-in.component';
+import {LoginComponent} from './sign-in/login/login.component';
+import {RegisterComponent} from './sign-in/register/register.component';
+import {PasswordForgottenComponent} from './sign-in/password-forgotten/password-forgotten.component';
 
 
 const routes: Routes = [
@@ -24,6 +28,11 @@ const routes: Routes = [
     ]
   },
   {path: 'join-us', component: JoinUsComponent},
+  {path: 'sign-in', component: SignInComponent , children: [
+      {path: '' , component: LoginComponent , pathMatch: 'full'},
+      {path: 'register', component: RegisterComponent},
+      {path: 'password-forgotten', component: PasswordForgottenComponent}
+    ]},
   {path: '**', component: PageNotFoundComponent}
 ];
 

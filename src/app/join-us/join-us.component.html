@@ -4,7 +4,10 @@
   <!-- ======= Contact Section ======= -->
   <section class="contact" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
 
-    <h3 class="join-us-title">Your information!</h3>
+    <h3 class="join-us-title">
+      <img src="assets/img/illustrations/form/hiring.svg" alt="image missing..." class="image-sizing">
+      Your information
+    </h3>
 
     <div class="container">
       <div class="row">
@@ -15,10 +18,10 @@
 
               <div class="col-md-6 form-group">
                 <input autocomplete="off" class="form-control" formControlName="name" id="name" name="name"
-                       placeholder="Your Name" type="text"/>
+                       placeholder="Your Name" type="text" appFocusElement/>
                 <small *ngIf="form.get('name').invalid && form.get('name').touched" class="form-text text-danger">
                   <i class="icofont-warning-alt"></i>
-                  please enter your name
+                  Please enter your name
                 </small>
               </div>
 
@@ -28,7 +31,7 @@
 
                 <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
                   <i class="icofont-warning-alt"></i>
-                  please enter a valid email
+                  Please enter a valid email
                 </small>
 
               </div>
@@ -49,7 +52,7 @@
                          class="form-text text-danger"
                         style="position: relative;top: -7px">
                     <i class="icofont-warning-alt"></i>
-                    please upload your CV in pdf format
+                    Please upload your CV in pdf format
                   </small>
 
                 </div>

@@ -1,0 +1,39 @@
+<div class="vertical-tab sidebar-fill">
+
+  <div class="d-flex flex-column justify-content-center sidebar-fill">
+<ul class="sidebar-list">
+
+  <li>
+    <div class="section-w3ls flex-fill" id="section1">
+      <a [routerLink]="'/sign-in'" >
+        <label class="icon-left-w3pvt vertical-text" [routerLinkActive]="'sign-in-link-active'" [routerLinkActiveOptions]="{exact:true}">
+          Login
+        </label>
+      </a>
+    </div>
+  </li>
+
+  <li>
+    <div class="section-w3ls flex-fill" id="section2">
+      <a [routerLink]="'/sign-in/register'">
+        <label class="icon-left-w3pvt vertical-text" [routerLinkActive]="'sign-in-link-active'">
+          Register
+        </label>
+      </a>
+    </div>
+  </li>
+
+  <li>
+    <div class="section-w3ls flex-fill" id="section3" >
+      <a [routerLink]="'/sign-in/password-forgotten'">
+        <label class="icon-left-w3pvt vertical-text" [routerLinkActive]="'sign-in-link-active'">
+          Forgot Password?
+        </label>
+      </a>
+    </div>
+  </li>
+
+</ul>
+  </div>
+
+</div>
