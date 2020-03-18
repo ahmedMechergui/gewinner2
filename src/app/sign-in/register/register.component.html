@@ -9,7 +9,7 @@
 
         <div class="col-sm-6 form-group">
           <input appFocusElement class="form-control" formControlName="name" id="name" name="name"
-                 placeholder="Your Full Name" type="text"/>
+                 placeholder="Your Full Name" type="text" autocomplete="off"/>
 
           <small *ngIf="form.get('name').invalid && form.get('name').touched" class="form-text text-danger">
             <i class="icofont-warning-alt"></i>
