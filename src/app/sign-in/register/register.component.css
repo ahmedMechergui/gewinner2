@@ -72,7 +72,7 @@ select:focus{
 
 
 
-input.ng-invalid.ng-touched, input.ng-invalid.ng-touched {
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
   border:1px solid #FF9494;
   outline-color: #FF9494 !important;
 }

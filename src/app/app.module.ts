@@ -19,7 +19,6 @@ import {NewsSidebarComponent} from './news/news-sidebar/news-sidebar.component';
 import {JoinUsComponent} from './join-us/join-us.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { SideBarComponent } from './sign-in/side-bar/side-bar.component';
 import { LoginComponent } from './sign-in/login/login.component';
 import { RegisterComponent } from './sign-in/register/register.component';
 import { PasswordForgottenComponent } from './sign-in/password-forgotten/password-forgotten.component';
@@ -44,7 +43,6 @@ import { FocusElementDirective } from './focus-element.directive';
     NewsSidebarComponent,
     JoinUsComponent,
     SignInComponent,
-    SideBarComponent,
     LoginComponent,
     RegisterComponent,
     PasswordForgottenComponent,
