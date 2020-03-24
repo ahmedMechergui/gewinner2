@@ -23,6 +23,11 @@ import { LoginComponent } from './sign-in/login/login.component';
 import { RegisterComponent } from './sign-in/register/register.component';
 import { PasswordForgottenComponent } from './sign-in/password-forgotten/password-forgotten.component';
 import { FocusElementDirective } from './focus-element.directive';
+import { MoovobrainComponent } from './moovobrain/moovobrain.component';
+import { HeroComponent } from './home/hero/hero.component';
+import { ProductComponent } from './moovobrain/product/product.component';
+import { MoovobrainVideoComponent } from './moovobrain/moovobrain-video/moovobrain-video.component';
+import { MoovobrainMobileAppComponent } from './moovobrain/moovobrain-mobile-app/moovobrain-mobile-app.component';
 
 
 
@@ -47,6 +52,11 @@ import { FocusElementDirective } from './focus-element.directive';
     RegisterComponent,
     PasswordForgottenComponent,
     FocusElementDirective,
+    MoovobrainComponent,
+    HeroComponent,
+    ProductComponent,
+    MoovobrainVideoComponent,
+    MoovobrainMobileAppComponent,
   ],
   imports: [
     BrowserModule,

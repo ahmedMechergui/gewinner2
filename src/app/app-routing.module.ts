@@ -13,11 +13,13 @@ import {SignInComponent} from './sign-in/sign-in.component';
 import {LoginComponent} from './sign-in/login/login.component';
 import {RegisterComponent} from './sign-in/register/register.component';
 import {PasswordForgottenComponent} from './sign-in/password-forgotten/password-forgotten.component';
+import {MoovobrainComponent} from './moovobrain/moovobrain.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'moovobrain', component: MoovobrainComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
   {path: 'team', component: TeamComponent},
@@ -28,11 +30,13 @@ const routes: Routes = [
     ]
   },
   {path: 'join-us', component: JoinUsComponent},
-  {path: 'sign-in', component: SignInComponent , children: [
-      {path: '' , component: LoginComponent , pathMatch: 'full'},
+  {
+    path: 'sign-in', component: SignInComponent, children: [
+      {path: '', component: LoginComponent, pathMatch: 'full'},
       {path: 'register', component: RegisterComponent},
       {path: 'password-forgotten', component: PasswordForgottenComponent}
-    ]},
+    ]
+  },
   {path: '**', component: PageNotFoundComponent}
 ];
 
