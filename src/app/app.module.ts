@@ -28,6 +28,9 @@ import { HeroComponent } from './home/hero/hero.component';
 import { ProductComponent } from './moovobrain/product/product.component';
 import { MoovobrainVideoComponent } from './moovobrain/moovobrain-video/moovobrain-video.component';
 import { MoovobrainMobileAppComponent } from './moovobrain/moovobrain-mobile-app/moovobrain-mobile-app.component';
+import { ReviewsComponent } from './moovobrain/reviews/reviews.component';
+import { TestimonialsComponent } from './moovobrain/reviews/testimonials/testimonials.component';
+import { FeedbackComponent } from './moovobrain/reviews/feedback/feedback.component';
 
 
 
@@ -57,6 +60,9 @@ import { MoovobrainMobileAppComponent } from './moovobrain/moovobrain-mobile-app
     ProductComponent,
     MoovobrainVideoComponent,
     MoovobrainMobileAppComponent,
+    ReviewsComponent,
+    TestimonialsComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,

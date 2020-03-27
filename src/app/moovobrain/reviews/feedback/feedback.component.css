@@ -1,0 +1,147 @@
+/*=========================
+   Rating bars
+ ========================== */
+
+
+.rating-label {
+  font-weight: bold
+}
+
+
+.rating-bar {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px
+}
+
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer
+}
+
+.bar{
+  height: 10px;
+  background-color: #FBC02D;
+  border-radius: 20px
+}
+
+.bar-5 {
+  width: 70%;
+}
+
+.bar-4 {
+  width: 30%;
+}
+
+.bar-3 {
+  width: 20%;
+}
+
+.bar-2 {
+  width: 10%;
+}
+
+.bar-1 {
+  width: 0%;
+}
+
+.star-active {
+  color: #FBC02D;
+  margin-top: 50px;
+  margin-bottom: 10px
+}
+
+.star-active:hover {
+  color: #F9A825;
+  cursor: pointer
+}
+
+/*=========================
+   Feedback TextArea
+  ========================== */
+.feedback-textArea{
+  border-radius: 0;
+  padding: 10px 5px;
+  box-shadow: none;
+  font-size: 14px;
+  margin: 9px 0 3px 0;
+  resize: none;
+}
+
+/*=========================
+   Stars
+ ========================== */
+.rating{
+  display: inline-block;
+}
+
+.rate i, .rate i:hover ~ i {
+  color: #ccc;
+  text-shadow: none;
+  transition: color 200ms, text-shadow 200ms;
+  transition-delay: 0ms;
+}
+
+.rate:hover i {
+  color: #fc0;
+  text-shadow: #fc0 0 0 20px;
+}
+
+
+.rate:hover i:nth-child(2) {
+  transition-delay: 15ms;
+}
+
+.rate:hover i:nth-child(3) {
+  transition-delay: 30ms;
+}
+
+.rate:hover i:nth-child(4) {
+  transition-delay: 45ms;
+}
+
+.rate:hover i:nth-child(5) {
+  transition-delay: 60ms;
+}
+
+/* Miscellaneous styles. */
+.rate i {
+  cursor: pointer;
+  font-style: normal;
+}
+
+.rate {
+  font-size: 20px;
+  height: 100%;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+
+/*=========================
+   Send Review Button
+ ========================== */
+
+.send-button{
+  font-size: 14px;
+  border-radius: 3px;
+
+  background: #3476b0;
+  border: 0;
+  padding: 3px 6px;
+  color: #fff;
+  transition: 0.4s;
+  margin-left: 4px;
+}
+button:disabled{
+  cursor:not-allowed;
+  background: rgba(79, 146, 205, 0.84) !important;
+}
+
+.stars-submit-container{
+  text-align: right;
+}

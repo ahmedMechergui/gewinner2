@@ -1,0 +1,28 @@
+
+.review-heading {
+  font-size: 24px
+}
+.review-heading::first-letter{
+  text-transform: uppercase;
+}
+
+.review-desc {
+  font-size: 15px
+}
+
+.star-active {
+  color: #fbc02d;
+}
+.star-muted{
+  color: #ccc;
+}
+
+.author {
+  font-size: 20px;
+  margin-bottom: 0
+}
+
+.review-date {
+  color: grey;
+}
+

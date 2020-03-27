@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
+import {ScriptsLoaderService} from '../../scripts-loader.service';
 
 @Component({
   selector: 'app-moovobrain-video',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoovobrainVideoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private scriptsLoader: ScriptsLoaderService,private renderer2: Renderer2) {
+  }
 
   ngOnInit() {
+    this.scriptsLoader.addScripts(this.renderer2, 'moovobrain-video');
   }
 
 }

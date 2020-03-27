@@ -1,0 +1,22 @@
+.card {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 0 60px;
+  margin-top: 70px
+}
+
+h2{
+  font-size: 34px ;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 992px) {
+  .card{
+    padding: 0 10px;
+  }
+}
+.heading0 {
+  margin-top: -50px
+}
+
+

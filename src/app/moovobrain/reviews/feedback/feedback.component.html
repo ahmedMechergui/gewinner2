@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="justify-content-center">
+      <table class="text-left mx-auto">
+        <tr>
+          <td class="rating-label">Excellent</td>
+          <td class="rating-bar">
+            <div class="bar-container">
+              <div class="bar bar-5"></div>
+            </div>
+          </td>
+          <td>123</td>
+        </tr>
+        <tr>
+          <td class="rating-label">Good</td>
+          <td class="rating-bar">
+            <div class="bar-container">
+              <div class="bar bar-4"></div>
+            </div>
+          </td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td class="rating-label">Average</td>
+          <td class="rating-bar">
+            <div class="bar-container">
+              <div class="bar bar-3"></div>
+            </div>
+          </td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="rating-label">Bad</td>
+          <td class="rating-bar">
+            <div class="bar-container">
+              <div class="bar bar-2"></div>
+            </div>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td class="rating-label">Brutal</td>
+          <td class="rating-bar">
+            <div class="bar-container">
+              <div class="bar bar-1"></div>
+            </div>
+          </td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-6">
+              <textarea class="form-control feedback-textArea" name="feedback" id="feedback"
+                        width="100%" rows="3"
+                        placeholder="Leave a Feedback*"></textarea>
+    <div class="stars-submit-container">
+      <div class="rating">
+                <span class="rate" id="stars">
+                <i (click)="starClicked(1)" class="icofont-star" id="star1"></i>
+                <i (click)="starClicked(2)" class="icofont-star" id="star2"></i>
+                <i (click)="starClicked(3)" class="icofont-star" id="star3"></i>
+                <i (click)="starClicked(4)" class="icofont-star" id="star4"></i>
+                <i (click)="starClicked(5)" class="icofont-star" id="star5"></i>
+              </span>
+      </div>
+      <button class="send-button">Send Feedback</button>
+    </div>
+  </div>
+</div>

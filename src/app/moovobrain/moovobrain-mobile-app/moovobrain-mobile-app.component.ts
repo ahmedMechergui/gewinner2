@@ -8,6 +8,7 @@ import {ScriptsLoaderService} from '../../scripts-loader.service';
 })
 export class MoovobrainMobileAppComponent implements OnInit {
 
+  // tslint:disable-next-line:variable-name
   constructor(private renderer2: Renderer2, private scriptsLoader: ScriptsLoaderService) {
   }
 
