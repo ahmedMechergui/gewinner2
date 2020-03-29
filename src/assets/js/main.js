@@ -26,6 +26,7 @@
     $(this).find('p').addClass('animated fadeInUp');
     $(this).find('.btn-get-started').addClass('animated fadeInUp');
   });
+
   // Back to top button
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -42,12 +43,11 @@
     return false;
   });
 
-
-
   // Init AOS
   AOS.init({
     duration: 800,
     easing: "ease-in-out-back",
     once: true
   });
+
 })(jQuery);

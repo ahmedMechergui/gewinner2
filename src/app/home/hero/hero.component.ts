@@ -1,4 +1,5 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import {ScriptsLoaderService} from '../../scripts-loader.service';
 
 @Component({
   selector: 'app-hero',
@@ -11,7 +12,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   @Input() showButtons = true;
 
 
-  constructor() {
+  constructor(private scriptloader: ScriptsLoaderService, private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -21,12 +22,18 @@ export class HeroComponent implements OnInit, OnDestroy {
 
     // tslint:disable-next-line:max-line-length
     document.getElementById('hero').style.setProperty('--bg-url', 'linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("assets/img/' + this.imageName + '") center top no-repeat');
+
+    this.loadScripts();
   }
 
   ngOnDestroy(): void {
     document.getElementById('header').classList.remove('header-transparent');
     document.getElementById('logo').classList.remove('hide-on-sd');
     document.getElementById('header').classList.add('box-shadow');
+  }
+
+  loadScripts() {
+    this.scriptloader.addScripts(this.renderer, 'moovobrain-scroll-down');
   }
 
 }
