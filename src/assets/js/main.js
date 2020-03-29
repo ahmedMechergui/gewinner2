@@ -42,32 +42,12 @@
     return false;
   });
 
-  // Initiate the venobox plugin
-  $(window).on('load', function () {
-    $('.venobox').venobox();
-  });
 
-  // Porfolio isotope and filter
-  $(window).on('load', function () {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      layoutMode: 'fitRows'
-    });
 
-    $('#portfolio-flters li').on('click', function () {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-    });
-
-  });
-
-  // Initi AOS
+  // Init AOS
   AOS.init({
     duration: 800,
-    easing: "ease-in-out-back"
+    easing: "ease-in-out-back",
+    once: true
   });
-
 })(jQuery);

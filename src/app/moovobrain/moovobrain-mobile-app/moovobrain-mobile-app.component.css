@@ -188,12 +188,12 @@ h3, h5
   text-align: center;
 }
 .download-app img{
-  width: 232px;
-  height: 77px;
+  width: 170px;
+  height: 58px;
 }
 
 
-@media (max-width: 463px) {
+@media (max-width: 339px) {
   .margin-custom {
     margin-top:1rem;
   }
