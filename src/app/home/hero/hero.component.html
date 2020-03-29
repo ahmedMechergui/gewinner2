@@ -6,7 +6,7 @@
       <div class="carousel-container">
         <h2 class="animated fadeInDown">Welcome to <span>Gewinner</span></h2>
         <p class="animated fadeInUp">Together to facilitate disabled people’s life</p>
-        <a class="btn-get-started animated fadeInUp" href="">Know more</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
       </div>
     </div>
 
@@ -19,7 +19,7 @@
           physically disabled people who cannot use their upper members to pilot conventional
           wheelchairs with joystick.
         </p>
-        <a class="btn-get-started animated fadeInUp" href="">Know more</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
       </div>
     </div>
 
@@ -28,21 +28,30 @@
       <div class="carousel-container">
         <h2 class="animated fadeInDown">For those we love</h2>
         <p class="animated fadeInUp">Mobility, Security and Independence </p>
-        <a class="btn-get-started animated fadeInUp" [routerLink]="'moovobrain'">Know more</a>
+        <a class="btn-get-started animated fadeInUp" [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
       </div>
     </div>
+
+
 
     <a class="carousel-control-prev" data-slide="prev" href="#heroCarousel" role="button">
       <span aria-hidden="true" class="carousel-control-prev-icon bx bx-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
 
-    <a class="carousel-control-next" data-slide="next" href="#heroCarousel" role="button">
+    <a class="carousel-control-next" data-slide="next" href="#heroCarousel" role="button" >
       <span aria-hidden="true" class="carousel-control-next-icon bx bx-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
 
+
+
   </div>
+
+  <div class="arrow bounce">
+    <i class="icofont-rounded-down"></i>
+  </div>
+
 </section><!-- End Hero -->
 
 <!-- ======= Logo on SD Section======= -->

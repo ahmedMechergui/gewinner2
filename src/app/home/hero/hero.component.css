@@ -1,3 +1,35 @@
+/*--------------------------------------------------------------
+# Scroll down button
+--------------------------------------------------------------*/
+
+.arrow {
+  bottom: 9%;
+  position: absolute;
+  left: 49%;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 31px;
+  z-index: 1;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Logo responsive handler

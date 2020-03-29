@@ -6,8 +6,9 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit, OnDestroy {
- // @Input() imageName = 'hero.jpg';
- @Input() imageName = 'hero-bg.jpg';
+  // these information will be provided by moovobrain page
+  @Input() imageName = 'hero-bg.jpg';
+  @Input() showButtons = true;
 
 
   constructor() {
