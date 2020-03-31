@@ -1,4 +1,3 @@
-// console.log('accessories carousel script loaded');
 $(function () {
   $('.accessories-slick-items').slick({
     infinite: true,
@@ -33,15 +32,6 @@ $(function () {
       }
     ]
   });
-  //   .on('setPosition', function (event, slick) {
-  //   slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-  // });
-
-
 });
 
-
-// .on('setPosition', function (event, slick) {
-//   slick.$slides.css('height', slick.$slideTrack.height() + 'px');
-// })
 

@@ -1,7 +1,7 @@
 <section style="padding-top: 0" id="moovobrain-product">
   <div class="container overflow-hidden">
     <div class="section-header">
-      <h2 class="section-title text-center">MOOVOBRAIN Features</h2>
+      <h2 class="section-title text-center">Features</h2>
       <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
         ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
     </div>
@@ -44,7 +44,7 @@
         </div>
 
         <div class="buttons text-center text-md-right">
-          <button class="btn mr-sm-2" data-toggle="modal" data-target="#myModal">
+          <button class="btn custom-margin" data-toggle="modal" data-target="#myModal">
            <i class="icofont-cart-alt order-icon"></i> <span class="btn-text"> Order Now</span>
           </button>
 
@@ -67,19 +67,21 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">MOOVOBRAIN</h4>
+        <h4 class="modal-title custom-title" role="button" (click)="setActive(1)" [class.activated]="isActive===1"> Individual </h4>
+        <h4 class="modal-title custom-title" role="button" (click)="setActive(2)" [class.activated]="isActive===2"> Organisation</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        Form not implemented yet...
+        <app-test-individual *ngIf="isActive === 1"></app-test-individual>
+        <app-test-organisation *ngIf="isActive === 2"></app-test-organisation>
       </div>
 
       <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--      </div>-->
 
     </div>
   </div>

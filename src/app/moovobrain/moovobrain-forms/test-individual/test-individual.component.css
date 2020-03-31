@@ -1,0 +1,62 @@
+.join-us-title{
+  font-size: 35px;
+  line-height: 55px;
+  font-weight: 600;
+  color: #2c2c51;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/*.image-sizing{*/
+/*  max-width: 78px;*/
+/*}*/
+
+
+.contact .join-us-form input, .contact .join-us-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .join-us-form input {
+  padding: 20px 15px;
+}
+
+.contact .join-us-form textarea {
+  padding: 20px 15px;
+}
+
+.contact .join-us-form button[type="submit"] {
+  background: #051441;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+button:disabled{
+  cursor:not-allowed;
+  background: rgba(5, 20, 65, 0.86) !important;
+}
+
+.custom-file-label{
+  color: grey;
+}
+
+select:focus, .custom-file-label{
+  box-shadow: none !important;
+  outline-color: transparent !important;
+}
+
+input.ng-invalid.ng-touched, input.ng-invalid.ng-touched ~ .custom-file-label {
+  border:1px solid #FF9494;
+  outline-color: #FF9494 !important;
+}
+
+input.ng-invalid.ng-touched ~ .custom-file-label::after {
+  border-left: none;
+}
+
+input:menu{
+  width: 100% !important;
+}

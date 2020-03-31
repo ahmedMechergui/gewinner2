@@ -7,6 +7,8 @@
         <h2 class="animated fadeInDown">Welcome to <span>Gewinner</span></h2>
         <p class="animated fadeInUp">Together to facilitate disabled people’s life</p>
         <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Order</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Test</a>
       </div>
     </div>
 
@@ -20,6 +22,8 @@
           wheelchairs with joystick.
         </p>
         <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Order</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Test</a>
       </div>
     </div>
 
@@ -29,6 +33,8 @@
         <h2 class="animated fadeInDown">For those we love</h2>
         <p class="animated fadeInUp">Mobility, Security and Independence </p>
         <a class="btn-get-started animated fadeInUp" [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Order</a>
+        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#myModal" *ngIf="!showButtons">Test</a>
       </div>
     </div>
 
@@ -48,14 +54,14 @@
 
   </div>
 
-  <a class="arrow bounce scroll-down">
+  <a class="arrow bounce scroll-down" *ngIf="!showButtons">
     <i class="icofont-rounded-down"></i>
   </a>
 
 </section><!-- End Hero -->
 
 <!-- ======= Logo on SD Section======= -->
-<div class="logo float-left show-on-sd" id="logoSD" data-aos="fade-down">
+<div class="logo float-left show-on-sd" id="logoSD" data-aos="fade-down" *ngIf="showButtons">
   <a href="index.html"><img src="assets/img/logo-black.png" alt="logo missing..." class="img-fluid"></a>
 </div>
 <!-- End logo on SD  -->

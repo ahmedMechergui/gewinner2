@@ -93,7 +93,8 @@ h3, h5
 }
 
 .nav-tabs.feature-tabs .nav-item {
-  width: 100%
+  width: fit-content;
+  margin: auto;
 }
 
 .nav-tabs.feature-tabs .nav-item .nav-link {

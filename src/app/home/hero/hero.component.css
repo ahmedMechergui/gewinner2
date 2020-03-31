@@ -1,3 +1,15 @@
+.btn-get-started{
+  display: inline-block;
+}
+
+/*--------------------------------------------------------------
+# Removing bootstrap carousel arrows
+--------------------------------------------------------------*/
+
+.carousel-control-prev , .carousel-control-next{
+  display: none !important;
+}
+
 /*--------------------------------------------------------------
 # Scroll down button
 --------------------------------------------------------------*/
@@ -90,7 +102,7 @@
 }
 
 #hero .carousel-container {
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
   align-items: center;
   flex-direction: column;

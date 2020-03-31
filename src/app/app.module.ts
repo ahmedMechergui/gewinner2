@@ -18,20 +18,22 @@ import {NewsBlogComponent} from './news/news-blog/news-blog.component';
 import {NewsSidebarComponent} from './news/news-sidebar/news-sidebar.component';
 import {JoinUsComponent} from './join-us/join-us.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { LoginComponent } from './sign-in/login/login.component';
-import { RegisterComponent } from './sign-in/register/register.component';
-import { PasswordForgottenComponent } from './sign-in/password-forgotten/password-forgotten.component';
-import { FocusElementDirective } from './focus-element.directive';
-import { MoovobrainComponent } from './moovobrain/moovobrain.component';
-import { HeroComponent } from './home/hero/hero.component';
-import { ProductComponent } from './moovobrain/product/product.component';
-import { MoovobrainVideoComponent } from './moovobrain/moovobrain-video/moovobrain-video.component';
-import { MoovobrainMobileAppComponent } from './moovobrain/moovobrain-mobile-app/moovobrain-mobile-app.component';
-import { ReviewsComponent } from './moovobrain/reviews/reviews.component';
-import { TestimonialsComponent } from './moovobrain/reviews/testimonials/testimonials.component';
-import { FeedbackComponent } from './moovobrain/reviews/feedback/feedback.component';
-
+import {SignInComponent} from './sign-in/sign-in.component';
+import {LoginComponent} from './sign-in/login/login.component';
+import {RegisterComponent} from './sign-in/register/register.component';
+import {PasswordForgottenComponent} from './sign-in/password-forgotten/password-forgotten.component';
+import {FocusElementDirective} from './focus-element.directive';
+import {MoovobrainComponent} from './moovobrain/moovobrain.component';
+import {HeroComponent} from './home/hero/hero.component';
+import {ProductComponent} from './moovobrain/product/product.component';
+import {MoovobrainVideoComponent} from './moovobrain/moovobrain-video/moovobrain-video.component';
+import {MoovobrainMobileAppComponent} from './moovobrain/moovobrain-mobile-app/moovobrain-mobile-app.component';
+import {ReviewsComponent} from './moovobrain/reviews/reviews.component';
+import {TestimonialsComponent} from './moovobrain/reviews/testimonials/testimonials.component';
+import {FeedbackComponent} from './moovobrain/reviews/feedback/feedback.component';
+import {MoovobrainFormsComponent} from './moovobrain/moovobrain-forms/moovobrain-forms.component';
+import {TestIndividualComponent} from './moovobrain/moovobrain-forms/test-individual/test-individual.component';
+import {TestOrganisationComponent} from './moovobrain/moovobrain-forms/test-organisation/test-organisation.component';
 
 
 @NgModule({
@@ -63,6 +65,9 @@ import { FeedbackComponent } from './moovobrain/reviews/feedback/feedback.compon
     ReviewsComponent,
     TestimonialsComponent,
     FeedbackComponent,
+    MoovobrainFormsComponent,
+    TestIndividualComponent,
+    TestOrganisationComponent,
   ],
   imports: [
     BrowserModule,

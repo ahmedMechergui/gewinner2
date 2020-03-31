@@ -128,10 +128,39 @@ h2, h4 {
   border-radius: 40px;
 }
 
+
+
+@media only screen and (min-width: 409px) {
+  .custom-margin{margin-right: 10px !important}
+}
 .buttons button:hover{
   background: #001b40;
 }
 
 .order-icon{
   font-size: 20px !important;
+}
+
+/*====================================
+# Resizing bootstrap modal
+  ====================================*/
+@media screen and (min-width: 576px) {
+  .modal-dialog {
+    max-width: 1000px !important;
+    margin: 1.75rem auto !important;
+  }
+}
+
+
+/*====================================
+# Switching modal titles
+  ====================================*/
+.custom-title{
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.activated{
+ color: #052267;
 }
