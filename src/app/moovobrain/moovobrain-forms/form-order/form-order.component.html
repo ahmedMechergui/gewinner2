@@ -1,0 +1,1178 @@
+<!-- MultiStep Form -->
+
+<div class="row justify-content-center mt-0">
+  <div class="col-12">
+    <div class="card">
+      <div class="row">
+        <div class="col-md-12 mx-0">
+          <form [formGroup]="form" id="msform" (ngSubmit)="alert()">
+
+            <!-- progressbar -->
+            <ul id="progressbar">
+              <li class="active step-title" id="wheelchair"><strong>Wheelchair</strong></li>
+              <li class="step-title" id="security"><strong>Safety</strong></li>
+              <li class="step-title" id="accessories"><strong>Accessories</strong></li>
+              <li class="step-title" id="services"><strong>Services</strong></li>
+              <li class="step-title" id="payment"><strong>Payment</strong></li>
+              <li class="step-title" id="confirmation"><strong>Confirmation</strong></li>
+            </ul>
+
+            <!-- ====================================
+                  # Every fieldset represents a form step
+                 ====================================-->
+
+            <fieldset class="container-fluid">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="steeringSystem" id="steering-system"
+                             type="checkbox">
+                      <label class="lbl" for="steering-system">Brain mode steering system
+                        <span class="text-success">(included)</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    The user can move forward when he concentrate, stop the wheelchair by blinking his eyes
+                    and turn it right with 45 degree when he blink his eyes.
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="headset" id="headset"
+                             type="checkbox">
+                      <label class="lbl" for="headset">Headset <span class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    A Neurosky mobile headset will be offered to detect brain waves with 6 hours autonomy
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="wheelchair" id="e-wheelchair"
+                             type="checkbox">
+                      <label class="lbl" for="e-wheelchair">Electric wheelchair <span
+                        class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    A Comfortable wheelchair designed for indoor use.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="mobileApp"
+                             id="mobile-app" type="checkbox">
+                      <label class="lbl" for="mobile-app">Mobile application <span
+                        class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    Basic version of moovobrain app for the assistant to <B>Realtime</B> track the wheelchair’s state
+                    and headset’s state.
+                  </div>
+                </div>
+              </div>
+
+              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+            </fieldset> <!-- Wheelchair -->
+            <fieldset>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="obstacleDetection"
+                             id="obstacle-detection"
+                             type="checkbox">
+                      <label class="lbl" for="obstacle-detection">Obstacles Detection <span class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    The wheelchair can detect obstacles to insure the security of the patient.
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="camera" id="camera" type="checkbox">
+                      <label class="lbl" for="camera">Camera <span class="text-success">(+1500 TND)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    A camera installed on the wheelchair to help the assistant remote control the
+                    wheelchair if needed using the mobile app
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="gps" id="gps" type="checkbox">
+                      <label class="lbl" for="gps">GPS <span class="text-success">(+1500 TND)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    The assistant can track the wheelchair on a map with gps using
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="notifications" id="notifications" type="checkbox">
+                      <label class="lbl" for="notifications">Notifications <span class="text-success">(+200 TND)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    When the assistant install the mobile app, he can receive notifications of the
+                    wheelchair battery’s state, the headset battery’s state, etc.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="sms" id="sms" type="checkbox">
+                      <label class="lbl" for="sms">SMS <span class="text-success">(+200 TND)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    The assistant install can receive SMS to control in Realtime the wheelchair
+                    battery’s state, the headset battery’s state, etc.
+                  </div>
+                </div>
+              </div>
+
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
+              <input class="next btn  action-button" name="next" type="button" value="Next Step"/>
+            </fieldset> <!-- Security System -->
+            <fieldset>
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="securityBelt" id="security-belt"
+                             type="checkbox">
+                      <label class="lbl" for="security-belt">Security Belt <span class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="headrest" id="headrest" type="checkbox">
+                      <label class="lbl" for="headrest">Headrest Neck Support <span
+                        class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="mirror" id="mirror" type="checkbox">
+                      <label class="lbl" for="mirror">Rear-View Mirror <span
+                        class="text-success">(+250 TND)</span></label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="table" id="table" type="checkbox">
+                      <label class="lbl" for="table">Adjustable Table <span
+                        class="text-success">(+390 TND)</span></label>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="rearCamera" id="rear-camera" type="checkbox">
+                      <label class="lbl" for="rear-camera">Rear-View Camera <span
+                        class="text-success">(+1500 TND)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    LCD Screen added to the steering system to make <span style="white-space: nowrap">rear-view</span>
+                    accessible to the user and the
+                    assistant
+                  </div>
+                </div>
+
+              </div>
+
+
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/> <input
+              class="next action-button btn" name="next" type="button" value="Next Step"/>
+            </fieldset> <!-- Accessories -->
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input (click)="trainingClicked()" class="cb" formControlName="trainingSession" id="training"
+                             type="checkbox">
+                      <label class="lbl" for="training">
+                        Training Session
+                      </label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    Occupational therapist help the user to pilot and adapt to Moovobrain
+
+                    <div class="d-flex -j-bet -i-base">
+                      <div class="fi-w position-relative _cb _ha">
+                        <input class="cb" formControlName="trainingHours" id="hours-2" type="radio"
+                               value="2">
+                        <label class="lbl radio" for="hours-2">
+                          2 Hours
+                          <span class="text-success">(+2000 TND)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex -j-bet -i-base">
+                      <div class="fi-w position-relative _cb _ha">
+                        <input class="cb" formControlName="trainingHours" id="hours-3" type="radio"
+                               value="3">
+                        <label class="lbl radio" for="hours-3">
+                          3 Hours
+                          <span class="text-success">(+2500 TND)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex -j-bet -i-base">
+                      <div class="fi-w position-relative _cb _ha">
+                        <input class="cb" formControlName="trainingHours" id="hours-more"
+                               type="radio"
+                               value="more">
+                        <label class="lbl radio" for="hours-more">
+                          More
+                          <span class="text-success">(+4000 TND)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input (click)="controlClicked()" class="cb" formControlName="control" id="control"
+                             type="checkbox">
+                      <label class="lbl" for="control">Quarterly Quality Control</label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    One of our workers take charge to technically control the quality of your moovobrain, TND
+                    900/quarter
+                    (period can be extended)
+
+                    <div class="d-flex -j-bet -i-base">
+                      <div class="fi-w position-relative _cb _ha">
+                        <input (click)="moreYearsClicked(false)" class="cb" formControlName="controlYears"
+                               id="years-2"
+                               type="radio"
+                               value="2">
+                        <label class="lbl radio" for="years-2">
+                          2 Years
+                          <span class="text-success">(+4000 TND)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex -j-bet -i-base">
+                      <div class="fi-w position-relative _cb _ha d-flex">
+                        <input (click)="moreYearsClicked(true)" class="cb" formControlName="controlYears"
+                               id="years-more"
+                               type="radio"
+                               value="more">
+                        <label class="lbl radio" for="years-more">
+                          More
+                        </label>
+
+                        <div [class.show-more]="controlCheckbox && moreYearsRadio"
+                             class="d-flex -j-bet -i-base hide-on-unchecked">
+                          <div class="fi-w position-relative _cb _ha" style="padding-top: 0 ; padding-left: 6px">
+                            <input #addedYears (change)="calculateControlPrice(+addedYears.value)"
+                                   (input)="calculateControlPrice(+addedYears.value)"
+                                   [max]="20"
+                                   [min]="3"
+                                   id="added-years" name="added-years"
+                                   oninput=" +value!==0 && +value<21 ||(value='');"
+                                   step="0.25" style="width: 50px" type="number" value="3">
+                            <label class="lbl radio" for="added-years">
+                              <span class="text-success pl-2"> +{{controlPrice}} TND</span>
+                            </label>
+                          </div>
+
+                          <small class="text-secondary position-absolute">20 years maximum</small>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="demo" id="demo" type="checkbox">
+                      <label class="lbl" for="demo">Video Demo <span
+                        class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <div class="text-secondary pl-5 text-left">
+                    A user Manuel will be offered.
+                  </div>
+                </div>
+
+              </div>
+
+
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
+              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+            </fieldset> <!-- Services -->
+            <fieldset>
+
+              <div class="alert alert-info ml-md-3 mr-md-3">
+                <h6 class="text-center">The payment should be done only with bank transfer to the company’s account
+                  which will be mentioned in the confirmation email.</h6>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col-12">
+                  <p [class.show]="clientNature===0" class="text-left text-dark fade">Please specify if you are an
+                    individual or an organization : </p>
+                  <div class="form-group">
+                    <select #clientNatureSelect (change)="changeClientNature(+clientNatureSelect.value)"
+                            class="form-control"
+                            formControlName="clientNature" id="client-nature">
+                      <option disabled selected value="">Select Here</option>
+                      <option value="1">Individual</option>
+                      <option value="2">Organisation</option>
+                    </select>
+
+
+                  </div>
+
+                </div>
+              </div>
+
+              <!--==================
+                  # Individual form
+                  ==================-->
+              <div *ngIf="clientNature === 1">
+
+                <section class="contact" style="padding: 0">
+
+
+                  <div class="row">
+
+                    <div class="col-lg-12">
+                      <div class="join-us-form">
+                        <div class="form-row">
+                          <div class="col-md-6 form-group">
+                            <input autocomplete="off" class="form-control" formControlName="iName"
+                                   id="i-name" placeholder="Your Name" type="text"/>
+                            <small *ngIf="form.get('iName').invalid && form.get('iName').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter your name
+                            </small>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input autocomplete="off" class="form-control" formControlName="iEmail"
+                                   id="i-email" placeholder="Your Email" type="email"/>
+                            <small *ngIf="form.get('iEmail').invalid && form.get('iEmail').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please a valid email
+                            </small>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="iBirthday"
+                                   id="individual-birthday" onfocus="this.type='date'" placeholder="Your Birthday"
+                                   type="text">
+                            <small *ngIf="form.get('iEmail').invalid && form.get('iEmail').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter your Birthday
+                            </small>
+                          </div>
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select class="form-control" formControlName="iCountry" id="i-country">
+                                <option disabled selected value="">Select your country</option>
+                                <option value="Afganistan">Afghanistan</option>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="American Samoa">American Samoa</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Anguilla">Anguilla</option>
+                                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Aruba">Aruba</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Azerbaijan">Azerbaijan</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Belize">Belize</option>
+                                <option value="Benin">Benin</option>
+                                <option value="Bermuda">Bermuda</option>
+                                <option value="Bhutan">Bhutan</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Bonaire">Bonaire</option>
+                                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                <option value="Botswana">Botswana</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                <option value="Brunei">Brunei</option>
+                                <option value="Bulgaria">Bulgaria</option>
+                                <option value="Burkina Faso">Burkina Faso</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Cameroon">Cameroon</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Canary Islands">Canary Islands</option>
+                                <option value="Cape Verde">Cape Verde</option>
+                                <option value="Cayman Islands">Cayman Islands</option>
+                                <option value="Central African Republic">Central African Republic</option>
+                                <option value="Chad">Chad</option>
+                                <option value="Channel Islands">Channel Islands</option>
+                                <option value="Chile">Chile</option>
+                                <option value="China">China</option>
+                                <option value="Christmas Island">Christmas Island</option>
+                                <option value="Cocos Island">Cocos Island</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Congo">Congo</option>
+                                <option value="Cook Islands">Cook Islands</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cote DIvoire">Cote DIvoire</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Curaco">Curacao</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Czech Republic">Czech Republic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Djibouti">Djibouti</option>
+                                <option value="Dominica">Dominica</option>
+                                <option value="Dominican Republic">Dominican Republic</option>
+                                <option value="East Timor">East Timor</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                <option value="Eritrea">Eritrea</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="Falkland Islands">Falkland Islands</option>
+                                <option value="Faroe Islands">Faroe Islands</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="French Guiana">French Guiana</option>
+                                <option value="French Polynesia">French Polynesia</option>
+                                <option value="French Southern Ter">French Southern Ter</option>
+                                <option value="Gabon">Gabon</option>
+                                <option value="Gambia">Gambia</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="Great Britain">Great Britain</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Greenland">Greenland</option>
+                                <option value="Grenada">Grenada</option>
+                                <option value="Guadeloupe">Guadeloupe</option>
+                                <option value="Guam">Guam</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Guinea">Guinea</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Haiti">Haiti</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Hong Kong">Hong Kong</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Iceland">Iceland</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="India">India</option>
+                                <option value="Iran">Iran</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Isle of Man">Isle of Man</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Kiribati">Kiribati</option>
+                                <option value="Korea North">Korea North</option>
+                                <option value="Korea Sout">Korea South</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                <option value="Laos">Laos</option>
+                                <option value="Latvia">Latvia</option>
+                                <option value="Lebanon">Lebanon</option>
+                                <option value="Lesotho">Lesotho</option>
+                                <option value="Liberia">Liberia</option>
+                                <option value="Libya">Libya</option>
+                                <option value="Liechtenstein">Liechtenstein</option>
+                                <option value="Lithuania">Lithuania</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Macau">Macau</option>
+                                <option value="Macedonia">Macedonia</option>
+                                <option value="Madagascar">Madagascar</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Malawi">Malawi</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="Mali">Mali</option>
+                                <option value="Malta">Malta</option>
+                                <option value="Marshall Islands">Marshall Islands</option>
+                                <option value="Martinique">Martinique</option>
+                                <option value="Mauritania">Mauritania</option>
+                                <option value="Mauritius">Mauritius</option>
+                                <option value="Mayotte">Mayotte</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Midway Islands">Midway Islands</option>
+                                <option value="Moldova">Moldova</option>
+                                <option value="Monaco">Monaco</option>
+                                <option value="Mongolia">Mongolia</option>
+                                <option value="Montserrat">Montserrat</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Mozambique">Mozambique</option>
+                                <option value="Myanmar">Myanmar</option>
+                                <option value="Nambia">Nambia</option>
+                                <option value="Nauru">Nauru</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Netherland Antilles">Netherland Antilles</option>
+                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                <option value="Nevis">Nevis</option>
+                                <option value="New Caledonia">New Caledonia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Niue">Niue</option>
+                                <option value="Norfolk Island">Norfolk Island</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Palau Island">Palau Island</option>
+                                <option value="Palestine">Palestine</option>
+                                <option value="Panama">Panama</option>
+                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Phillipines">Philippines</option>
+                                <option value="Pitcairn Island">Pitcairn Island</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                <option value="Republic of Serbia">Republic of Serbia</option>
+                                <option value="Reunion">Reunion</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="St Barthelemy">St Barthelemy</option>
+                                <option value="St Eustatius">St Eustatius</option>
+                                <option value="St Helena">St Helena</option>
+                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                <option value="St Lucia">St Lucia</option>
+                                <option value="St Maarten">St Maarten</option>
+                                <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                <option value="Saipan">Saipan</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="Samoa American">Samoa American</option>
+                                <option value="San Marino">San Marino</option>
+                                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Senegal">Senegal</option>
+                                <option value="Seychelles">Seychelles</option>
+                                <option value="Sierra Leone">Sierra Leone</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Slovakia">Slovakia</option>
+                                <option value="Slovenia">Slovenia</option>
+                                <option value="Solomon Islands">Solomon Islands</option>
+                                <option value="Somalia">Somalia</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Sudan">Sudan</option>
+                                <option value="Suriname">Suriname</option>
+                                <option value="Swaziland">Swaziland</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Syria">Syria</option>
+                                <option value="Tahiti">Tahiti</option>
+                                <option value="Taiwan">Taiwan</option>
+                                <option value="Tajikistan">Tajikistan</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Togo">Togo</option>
+                                <option value="Tokelau">Tokelau</option>
+                                <option value="Tonga">Tonga</option>
+                                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="Turkmenistan">Turkmenistan</option>
+                                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                <option value="Tuvalu">Tuvalu</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="United Arab Erimates">United Arab Emirates</option>
+                                <option value="United States of America">United States of America</option>
+                                <option value="Uraguay">Uruguay</option>
+                                <option value="Uzbekistan">Uzbekistan</option>
+                                <option value="Vanuatu">Vanuatu</option>
+                                <option value="Vatican City State">Vatican City State</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                <option value="Wake Island">Wake Island</option>
+                                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                <option value="Yemen">Yemen</option>
+                                <option value="Zaire">Zaire</option>
+                                <option value="Zambia">Zambia</option>
+                                <option value="Zimbabwe">Zimbabwe</option>
+                              </select>
+                              <small *ngIf="form.get('iCountry').invalid && form.get('iCountry').touched"
+                                     class="form-text text-danger">
+                                <i class="icofont-warning-alt"></i>
+                                Please select your country
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="iPhone"
+                                   id="i-phone" oninput="!value.includes('-')||(value='')" placeholder="Your Phone Number"
+                                   type="number"/>
+                            <small *ngIf="form.get('iPhone').invalid && form.get('iPhone').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter a valid phone number
+                            </small>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="iHandicap" list="handicaps"
+                                   placeholder="Handicap Type (Specify if not listed)">
+                            <small *ngIf="form.get('iHandicap').invalid && form.get('iHandicap').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please specify the handicap
+                            </small>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </section>
+
+
+              </div>
+              <!--==================
+                  # Organisation form
+                  ==================-->
+              <div *ngIf="clientNature === 2">
+                <section class="contact" style="padding: 0">
+                  <div class="row">
+
+                    <div class="col-lg-12">
+                      <div class="join-us-form">
+                        <div class="form-row">
+
+                          <div class="col-md-6 form-group">
+                            <input autocomplete="off" class="form-control" formControlName="oName"
+                                   id="o-name" placeholder="Organisation name" type="text"/>
+                            <small *ngIf="form.get('oName').invalid && form.get('oName').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the organisation name
+                            </small>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="oType" id="o-type"
+                                   list="organisations" placeholder="Organisation Type (Specify if not listed)">
+                            <small *ngIf="form.get('oType').invalid && form.get('oType').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the organisation type
+                            </small>
+                            <datalist id="organisations">
+                              <option value="Company">
+                              <option value="Hospital">
+                              <option value="Association">
+                            </datalist>
+                          </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="oSector"
+                                   id="o-sector" placeholder="Organisation Sector" type="text">
+                            <small *ngIf="form.get('oSector').invalid && form.get('oSector').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the organisation sector
+                            </small>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="oRegistrationNumber"
+                                   id="o-registration"
+                                   placeholder="Registration Number" type="text">
+                            <small
+                              *ngIf="form.get('oRegistrationNumber').invalid && form.get('oRegistrationNumber').touched"
+                              class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the Registration number
+                            </small>
+                          </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="oResponsibleName"
+                                   id="responsible" placeholder="Responsible Name" type="text">
+                            <small *ngIf="form.get('oResponsibleName').invalid && form.get('oResponsibleName').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the responsible name
+                            </small>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input class="form-control" formControlName="oHandicap" id="o-handicap" list="handicaps"
+                                   placeholder="Handicap Type (Specify if not listed)">
+                            <small *ngIf="form.get('oHandicap').invalid && form.get('oHandicap').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please specify the handicap
+                            </small>
+                            <datalist id="handicaps">
+                              <option value="paralysis">
+                              <option value="paralysis 2">
+                              <option value="paralysis 3">
+                              <option value="paralysis 4">
+                              <option value="paralysis 5">
+                            </datalist>
+
+                          </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select class="form-control" formControlName="oCountry" id="country">
+                                <option disabled selected value="">Select Country</option>
+                                <option value="Afganistan">Afghanistan</option>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="American Samoa">American Samoa</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Anguilla">Anguilla</option>
+                                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Aruba">Aruba</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Azerbaijan">Azerbaijan</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Belize">Belize</option>
+                                <option value="Benin">Benin</option>
+                                <option value="Bermuda">Bermuda</option>
+                                <option value="Bhutan">Bhutan</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Bonaire">Bonaire</option>
+                                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                <option value="Botswana">Botswana</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                <option value="Brunei">Brunei</option>
+                                <option value="Bulgaria">Bulgaria</option>
+                                <option value="Burkina Faso">Burkina Faso</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Cameroon">Cameroon</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Canary Islands">Canary Islands</option>
+                                <option value="Cape Verde">Cape Verde</option>
+                                <option value="Cayman Islands">Cayman Islands</option>
+                                <option value="Central African Republic">Central African Republic</option>
+                                <option value="Chad">Chad</option>
+                                <option value="Channel Islands">Channel Islands</option>
+                                <option value="Chile">Chile</option>
+                                <option value="China">China</option>
+                                <option value="Christmas Island">Christmas Island</option>
+                                <option value="Cocos Island">Cocos Island</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Congo">Congo</option>
+                                <option value="Cook Islands">Cook Islands</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cote DIvoire">Cote DIvoire</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Curaco">Curacao</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Czech Republic">Czech Republic</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Djibouti">Djibouti</option>
+                                <option value="Dominica">Dominica</option>
+                                <option value="Dominican Republic">Dominican Republic</option>
+                                <option value="East Timor">East Timor</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Egypt">Egypt</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                <option value="Eritrea">Eritrea</option>
+                                <option value="Estonia">Estonia</option>
+                                <option value="Ethiopia">Ethiopia</option>
+                                <option value="Falkland Islands">Falkland Islands</option>
+                                <option value="Faroe Islands">Faroe Islands</option>
+                                <option value="Fiji">Fiji</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="French Guiana">French Guiana</option>
+                                <option value="French Polynesia">French Polynesia</option>
+                                <option value="French Southern Ter">French Southern Ter</option>
+                                <option value="Gabon">Gabon</option>
+                                <option value="Gambia">Gambia</option>
+                                <option value="Georgia">Georgia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Ghana">Ghana</option>
+                                <option value="Gibraltar">Gibraltar</option>
+                                <option value="Great Britain">Great Britain</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Greenland">Greenland</option>
+                                <option value="Grenada">Grenada</option>
+                                <option value="Guadeloupe">Guadeloupe</option>
+                                <option value="Guam">Guam</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Guinea">Guinea</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Haiti">Haiti</option>
+                                <option value="Hawaii">Hawaii</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Hong Kong">Hong Kong</option>
+                                <option value="Hungary">Hungary</option>
+                                <option value="Iceland">Iceland</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="India">India</option>
+                                <option value="Iran">Iran</option>
+                                <option value="Iraq">Iraq</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Isle of Man">Isle of Man</option>
+                                <option value="Israel">Israel</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Jordan">Jordan</option>
+                                <option value="Kazakhstan">Kazakhstan</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Kiribati">Kiribati</option>
+                                <option value="Korea North">Korea North</option>
+                                <option value="Korea Sout">Korea South</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                <option value="Laos">Laos</option>
+                                <option value="Latvia">Latvia</option>
+                                <option value="Lebanon">Lebanon</option>
+                                <option value="Lesotho">Lesotho</option>
+                                <option value="Liberia">Liberia</option>
+                                <option value="Libya">Libya</option>
+                                <option value="Liechtenstein">Liechtenstein</option>
+                                <option value="Lithuania">Lithuania</option>
+                                <option value="Luxembourg">Luxembourg</option>
+                                <option value="Macau">Macau</option>
+                                <option value="Macedonia">Macedonia</option>
+                                <option value="Madagascar">Madagascar</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Malawi">Malawi</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="Mali">Mali</option>
+                                <option value="Malta">Malta</option>
+                                <option value="Marshall Islands">Marshall Islands</option>
+                                <option value="Martinique">Martinique</option>
+                                <option value="Mauritania">Mauritania</option>
+                                <option value="Mauritius">Mauritius</option>
+                                <option value="Mayotte">Mayotte</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Midway Islands">Midway Islands</option>
+                                <option value="Moldova">Moldova</option>
+                                <option value="Monaco">Monaco</option>
+                                <option value="Mongolia">Mongolia</option>
+                                <option value="Montserrat">Montserrat</option>
+                                <option value="Morocco">Morocco</option>
+                                <option value="Mozambique">Mozambique</option>
+                                <option value="Myanmar">Myanmar</option>
+                                <option value="Nambia">Nambia</option>
+                                <option value="Nauru">Nauru</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Netherland Antilles">Netherland Antilles</option>
+                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                <option value="Nevis">Nevis</option>
+                                <option value="New Caledonia">New Caledonia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Niue">Niue</option>
+                                <option value="Norfolk Island">Norfolk Island</option>
+                                <option value="Norway">Norway</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Palau Island">Palau Island</option>
+                                <option value="Palestine">Palestine</option>
+                                <option value="Panama">Panama</option>
+                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Peru">Peru</option>
+                                <option value="Phillipines">Philippines</option>
+                                <option value="Pitcairn Island">Pitcairn Island</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                <option value="Republic of Serbia">Republic of Serbia</option>
+                                <option value="Reunion">Reunion</option>
+                                <option value="Romania">Romania</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="St Barthelemy">St Barthelemy</option>
+                                <option value="St Eustatius">St Eustatius</option>
+                                <option value="St Helena">St Helena</option>
+                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                <option value="St Lucia">St Lucia</option>
+                                <option value="St Maarten">St Maarten</option>
+                                <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                <option value="Saipan">Saipan</option>
+                                <option value="Samoa">Samoa</option>
+                                <option value="Samoa American">Samoa American</option>
+                                <option value="San Marino">San Marino</option>
+                                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Senegal">Senegal</option>
+                                <option value="Seychelles">Seychelles</option>
+                                <option value="Sierra Leone">Sierra Leone</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Slovakia">Slovakia</option>
+                                <option value="Slovenia">Slovenia</option>
+                                <option value="Solomon Islands">Solomon Islands</option>
+                                <option value="Somalia">Somalia</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Sudan">Sudan</option>
+                                <option value="Suriname">Suriname</option>
+                                <option value="Swaziland">Swaziland</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Switzerland">Switzerland</option>
+                                <option value="Syria">Syria</option>
+                                <option value="Tahiti">Tahiti</option>
+                                <option value="Taiwan">Taiwan</option>
+                                <option value="Tajikistan">Tajikistan</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="Togo">Togo</option>
+                                <option value="Tokelau">Tokelau</option>
+                                <option value="Tonga">Tonga</option>
+                                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                <option value="Tunisia">Tunisia</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="Turkmenistan">Turkmenistan</option>
+                                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                <option value="Tuvalu">Tuvalu</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Ukraine">Ukraine</option>
+                                <option value="United Arab Erimates">United Arab Emirates</option>
+                                <option value="United States of America">United States of America</option>
+                                <option value="Uraguay">Uruguay</option>
+                                <option value="Uzbekistan">Uzbekistan</option>
+                                <option value="Vanuatu">Vanuatu</option>
+                                <option value="Vatican City State">Vatican City State</option>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Vietnam">Vietnam</option>
+                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                <option value="Wake Island">Wake Island</option>
+                                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                <option value="Yemen">Yemen</option>
+                                <option value="Zaire">Zaire</option>
+                                <option value="Zambia">Zambia</option>
+                                <option value="Zimbabwe">Zimbabwe</option>
+                              </select>
+                              <small *ngIf="form.get('oCountry').invalid && form.get('oCountry').touched"
+                                     class="form-text text-danger">
+                                <i class="icofont-warning-alt"></i>
+                                Please select the country
+                              </small>
+                            </div>
+                          </div>
+
+                          <div class="col-md-6 form-group">
+                            <input autocomplete="off" class="form-control" formControlName="oPhone"
+                                   id="o-phone" placeholder="Organisation Phone Number" type="number"/>
+                            <small *ngIf="form.get('oPhone').invalid && form.get('oPhone').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter the phone number
+                            </small>
+                          </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                          <div class="col-md-12 form-group">
+                            <input class="form-control" id="o-email"
+                                   formControlName="oEmail" placeholder="Organisation Email" type="text">
+                            <small *ngIf="form.get('oEmail').invalid && form.get('oEmail').touched"
+                                   class="form-text text-danger">
+                              <i class="icofont-warning-alt"></i>
+                              Please enter a valid email
+                            </small>
+                          </div>
+
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </section>
+
+              </div>
+
+
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
+              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+            </fieldset> <!-- Payment -->
+            <fieldset>
+
+
+              <div class="container-sm pl-sm-3 pr-sm-3 text-dark">
+                <div class="d-flex mb-1">
+                  <div>Purchase price</div>
+                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                </div>
+
+                <div class="d-flex mb-1">
+                  <div>Taxes</div>
+                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                </div>
+
+                <div class="d-flex mb-1">
+                  <div>Shipping (8-12 weeks)</div>
+                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                </div>
+
+                <div class="d-flex mb-1">
+                  <h6>Total</h6>
+                  <h6 class="ml-auto">XXXX &nbsp; TND</h6>
+                </div>
+
+              </div>
+
+
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
+              <button
+              class="confirm btn action-button"  type="submit">Confirm Order 2</button>
+            </fieldset> <!-- Confirmation -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

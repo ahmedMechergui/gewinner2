@@ -1,32 +1,46 @@
 <section class="contact" style="padding: 0">
 
   <h3 class="join-us-title">
-    <!--    <img src="assets/img/illustrations/form/test.svg" alt="image missing..." class="image-sizing">-->
+    <img alt="image missing..." class="image-sizing" src="assets/img/illustrations/form/agreement.svg">
     MOOVOBRAIN TEST
   </h3>
 
   <div class="row">
 
     <div class="col-lg-12">
-      <form [formGroup]="null" class="join-us-form" method="post">
+      <form [formGroup]="form" class="join-us-form" method="post" (ngSubmit)="alert()">
         <div class="form-row">
 
           <div class="col-md-6 form-group">
-            <input  autocomplete="off" class="form-control" id="name"
-                   name="name" placeholder="Your Name" type="text"/>
+            <input autocomplete="off" formControlName="name" class="form-control" id="name" placeholder="Your Name" type="text"/>
+            <small *ngIf="form.get('name').invalid && form.get('name').touched"
+                   class="form-text text-danger">
+              <i class="icofont-warning-alt"></i>
+              Please enter your name
+            </small>
           </div>
 
           <div class="col-md-6 form-group">
-            <input autocomplete="off" class="form-control" id="email" name="email"
+            <input autocomplete="off" class="form-control" formControlName="email" id="email"
                    placeholder="Your Email" type="email"/>
+            <small *ngIf="form.get('email').invalid && form.get('email').touched"
+                   class="form-text text-danger">
+              <i class="icofont-warning-alt"></i>
+              Please enter a valid email
+            </small>
           </div>
         </div>
 
         <div class="form-row">
 
           <div class="col-md-6 form-group">
-            <input  class="form-control" id="birthday"
-                   name="birthday" type="date">
+            <input class="form-control" id="birthday"
+                   onfocus="this.type='date'" formControlName="birthday" placeholder="Your Birthday" type="text">
+            <small *ngIf="form.get('birthday').invalid && form.get('birthday').touched"
+                   class="form-text text-danger">
+              <i class="icofont-warning-alt"></i>
+              Please specify the handicap
+            </small>
           </div>
 
           <div class="col-md-6">
@@ -280,6 +294,11 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
               </select>
+              <small *ngIf="form.get('country').invalid && form.get('country').touched"
+                     class="form-text text-danger">
+                <i class="icofont-warning-alt"></i>
+                Please specify your country
+              </small>
             </div>
           </div>
         </div>
@@ -287,12 +306,24 @@
         <div class="form-row">
 
           <div class="col-md-6 form-group">
-            <input autocomplete="off" class="form-control" id="phone"
-                   name="name" placeholder="Your Phone Number" type="text"/>
+            <input autocomplete="off" class="form-control" id="phone" formControlName="phone"
+                   placeholder="Your Phone Number" type="number"/>
+            <small *ngIf="form.get('phone').invalid && form.get('phone').touched"
+                   class="form-text text-danger">
+              <i class="icofont-warning-alt"></i>
+              Please enter your phone number
+            </small>
           </div>
 
           <div class="col-md-6 form-group">
-            <input list="handicaps" class="form-control" name="browser" placeholder="Handicap Type">
+            <input class="form-control" list="handicaps" formControlName="handicap" placeholder="Handicap Type (Specify if not listed)">
+
+            <small *ngIf="form.get('handicap').invalid && form.get('handicap').touched"
+                   class="form-text text-danger">
+              <i class="icofont-warning-alt"></i>
+              Please enter the handicap
+            </small>
+
             <datalist id="handicaps">
               <option value="paralysis">
               <option value="paralysis 2">

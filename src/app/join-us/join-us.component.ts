@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 

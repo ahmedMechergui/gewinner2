@@ -33,7 +33,7 @@ import {TestimonialsComponent} from './moovobrain/reviews/testimonials/testimoni
 import {FeedbackComponent} from './moovobrain/reviews/feedback/feedback.component';
 import {MoovobrainFormsComponent} from './moovobrain/moovobrain-forms/moovobrain-forms.component';
 import {TestIndividualComponent} from './moovobrain/moovobrain-forms/test-individual/test-individual.component';
-import {TestOrganisationComponent} from './moovobrain/moovobrain-forms/test-organisation/test-organisation.component';
+import {FormOrderComponent} from './moovobrain/moovobrain-forms/form-order/form-order.component';
 
 
 @NgModule({
@@ -67,13 +67,13 @@ import {TestOrganisationComponent} from './moovobrain/moovobrain-forms/test-orga
     FeedbackComponent,
     MoovobrainFormsComponent,
     TestIndividualComponent,
-    TestOrganisationComponent,
+    FormOrderComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -44,11 +44,11 @@
         </div>
 
         <div class="buttons text-center text-md-right">
-          <button class="btn custom-margin" data-toggle="modal" data-target="#myModal">
+          <button class="btn custom-margin" data-toggle="modal" data-target="#order-modal">
            <i class="icofont-cart-alt order-icon"></i> <span class="btn-text"> Order Now</span>
           </button>
 
-          <button class="btn mt-1 mt-sm-0" data-toggle="modal" data-target="#myModal">
+          <button class="btn mt-1 mt-sm-0" data-toggle="modal" data-target="#test-modal">
             <i class="icofont-wheelchair order-icon"></i><span class="btn-text"> Test Moovobrain </span>
           </button>
         </div>
@@ -60,28 +60,46 @@
 
 
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
+<!-- Test Modal -->
+<div class="modal" id="test-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <app-test-individual></app-test-individual>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Order Modal -->
+<div class="modal" id="order-modal">
   <div class="modal-dialog">
     <div class="modal-content">
 
       <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title custom-title" role="button" (click)="setActive(1)" [class.activated]="isActive===1"> Individual </h4>
-        <h4 class="modal-title custom-title" role="button" (click)="setActive(2)" [class.activated]="isActive===2"> Organisation</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+      <!--      <div class="modal-header">-->
+      <!--        <h4 class="modal-title custom-title" role="button" (click)="setActive(1)" [class.activated]="isActive===1"> Individual </h4>-->
+      <!--        <h4 class="modal-title custom-title" role="button" (click)="setActive(2)" [class.activated]="isActive===2"> Organisation</h4>-->
+      <!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+      <!--      </div>-->
 
       <!-- Modal body -->
       <div class="modal-body">
-        <app-test-individual *ngIf="isActive === 1"></app-test-individual>
-        <app-test-organisation *ngIf="isActive === 2"></app-test-organisation>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <app-form-order></app-form-order>
+
       </div>
 
-      <!-- Modal footer -->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
-<!--      </div>-->
+<!--       Modal footer -->
+            <div class="modal-footer">
+              <h6>price : XXXX</h6>
+<!--              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+            </div>
 
     </div>
   </div>
