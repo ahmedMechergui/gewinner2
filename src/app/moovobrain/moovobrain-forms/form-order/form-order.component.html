@@ -5,7 +5,7 @@
     <div class="card">
       <div class="row">
         <div class="col-md-12 mx-0">
-          <form [formGroup]="form" id="msform" (ngSubmit)="alert()">
+          <form (ngSubmit)="alert()" [formGroup]="form" id="msform">
 
             <!-- progressbar -->
             <ul id="progressbar">
@@ -109,7 +109,8 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="camera" id="camera" type="checkbox">
+                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="camera" id="camera"
+                             type="checkbox">
                       <label class="lbl" for="camera">Camera <span class="text-success">(+1500 TND)</span></label>
                     </div>
                   </div>
@@ -125,8 +126,9 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="gps" id="gps" type="checkbox">
-                      <label class="lbl" for="gps">GPS <span class="text-success">(+1500 TND)</span></label>
+                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="gps" id="gps"
+                             type="checkbox">
+                      <label class="lbl" for="gps">GPS <span class="text-success">(+500 TND)</span></label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
@@ -137,8 +139,11 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="notifications" id="notifications" type="checkbox">
-                      <label class="lbl" for="notifications">Notifications <span class="text-success">(+200 TND)</span></label>
+                      <input (change)="priceUpdate($event,200)" class="cb" formControlName="notifications"
+                             id="notifications" type="checkbox">
+                      <label class="lbl" for="notifications">Notifications
+                        <span class="text-success">(+200 TND)</span>
+                      </label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
@@ -153,7 +158,8 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="sms" id="sms" type="checkbox">
+                      <input (change)="priceUpdate($event,200)" class="cb" formControlName="sms" id="sms"
+                             type="checkbox">
                       <label class="lbl" for="sms">SMS <span class="text-success">(+200 TND)</span></label>
                     </div>
                   </div>
@@ -176,7 +182,9 @@
                     <div class="fi-w position-relative _cb _ha">
                       <input class="cb" formControlName="securityBelt" id="security-belt"
                              type="checkbox">
-                      <label class="lbl" for="security-belt">Security Belt <span class="text-success">(included)</span></label>
+                      <label class="lbl" for="security-belt">Security Belt
+                        <span class="text-success">(included)</span>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -198,7 +206,8 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="mirror" id="mirror" type="checkbox">
+                      <input (change)="priceUpdate($event,250)" class="cb" formControlName="mirror" id="mirror"
+                             type="checkbox">
                       <label class="lbl" for="mirror">Rear-View Mirror <span
                         class="text-success">(+250 TND)</span></label>
                     </div>
@@ -208,7 +217,8 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="table" id="table" type="checkbox">
+                      <input (change)="priceUpdate($event,390)" class="cb" formControlName="table" id="table"
+                             type="checkbox">
                       <label class="lbl" for="table">Adjustable Table <span
                         class="text-success">(+390 TND)</span></label>
                     </div>
@@ -222,7 +232,8 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="rearCamera" id="rear-camera" type="checkbox">
+                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="rearCamera"
+                             id="rear-camera" type="checkbox">
                       <label class="lbl" for="rear-camera">Rear-View Camera <span
                         class="text-success">(+1500 TND)</span></label>
                     </div>
@@ -237,8 +248,9 @@
               </div>
 
 
-              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/> <input
-              class="next action-button btn" name="next" type="button" value="Next Step"/>
+              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
+              <input
+                class="next action-button btn" name="next" type="button" value="Next Step"/>
             </fieldset> <!-- Accessories -->
             <fieldset>
               <div class="row">
@@ -257,7 +269,8 @@
 
                     <div class="d-flex -j-bet -i-base">
                       <div class="fi-w position-relative _cb _ha">
-                        <input class="cb" formControlName="trainingHours" id="hours-2" type="radio"
+                        <input (change)="trainingRadioSelected($event,2000)" class="cb" formControlName="trainingHours"
+                               id="hours-2" type="radio"
                                value="2">
                         <label class="lbl radio" for="hours-2">
                           2 Hours
@@ -268,7 +281,8 @@
 
                     <div class="d-flex -j-bet -i-base">
                       <div class="fi-w position-relative _cb _ha">
-                        <input class="cb" formControlName="trainingHours" id="hours-3" type="radio"
+                        <input (change)="trainingRadioSelected($event,2500)" class="cb" formControlName="trainingHours"
+                               id="hours-3" type="radio"
                                value="3">
                         <label class="lbl radio" for="hours-3">
                           3 Hours
@@ -279,7 +293,8 @@
 
                     <div class="d-flex -j-bet -i-base">
                       <div class="fi-w position-relative _cb _ha">
-                        <input class="cb" formControlName="trainingHours" id="hours-more"
+                        <input (change)="trainingRadioSelected($event,4000)" class="cb" formControlName="trainingHours"
+                               id="hours-more"
                                type="radio"
                                value="more">
                         <label class="lbl radio" for="hours-more">
@@ -308,7 +323,8 @@
 
                     <div class="d-flex -j-bet -i-base">
                       <div class="fi-w position-relative _cb _ha">
-                        <input (click)="moreYearsClicked(false)" class="cb" formControlName="controlYears"
+                        <input (change)="controlRadioSelected($event,4000)" (click)="moreYearsClicked(false)" class="cb"
+                               formControlName="controlYears"
                                id="years-2"
                                type="radio"
                                value="2">
@@ -321,7 +337,8 @@
 
                     <div class="d-flex -j-bet -i-base">
                       <div class="fi-w position-relative _cb _ha d-flex">
-                        <input (click)="moreYearsClicked(true)" class="cb" formControlName="controlYears"
+                        <input (change)="controlRadioSelected($event,controlMorePrice)" (click)="moreYearsClicked(true)" class="cb"
+                               formControlName="controlYears"
                                id="years-more"
                                type="radio"
                                value="more">
@@ -340,7 +357,7 @@
                                    oninput=" +value!==0 && +value<21 ||(value='');"
                                    step="0.25" style="width: 50px" type="number" value="3">
                             <label class="lbl radio" for="added-years">
-                              <span class="text-success pl-2"> +{{controlPrice}} TND</span>
+                              <span class="text-success pl-2"> +{{controlMorePrice}} TND</span>
                             </label>
                           </div>
 
@@ -711,7 +728,8 @@
 
                           <div class="col-md-6 form-group">
                             <input class="form-control" formControlName="iPhone"
-                                   id="i-phone" oninput="!value.includes('-')||(value='')" placeholder="Your Phone Number"
+                                   id="i-phone" oninput="!value.includes('-')||(value='')"
+                                   placeholder="Your Phone Number"
                                    type="number"/>
                             <small *ngIf="form.get('iPhone').invalid && form.get('iPhone').touched"
                                    class="form-text text-danger">
@@ -1113,8 +1131,8 @@
                         <div class="form-row">
 
                           <div class="col-md-12 form-group">
-                            <input class="form-control" id="o-email"
-                                   formControlName="oEmail" placeholder="Organisation Email" type="text">
+                            <input class="form-control" formControlName="oEmail"
+                                   id="o-email" placeholder="Organisation Email" type="text">
                             <small *ngIf="form.get('oEmail').invalid && form.get('oEmail').touched"
                                    class="form-text text-danger">
                               <i class="icofont-warning-alt"></i>
@@ -1145,34 +1163,39 @@
               <div class="container-sm pl-sm-3 pr-sm-3 text-dark">
                 <div class="d-flex mb-1">
                   <div>Purchase price</div>
-                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                  <div class="ml-auto">{{purchasePrice + trainingPrice + controlPrice}} &nbsp; TND</div>
                 </div>
 
                 <div class="d-flex mb-1">
                   <div>Taxes</div>
-                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                  <div class="ml-auto">0000 &nbsp; TND</div>
                 </div>
 
                 <div class="d-flex mb-1">
                   <div>Shipping (8-12 weeks)</div>
-                  <div class="ml-auto">XXXX &nbsp; TND</div>
+                  <div class="ml-auto">0000 &nbsp; TND</div>
                 </div>
 
                 <div class="d-flex mb-1">
                   <h6>Total</h6>
-                  <h6 class="ml-auto">XXXX &nbsp; TND</h6>
+                  <h6 class="ml-auto">{{purchasePrice + trainingPrice + controlPrice}} &nbsp; TND</h6>
                 </div>
 
               </div>
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <button
-              class="confirm btn action-button"  type="submit">Confirm Order 2</button>
+              <button class="confirm btn action-button" type="submit">Confirm Order</button>
             </fieldset> <!-- Confirmation -->
           </form>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+
+<!--       Modal footer -->
+<div class="modal-footer">
+  <h6>Price : {{purchasePrice + trainingPrice + controlPrice}}&nbsp;TND</h6>
 </div>
