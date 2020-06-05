@@ -10,16 +10,21 @@ import {Accessorie} from './accessorie.model';
 export class AccessoriesComponent implements OnInit {
   // accessories shall be added by admin dashboard
   accessories: Accessorie[] = [
-    new Accessorie('Camera',
+    new Accessorie(1,
+      'Camera',
       'Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sintoccaecati cupiditate non provident',
       'assets/img/accessories/icons/wheelchair-camera.jpg'),
-    new Accessorie('Adjustable table', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n' +
+    new Accessorie(2,
+      'Adjustable table', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n' +
       '            fugiat nulla pariatur', 'assets/img/accessories/icons/adjustable-table.jpg'),
-    new Accessorie('Rear-view mirror', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt\n' +
+    new Accessorie(3,
+      'Rear-view mirror', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt\n' +
       '            mollit anim id est laborum', 'assets/img/accessories/icons/rear-view-mirror.jpg'),
-    new Accessorie('Security belt', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium\n' +
+    new Accessorie(4,
+      'Security belt', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium\n' +
       '            voluptatum deleniti atque', 'assets/img/accessories/icons/wheelchair-security-belt.jpg'),
-    new Accessorie('Headrest neck support', 'Odio ducimus qui blanditiis praesentium, in culpa qui officia deserunt\n' +
+    new Accessorie(5,
+      'Headrest neck support', 'Odio ducimus qui blanditiis praesentium, in culpa qui officia deserunt\n' +
       '            occaecat cupidatat non proident dromo', 'assets/img/accessories/icons/headrest.jpg')
   ];
 

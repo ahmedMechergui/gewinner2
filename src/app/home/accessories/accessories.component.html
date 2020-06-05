@@ -13,13 +13,13 @@
       <div *ngFor="let accessorie of accessories ; index as i"
            class="col-md-6 col-lg-3 d-flex align-items-stretch slide"
            data-aos="flip-right" data-aos-delay="100" data-aos-duration="1000">
-        <div class="icon-box icon-box-cyan">
-          <div class="accessories-item icon">
-            <img src="{{accessorie.imageURL}}" alt="image missing...">
+          <div class="icon-box icon-box-cyan" [routerLink]="['/accessorie/'+accessorie.id]">
+            <div class="accessories-item icon">
+              <img src="{{accessorie.imageURL}}" alt="image missing...">
+            </div>
+            <h4 class="title">{{accessorie.title}}</h4>
+            <p class="description text-secondary">{{accessorie.description}}</p>
           </div>
-          <h4 class="title"><a href="">{{accessorie.title}}</a></h4>
-          <p class="description">{{accessorie.description}}</p>
-        </div>
       </div>
 
     </div>

@@ -16,6 +16,7 @@ import {PasswordForgottenComponent} from './sign-in/password-forgotten/password-
 import {MoovobrainComponent} from './moovobrain/moovobrain.component';
 import {GeneralComponent} from './account-client/general/general.component';
 import {ServicesComponent} from './account-client/services/services.component';
+import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'team', component: TeamComponent},
   {path: 'account', component: GeneralComponent},
   {path: 'services', component: ServicesComponent},
+  {path: 'accessorie/:id', component: AccessorieItemComponent},
   {
     path: 'news', component: NewsComponent, children: [
       {path: '', component: NewsBlogComponent, pathMatch: 'full'},

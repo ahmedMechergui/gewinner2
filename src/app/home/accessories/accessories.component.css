@@ -69,7 +69,6 @@
   height: inherit !important;
 }
 
-
 /*--------------------------------------------------------------
 # Our Accessories
 --------------------------------------------------------------*/
@@ -84,6 +83,8 @@
   transition: all 0.3s ease-in-out;
   text-align: center;
   border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
 }
 
 .services .icon {

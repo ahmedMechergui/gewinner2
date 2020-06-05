@@ -39,6 +39,7 @@ import { AccountClientComponent } from './account-client/account-client.componen
 import { GeneralComponent } from './account-client/general/general.component';
 import { ServicesComponent } from './account-client/services/services.component';
 import { ScheduledControlsComponent } from './account-client/services/scheduled-controls/scheduled-controls.component';
+import { AccessorieItemComponent } from './accessorie-item/accessorie-item.component';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { ScheduledControlsComponent } from './account-client/services/scheduled-
     GeneralComponent,
     ServicesComponent,
     ScheduledControlsComponent,
+    AccessorieItemComponent,
   ],
   imports: [
     BrowserModule,
