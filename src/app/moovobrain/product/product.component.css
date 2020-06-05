@@ -117,50 +117,31 @@ h2, h4 {
 }
 
 .buttons > button{
-  /*margin-right: 5px;*/
-  color: #fff;
-  background: #00104b;
-  font-weight: 700;
+  color: #00104b;
+  font-weight: 600;
   border-color: #00104b;
   font-size: 20px !important;
   transition: 0.3s;
   height: 43px;
-  border-radius: 40px;
+  width: 214px;
 }
 
 
 
-@media only screen and (min-width: 409px) {
+@media only screen and (min-width: 469px) {
   .custom-margin{margin-right: 10px !important}
 }
+
+@media only screen and (max-width: 468px) {
+  .custom-margin{margin-bottom: 10px !important;margin-right: 10px;margin-left: 10px}
+}
+
 .buttons button:hover{
-  background: #001b40;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .order-icon{
   font-size: 20px !important;
 }
 
-/*====================================
-# Resizing bootstrap modal
-  ====================================*/
-@media screen and (min-width: 576px) {
-  .modal-dialog {
-    max-width: 1000px !important;
-    margin: 1.75rem auto !important;
-  }
-}
 
-
-/*====================================
-# Switching modal titles
-  ====================================*/
-.custom-title{
-  display: inline-block;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-.activated{
- color: #052267;
-}

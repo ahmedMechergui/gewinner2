@@ -1,0 +1,92 @@
+<main id="main">
+
+
+  <!-- ======= Join-us Section ======= -->
+  <section class="contact" data-aos="fade-up" data-aos-duration="500" data-aos-easing="ease-in-out">
+
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+
+          <h3 class="join-us-title">
+            <img src="assets/img/illustrations/avatar.svg" alt="image missing..." class="image-sizing">
+            Account settings
+          </h3>
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="join-us-form" method="post">
+            <div class="form-row">
+
+              <div class="col-md-6 form-group">
+                <label for="clientID" class="label"> Client ID :</label>
+                <input autocomplete="off" class="form-control" id="clientID" name="clientID"
+                       type="text" formControlName="clientID" title="Client ID cannot be edited"/>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label for="email" class="label"> E-mail :</label>
+                <input autocomplete="off" class="form-control" id="email" name="email"
+                       type="email" formControlName="email" />
+                <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  Please enter a valid email
+                </small>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label for="name" class="label"> Name :</label>
+                <input autocomplete="off" class="form-control" id="name" name="name"
+                       type="text" formControlName="name"/>
+                <small *ngIf="form.get('name').invalid && form.get('name').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  Please enter a valid name
+                </small>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label for="phone" class="label"> Phone Number :</label>
+                <input autocomplete="off" class="form-control" id="phone" name="phone"
+                       type="number" formControlName="phone"/>
+                <small *ngIf="form.get('phone').invalid && form.get('phone').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  Please enter a valid phone number
+                </small>
+              </div>
+
+              <hr style="width: 98% ; margin-top: 0.5rem ; margin-bottom: 0.5rem">
+
+              <div class="col-md-6 form-group">
+                <label for="oldPassword" class="label"> Current Password :</label>
+                <input autocomplete="off" class="form-control" id="oldPassword" name="oldPassword"
+                       type="password" formControlName="oldPassword" placeholder="Only fill if changing password"/>
+              </div>
+
+              <div class="col-md-6 form-group">
+                <label for="newPassword" class="label"> New Password :</label>
+                <input autocomplete="off" class="form-control" id="newPassword" name="newPassword"
+                       type="password" formControlName="newPassword" placeholder="Only fill if changing password"/>
+                <small *ngIf="form.get('newPassword').invalid && form.get('newPassword').touched" class="form-text text-danger">
+                  <i class="icofont-warning-alt"></i>
+                  Password must be 8 characters at least
+                </small>
+              </div>
+
+
+            </div>
+
+            <div class="text-right">
+              <button type="reset" class=" reset-button mr-2">Cancel</button>
+              <button type="submit" class="submit">Submit changes</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>

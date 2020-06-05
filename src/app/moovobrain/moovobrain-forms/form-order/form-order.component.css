@@ -309,6 +309,9 @@
   padding: 20px 15px;
 }
 
+[type = "radio"],[type = "checkbox"]{
+  display: none;
+}
 
 select:focus{
   box-shadow: none !important;

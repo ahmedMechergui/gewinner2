@@ -1,0 +1,97 @@
+.join-us-title{
+  font-size: 29px;
+  line-height: 55px;
+  font-weight: 600;
+  color: #2c2c51;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.image-sizing{
+  max-width: 50px;
+}
+
+.contact .container {
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 30px 40px;
+}
+
+.contact .join-us-form input{
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+#clientID {
+  cursor: not-allowed;
+}
+
+.contact .join-us-form input {
+  padding: 20px 15px;
+}
+
+
+
+button[type="submit"] {
+  background: #051441;
+}
+
+.reset-button{
+border-color:#A3AFBD;
+   background-color: #A3AFBD!important;
+}
+.reset-button:focus {
+  border-color:#A3AFBD;
+  /*outline: none;*/
+}
+
+button , button:hover{
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+}
+
+
+
+
+.submit:disabled{
+  cursor:not-allowed;
+  background: rgba(5, 20, 65, 0.86) !important;
+}
+
+.custom-file-label{
+  color: grey;
+}
+
+select:focus, .custom-file-label{
+  box-shadow: none !important;
+  outline-color: transparent !important;
+}
+
+input.ng-invalid.ng-touched, input.ng-invalid.ng-touched ~ .custom-file-label {
+  border:1px solid #FF9494;
+  outline-color: #FF9494 !important;
+}
+
+input.ng-invalid.ng-touched ~ .custom-file-label::after {
+  border-left: none;
+}
+
+.label {
+  color: #475F7B;
+  font-size: .9rem;
+  font-weight: 500;
+  margin-bottom: .2rem;
+  display: inline-block;
+}
+
+/*=============================
+ # Remove input number arrows
+  =============================*/
+.contact input::-webkit-outer-spin-button,
+.contact input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

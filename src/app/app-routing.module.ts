@@ -14,6 +14,8 @@ import {LoginComponent} from './sign-in/login/login.component';
 import {RegisterComponent} from './sign-in/register/register.component';
 import {PasswordForgottenComponent} from './sign-in/password-forgotten/password-forgotten.component';
 import {MoovobrainComponent} from './moovobrain/moovobrain.component';
+import {GeneralComponent} from './account-client/general/general.component';
+import {ServicesComponent} from './account-client/services/services.component';
 
 
 const routes: Routes = [
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
   {path: 'team', component: TeamComponent},
+  {path: 'account', component: GeneralComponent},
+  {path: 'services', component: ServicesComponent},
   {
     path: 'news', component: NewsComponent, children: [
       {path: '', component: NewsBlogComponent, pathMatch: 'full'},

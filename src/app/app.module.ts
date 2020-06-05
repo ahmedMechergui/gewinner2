@@ -34,6 +34,11 @@ import {FeedbackComponent} from './moovobrain/reviews/feedback/feedback.componen
 import {MoovobrainFormsComponent} from './moovobrain/moovobrain-forms/moovobrain-forms.component';
 import {TestIndividualComponent} from './moovobrain/moovobrain-forms/test-individual/test-individual.component';
 import {FormOrderComponent} from './moovobrain/moovobrain-forms/form-order/form-order.component';
+import { AccountDropdownComponent } from './header/account-dropdown/account-dropdown.component';
+import { AccountClientComponent } from './account-client/account-client.component';
+import { GeneralComponent } from './account-client/general/general.component';
+import { ServicesComponent } from './account-client/services/services.component';
+import { ScheduledControlsComponent } from './account-client/services/scheduled-controls/scheduled-controls.component';
 
 
 @NgModule({
@@ -68,6 +73,11 @@ import {FormOrderComponent} from './moovobrain/moovobrain-forms/form-order/form-
     MoovobrainFormsComponent,
     TestIndividualComponent,
     FormOrderComponent,
+    AccountDropdownComponent,
+    AccountClientComponent,
+    GeneralComponent,
+    ServicesComponent,
+    ScheduledControlsComponent,
   ],
   imports: [
     BrowserModule,

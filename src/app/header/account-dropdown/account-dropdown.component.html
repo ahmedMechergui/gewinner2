@@ -1,0 +1,36 @@
+
+<a class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+  <div class="peer">
+    <i class="icofont-ui-user"></i>
+    <span class="fsz-sm c-grey-900"> Account</span>
+  </div>
+</a>
+<ul class="dropdown-menu fsz-sm">
+  <li>
+    <a [routerLink]="'account'" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+      <i class="icofont-gear mR-10"></i>
+      <span>Settings</span>
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="'services'" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+      <i class="icofont-tools-alt-2 mR-10"></i>
+      <span>Services</span>
+    </a>
+  </li>
+  <li>
+    <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700" data-toggle="modal" data-target="#myModal">
+      <i class="icofont-ui-calendar mR-10"></i>
+      <span>Quality Control</span>
+    </a>
+  </li>
+  <li role="separator" class="divider"></li>
+  <li>
+    <a (click)="alert()" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+      <i class="icofont-power mR-10"></i>
+      <span>Logout</span>
+    </a>
+  </li>
+
+</ul>
+

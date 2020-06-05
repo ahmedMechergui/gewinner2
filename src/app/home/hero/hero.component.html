@@ -1,67 +1,42 @@
 <section class="d-flex justify-cntent-center align-items-center" id="hero">
   <div class="container carousel carousel-fade" data-ride="carousel" id="heroCarousel">
 
-    <!-- Slide 1 -->
-    <div class="carousel-item active">
-      <div class="carousel-container">
-        <h2 class="animated fadeInDown">Welcome to <span>Gewinner</span></h2>
-        <p class="animated fadeInUp">Together to facilitate disabled people’s life</p>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#order-modal" *ngIf="!showButtons">Order</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#test-modal" *ngIf="!showButtons">Test</a>
+    <!-- Slides for home page -->
+    <div *ngIf="isOnHome">
+      <div *ngFor="let slide of slidesHome ; let i = index" [class.active]="i===0" class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animated fadeInDown">{{slide.title}}</h2>
+          <p class="animated fadeInUp">{{slide.description}}</p>
+          <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp">Know More</a>
+        </div>
       </div>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="carousel-item">
-      <div class="carousel-container">
-        <h2 class="animated fadeInDown">Time to move</h2>
-        <p class="animated fadeInUp">
-          MOOVOBRAIN is a steering system of powered wheelchairs for
-          physically disabled people who cannot use their upper members to pilot conventional
-          wheelchairs with joystick.
-        </p>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#order-modal" *ngIf="!showButtons">Order</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#test-modal" *ngIf="!showButtons">Test</a>
+    <!-- Slides for MOOVOBRAIN page -->
+    <div *ngIf="!isOnHome">
+      <div *ngFor="let slide of slidesMoovobrain ; let i=index" [class.active]="i===0" class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animated fadeInDown">{{slide.title}}</h2>
+          <p class="animated fadeInUp">{{slide.description}}</p>
+          <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#order-modal"
+             data-toggle="modal">Order</a>
+          <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#test-modal"
+             data-toggle="modal">Test</a>
+        </div>
       </div>
     </div>
-
-    <!-- Slide 3 -->
-    <div class="carousel-item">
-      <div class="carousel-container">
-        <h2 class="animated fadeInDown">For those we love</h2>
-        <p class="animated fadeInUp">Mobility, Security and Independence </p>
-        <a class="btn-get-started animated fadeInUp" [routerLink]="'/moovobrain'" *ngIf="showButtons">Know More</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#order-modal" *ngIf="!showButtons">Order</a>
-        <a class="btn-get-started animated fadeInUp"  [routerLink]="'/moovobrain'" data-toggle="modal" data-target="#test-mdoal" *ngIf="!showButtons">Test</a>
-      </div>
-    </div>
-
-
-
-    <a class="carousel-control-prev" data-slide="prev" href="#heroCarousel" role="button">
-      <span aria-hidden="true" class="carousel-control-prev-icon bx bx-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-
-    <a class="carousel-control-next" data-slide="next" href="#heroCarousel" role="button" >
-      <span aria-hidden="true" class="carousel-control-next-icon bx bx-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
 
 
   </div>
 
-  <a class="arrow bounce scroll-down" *ngIf="!showButtons">
+  <a *ngIf="!isOnHome" class="arrow bounce scroll-down">
     <i class="icofont-rounded-down"></i>
   </a>
 
 </section><!-- End Hero -->
 
 <!-- ======= Logo on SD Section======= -->
-<div class="logo float-left show-on-sd" id="logoSD" data-aos="fade-down" *ngIf="showButtons">
-  <a href="index.html"><img src="assets/img/logo-black.png" alt="logo missing..." class="img-fluid"></a>
+<div *ngIf="isOnHome" class="logo float-left show-on-sd" data-aos="fade-down" id="logoSD">
+  <a href="index.html"><img alt="logo missing..." class="img-fluid" src="assets/img/logo-black.png"></a>
 </div>
 <!-- End logo on SD  -->

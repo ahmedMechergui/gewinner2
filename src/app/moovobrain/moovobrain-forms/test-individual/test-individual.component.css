@@ -8,10 +8,7 @@ input::-webkit-inner-spin-button {
 }
 
 
-
-
-
-.join-us-title{
+.join-us-title {
   font-size: 35px;
   line-height: 55px;
   font-weight: 600;
@@ -20,7 +17,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-.image-sizing{
+.image-sizing {
   max-width: 78px;
 }
 
@@ -47,22 +44,22 @@ input::-webkit-inner-spin-button {
   transition: 0.4s;
 }
 
-button:disabled{
-  cursor:not-allowed;
+button:disabled {
+  cursor: not-allowed;
   background: rgba(5, 20, 65, 0.86) !important;
 }
 
-.custom-file-label{
+.custom-file-label {
   color: grey;
 }
 
-select:focus, .custom-file-label{
+select:focus, .custom-file-label {
   box-shadow: none !important;
   outline-color: transparent !important;
 }
 
-input.ng-invalid.ng-touched, input.ng-invalid.ng-touched ~ .custom-file-label {
-  border:1px solid #FF9494;
+select.ng-invalid.ng-touched, input.ng-invalid.ng-touched, input.ng-invalid.ng-touched ~ .custom-file-label {
+  border: 1px solid #FF9494;
   outline-color: #FF9494 !important;
 }
 
@@ -70,6 +67,6 @@ input.ng-invalid.ng-touched ~ .custom-file-label::after {
   border-left: none;
 }
 
-input:menu{
+input:menu {
   width: 100% !important;
 }

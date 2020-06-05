@@ -1,0 +1,65 @@
+/*
+  Account dropdown
+*/
+
+.mR-10 {
+  margin-right: 10px !important;
+}
+
+.dropdown-menu > li > a {
+  line-height: 1.5;
+  min-height: auto;
+  padding: 10px 15px;
+}
+
+.c-grey-700, .cH-grey-700:hover {
+  color: #72777a !important;
+}
+
+.bgc-grey-100, .bgcH-grey-100:hover {
+  background-color: #f9fafb !important;
+}
+
+.dropdown-menu > li {
+  width: 100%;
+}
+
+.divider {
+  border-bottom: 1px solid rgba(0, 0, 0, .0625);
+  height: 1px;
+  overflow: hidden;
+}
+
+.no-after::after   { display: none !important; }
+
+.peers {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+.peer {
+  display: block;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.fxw-nw  { flex-wrap: nowrap; }
+
+.ai-c    { align-items: center; }
+
+
+
+.fsz-sm   { font-size: 0.87rem !important; }
+.d-b          { display: block !important; }
+.td-n { text-decoration: none !important; }
+
+.d-b          { display: block !important; }
+.td-n { text-decoration: none !important; }
+
+

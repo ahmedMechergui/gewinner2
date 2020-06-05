@@ -1,0 +1,35 @@
+<!-- Test Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+
+
+        <section class="contact" style="padding: 0">
+
+          <h3 class="title">
+            <img alt="image missing..." class="image-sizing" src="assets/img/illustrations/form/calendar.svg">
+            Scheduled Quality Controls
+          </h3>
+
+          <hr style="width: 98% ; margin-top: 0 ; margin-bottom: 0.5rem">
+
+          <p class="text-secondary">
+            You will be having quarterly quality  control on :
+          </p>
+
+          <ul class="text-secondary">
+            <li *ngFor="let date of scheduledControls">{{date | date:'fullDate'}}</li>
+          </ul>
+
+        </section>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

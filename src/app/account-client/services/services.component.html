@@ -1,0 +1,173 @@
+<main id="main">
+
+
+  <!-- ======= Services Section ======= -->
+  <section class="contact" data-aos="fade-up" data-aos-duration="500"
+           data-aos-easing="ease-in-out">
+
+
+    <div class="container-lg pr-md-5 pl-md-5">
+      <div class="row forms-container">
+
+        <div class="col-md-12 order-md-1 custom-padding">
+          <form [formGroup]="formQualityControl" (ngSubmit)="onSubmit()" style="display: flow-root">
+            <p class="header text-left text-dark font-weight-bold mb-0">
+              Quarterly Quality Control :
+            </p>
+            <p class="text-secondary pl-2 text-left">
+              One of our workers takes charge to technically control the quality of
+              your moovobrain, TND 900/quarter (period can be extended).
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-between justify-content-lg-around ">
+              <div class="-j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="months-3" type="radio"
+                         value="0.25" formControlName="addedYears">
+                  <label class="lbl radio" for="months-3">
+                    3 months
+                    <span class="text-success">(2500 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class=" -j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="months-6" type="radio" formControlName="addedYears"
+                         value="0.5">
+                  <label class="lbl radio" for="months-6">
+                    6 Months
+                    <span class="text-success">(4000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class=" -j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="months-12" type="radio" formControlName="addedYears"
+                         value="1">
+                  <label class="lbl radio" for="months-12">
+                    1 Year
+                    <span class="text-success">(7000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class=" -j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="months-24" type="radio" formControlName="addedYears"
+                         value="2">
+                  <label class="lbl radio" for="months-24">
+                    2 Years
+                    <span class="text-success">(10000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+
+            </div>
+
+            <button type="submit" class="submit float-right">Submit</button>
+
+          </form>
+
+          <hr style="width: 98% ; margin-top: 0.5rem ; margin-bottom: 0.5rem">
+
+          <form [formGroup]="formTrainingSession" (ngSubmit)="onSubmit()" style="display: flow-root">
+
+            <p class="header text-left text-dark font-weight-bold mb-0">
+              Training Session :
+            </p>
+            <p class="text-secondary pl-2 text-left">
+              An occupational therapist will help the user to pilot and adapt to Moovobrain.
+            </p>
+
+            <div class="d-flex flex-wrap justify-content-between justify-content-lg-around ">
+
+
+              <div class="-j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="hours-2" type="radio"
+                         value="2" formControlName="addedHours">
+                  <label class="lbl radio" for="hours-2">
+                    2 Hours
+                    <span class="text-success">(2000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="-j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="hours-3" type="radio"
+                         value="3" formControlName="addedHours">
+                  <label class="lbl radio" for="hours-3">
+                    3 Hours
+                    <span class="text-success">(2500 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="-j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="hours-4" type="radio"
+                         value="4" formControlName="addedHours">
+                  <label class="lbl radio" for="hours-4">
+                    4 Hours
+                    <span class="text-success">(3000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="-j-bet -i-base">
+                <div class="fi-w position-relative _cb _ha">
+                  <input class="cb"
+                         id="hours-more" type="radio"
+                         value="5" formControlName="addedHours">
+                  <label class="lbl radio" for="hours-more">
+                    More
+                    <span class="text-success">(4000 TND)</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <button type="submit" class="submit float-right">Submit</button>
+
+          </form>
+
+          <hr style="width: 98% ; margin-top: 0.5rem ; margin-bottom: 0.5rem">
+
+          <form [formGroup]="formMaintenanceRequest" (ngSubmit)="onSubmit()" style="display: flow-root">
+            <p class="header text-left text-dark font-weight-bold mb-0">
+              Maintenance :
+            </p>
+            <p class="text-secondary pl-2 text-left">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Amet dolor excepturi fugit incidunt natus porro quae quisquam
+              vero voluptates voluptatibus.
+            </p>
+
+            <button type="submit" class="submit float-right">Maintenance request</button>
+
+          </form>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>

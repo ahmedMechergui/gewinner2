@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, Input, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../../../scripts-loader.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
@@ -8,12 +8,13 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./form-order.component.css']
 })
 export class FormOrderComponent implements OnInit {
+  @Input() countries: string[];
   form: FormGroup;
   trainingSessionCheckbox = false;
   controlCheckbox = false;
   moreYearsRadio = false;
-  controlMorePrice = 7600;
-  clientNature = 0;
+  controlMorePrice = 0;
+  clientNature = 'none';
   // this doesn't include the services , it shall not be presented alone to user
   purchasePrice = 15000;
   // training price and control price is hold in its own variable and method because radio buttons are causing problems since
@@ -57,6 +58,7 @@ export class FormOrderComponent implements OnInit {
       trainingHours: new FormControl({value: null, disabled: true}),
       control: new FormControl(false),
       controlYears: new FormControl({value: null, disabled: true}),
+      controlYearsAdded: new FormControl(),
       demo: new FormControl({value: true, disabled: true}),
       // Client Nature , individual or organisation
       clientNature: new FormControl(''),
@@ -64,19 +66,23 @@ export class FormOrderComponent implements OnInit {
       iName: new FormControl(null, [Validators.required]),
       iEmail: new FormControl(null, [Validators.required, Validators.email]),
       iBirthday: new FormControl(null, [Validators.required]),
-      iCountry: new FormControl('', [this.countrySelected.bind(this)]),
+      // iCountry: new FormControl('', [this.countrySelected.bind(this)]),
+      iAddress: new FormControl(null, [Validators.required]),
+      iZipCode: new FormControl(null, [Validators.required]),
       iPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
       iHandicap: new FormControl(null, [Validators.required]),
       //  Organisation form
-      oName: new FormControl(null, [Validators.required]),
+      oName: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
       oType: new FormControl(null, [Validators.required]),
       oSector: new FormControl(null, [Validators.required]),
       oRegistrationNumber: new FormControl(null, [Validators.required]),
       oResponsibleName: new FormControl(null, [Validators.required]),
       oHandicap: new FormControl(null, [Validators.required]),
-      oCountry: new FormControl('', [this.countrySelected.bind(this)]),
+      // oCountry: new FormControl('', [this.countrySelected.bind(this)]),
+      oAddress: new FormControl(null, [Validators.required]),
+      oZipCode: new FormControl(null, [Validators.required]),
       oPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
-      oEmail: new FormControl(null, [Validators.required, Validators.email]),
+      oEmail: new FormControl(null, [Validators.required, Validators.email])
     });
   }
 
@@ -115,19 +121,21 @@ export class FormOrderComponent implements OnInit {
   }
 
   calculateControlPrice(addedYears: number) {
-    this.controlMorePrice = 4000 + 3600 * (addedYears - 2);
+    addedYears === 0 ? this.controlMorePrice = 0 : this.controlMorePrice = 4000 + 3600 * (addedYears - 2);
     this.controlPrice = this.controlMorePrice;
   }
 
-  changeClientNature(clientNature: number) {
+  changeClientNature(clientNature: string) {
     this.clientNature = clientNature;
   }
 
-  countrySelected(control: FormControl): { [s: string]: boolean } {
-    return control.value.length > 0 ? null : {s: true};
-  }
+  // countrySelected(control: FormControl): { [s: string]: boolean } {
+  //   return control.value.length > 0 ? null : {s: true};
+  // }
 
   alert() {
+    // this.form does not show disabled controls so we use this.form.getRawValue();
+    console.log(this.form.getRawValue());
     alert('function not implemented yet , waiting for nodejs integration');
   }
 

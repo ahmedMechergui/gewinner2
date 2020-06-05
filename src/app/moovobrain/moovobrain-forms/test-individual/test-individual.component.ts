@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class TestIndividualComponent implements OnInit {
   form: FormGroup;
+  @Input() countries: string[];
 
   constructor() {
   }
@@ -19,7 +20,7 @@ export class TestIndividualComponent implements OnInit {
   formInit() {
     // No validation added yet
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required , Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       birthday: new FormControl(null, [Validators.required]),
       country: new FormControl('', [this.countrySelected.bind(this)]),

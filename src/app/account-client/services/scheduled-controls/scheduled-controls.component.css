@@ -1,0 +1,21 @@
+.title {
+  font-size: 20px;
+  line-height: 55px;
+  font-weight: 600;
+  color: #2c2c51;
+  /*margin-bottom: 16px;*/
+  text-align: center;
+}
+
+.image-sizing {
+  max-width: 50px;
+}
+
+.close{
+  border-color: transparent;
+  outline: none;
+}
+
+ul > li {
+  font-family: "Roboto", sans-serif;
+}
