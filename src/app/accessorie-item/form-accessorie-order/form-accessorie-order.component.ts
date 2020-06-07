@@ -33,7 +33,7 @@ export class FormAccessorieOrderComponent implements OnInit {
       iAddress: new FormControl(null, [Validators.required]),
       iZipCode: new FormControl(null, [Validators.required]),
       iPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
-      iHandicap: new FormControl(null, [Validators.required]),
+      iHandicap: new FormControl(null),
       //  Organisation form
       oName: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
       oType: new FormControl(null, [Validators.required]),

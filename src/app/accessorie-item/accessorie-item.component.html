@@ -2,25 +2,25 @@
 <main id="main">
 
   <!-- ======= MOOVOBRAIN Section ======= -->
-    <div class="content-body">
-      <!-- app ecommerce details start -->
-      <section class="app-ecommerce-details">
-        <div class="card">
-          <div class="card-body">
-            <div class="row mb-5 mt-2">
-              <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
-                <div class="d-flex align-items-center justify-content-center">
-                  <img src="assets/img/accessories/images/headrest.jpg" class="img-fluid" alt="product image">
-                </div>
+  <div class="content-body">
+    <!-- app ecommerce details start -->
+    <section class="app-ecommerce-details">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-5 mt-2">
+            <div class="col-12 col-md-5 align-items-center justify-content-center mb-2 mb-md-0">
+              <div class="align-items-center justify-content-center">
+                <app-gallerie></app-gallerie>
               </div>
-              <div class="col-12 col-md-6">
-                <h5>Headrest - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </h5>
-                <p class="text-muted">by Gewinner</p>
-                <div class="ecommerce-details-price flex-wrap">
+            </div>
+            <div class="col-12 col-md-6">
+              <h5>Headrest - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </h5>
+              <p class="text-muted">by Gewinner</p>
+              <div class="ecommerce-details-price flex-wrap">
 
-                  <p class="text-success price font-medium-3 mb-0">198 TND</p>
-                  <div class="rating">
+                <p class="text-success price font-medium-3 mb-0">198 TND</p>
+                <div class="rating">
                 <span class="rate" id="stars">
                 <i (click)="starClicked(1)" class="icofont-star" id="star1"></i>
                 <i (click)="starClicked(2)" class="icofont-star" id="star2"></i>
@@ -28,39 +28,50 @@
                 <i (click)="starClicked(4)" class="icofont-star" id="star4"></i>
                 <i (click)="starClicked(5)" class="icofont-star" id="star5"></i>
               </span>
-                  </div>
-                  <span class="ml-50 ml-1 text-dark font-medium-1">{{ratings}} ratings</span>
                 </div>
-                <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, non, ullam? Asperiores, at atque corporis ducimus eius enim error eveniet ex excepturi illum in nesciunt odit omnis placeat possimus, qui quia saepe similique tenetur ullam. A aspernatur dicta dolore error facilis illo necessitatibus recusandae temporibus dicta dolore.</p>
-                <p class="font-weight-bold mb-25"> <i class="feather icofont-free-delivery mr-50 font-medium-2"></i> Free Shipping
-                </p>
-                <hr>
-                <p>Available - <span class="text-success">In stock</span></p>
-
-                <div class="d-flex flex-column flex-sm-row">
-                  <button class="btn btn-primary mr-0 mr-sm-2 mb-1 mb-sm-0" data-toggle="modal" data-target="#accessorie-order-modal"><i class="feather icofont-cart-alt mr-25"></i>ORDER NOW</button>
-                </div>
-
-<!--                <div class="col-md-6">-->
-<!--                  <select name="country" class="countries order-alpha presel-byip " id="countryId">-->
-<!--                    <option value="">Select Country</option>-->
-<!--                  </select>-->
-<!--                </div>-->
-<!--                <div class="col-md-6">-->
-<!--                  <select name="state" class="states order-alpha" id="stateId">-->
-<!--                    <option value="">Select State</option>-->
-<!--                  </select>-->
-<!--                </div>-->
-
+                <span class="ml-50 ml-1 text-dark font-medium-1">{{ratings}} ratings</span>
               </div>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, non, ullam? Asperiores, at atque
+                corporis ducimus eius enim error eveniet ex excepturi illum in nesciunt odit omnis placeat possimus, qui
+                quia saepe similique tenetur ullam. A aspernatur dicta dolore error facilis illo necessitatibus
+                recusandae temporibus dicta dolore.</p>
+              <p class="font-weight-bold mb-25"><i class="feather icofont-free-delivery mr-50 font-medium-2"></i> Free
+                Shipping
+              </p>
+              <hr>
+              <p>Available - <span class="text-success">In stock</span></p>
+
+
+              <div class="d-inline-block mb-1">
+                <p style="display: inline">Quantity </p>
+                <div class="input-group bootstrap-touchspin">
+                  <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected">
+                    <button class="btn btn-primary bootstrap-touchspin-down" (click)="quantityMinus()" type="button">-</button>
+                  </span>
+                  <input type="number" id="quantity" [(ngModel)]="quantity" class="touchspin form-control" value="1">
+                  <span class="input-group-btn input-group-append bootstrap-touchspin-injected">
+                    <button class="btn btn-primary bootstrap-touchspin-up" (click)="quantityPlus()" type="button">+</button>
+                  </span>
+                </div>
+              </div>
+
+
+              <div class="d-flex flex-column flex-sm-row">
+                <button class="btn btn-primary btn-padding mr-0 mr-sm-2 mb-1 mb-sm-0" data-toggle="modal"
+                        data-target="#accessorie-order-modal"><i class="feather icofont-cart-alt mr-25"></i>ORDER NOW
+                </button>
+              </div>
+
+
             </div>
           </div>
         </div>
-      </section>
-      <!-- app ecommerce details end -->
+      </div>
+    </section>
+    <!-- app ecommerce details end -->
 
-    </div>
+  </div>
 
 
 </main>

@@ -1,7 +1,4 @@
 
-
-
-
 main {
   font-size: 14px;
   height: 100%;
@@ -10,7 +7,7 @@ main {
 }
 
 section {
-  padding : 0;
+  padding: 0;
 }
 
 p {
@@ -28,6 +25,11 @@ p {
   color: #fff !important;
 }
 
+.btn-padding{
+  padding: 10px 28px !important;
+  font-size: 14px;
+}
+
 .btn {
   display: inline-block !important;
   font-weight: 400 !important;
@@ -35,8 +37,6 @@ p {
   vertical-align: middle !important;
   user-select: none !important;
   border: 0 solid transparent !important;
-  padding: 10px 28px !important;
-  font-size: 14px !important;
   line-height: 1 !important;
   border-radius: 0.4285rem !important;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -90,20 +90,18 @@ p {
 }
 
 
-
-
-.ml-50{
+.ml-50 {
   line-height: 2;
   font-size: 15px !important;
 }
 
-.mr-25{
+.mr-25 {
   font-size: 20px !important;
 }
 
 .price {
   /*font-size: 18px !important;*/
-  line-height: 1.6 ;
+  line-height: 1.6;
   /*color: #7367f0 !important;*/
   font-family: monospace;
 }
@@ -116,6 +114,7 @@ p {
 .img-fluid {
   max-height: 404px;
 }
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -145,7 +144,7 @@ h5, .h5 {
 /*=========================
    Stars
  ========================== */
-.rating{
+.rating {
   display: inline-block;
 }
 
@@ -190,4 +189,84 @@ h5, .h5 {
   justify-content: center;
   width: fit-content;
   margin: auto;
+}
+
+
+/*=============================
+  # Quantity
+  ============================= */
+
+.bootstrap-touchspin .input-group-btn-vertical {
+  position: absolute !important;
+  right: 0 !important;
+  height: 100% !important;
+  z-index: 11 !important;
+}
+
+.bootstrap-touchspin .input-group-btn-vertical > .btn {
+  position: absolute !important;
+  right: 0 !important;
+  height: 50% !important;
+  padding: 0 !important;
+  width: 2em !important;
+  text-align: center !important;
+  line-height: 1 !important;
+}
+
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
+  border-radius: 0 4px 0 0 !important;
+  top: 0 !important;
+}
+
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down {
+  border-radius: 0 0 4px 0 !important;
+  bottom: 0 !important;
+}
+
+.d-inline-block {
+  margin-bottom: 1rem !important;
+}
+
+.bootstrap-touchspin {
+  width: 8.4rem;
+  align-items: center;
+  display: inline-flex;
+}
+
+
+.bootstrap-touchspin-down {
+  padding: 0;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 5px !important;
+  left: 12px;
+}
+
+.touchspin {
+  font-size: 0.96rem;
+  line-height: 1.25;
+  padding: 5px;
+  height: auto;
+  border: 0;
+  background-color: #f8f8f8;
+  border-radius: 5px !important;
+  text-align: center;
+  font-weight: 500;
+}
+
+.bootstrap-touchspin-up{
+  padding: 0;
+  min-width: 22px;
+  min-height: 22px;
+  border-radius: 5px !important;
+  right: 12px;
+}
+
+/*=============================
+ # Remove input number arrows
+  =============================*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
 }

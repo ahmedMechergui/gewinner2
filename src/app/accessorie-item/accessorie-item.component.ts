@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-accessorie-item',
@@ -8,6 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class AccessorieItemComponent implements OnInit {
   isRated: boolean;
   ratings = 423;
+  // @ViewChild('quantity', {static: true}) quantityElement: ElementRef;
+  quantity = 1;
 
   constructor() {
   }
@@ -26,6 +28,14 @@ export class AccessorieItemComponent implements OnInit {
       const starID = 'star' + i;
       document.getElementById(starID).style.color = starNumber >= i ? '#fc0' : '#ccc';
     }
+  }
+
+  quantityPlus() {
+    this.quantity++;
+  }
+
+  quantityMinus() {
+    this.quantity > 1 ? this.quantity-- : this.quantity = 1;
   }
 
 

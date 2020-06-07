@@ -17,7 +17,7 @@ import {NewsArticleComponent} from './news/news-article/news-article.component';
 import {NewsBlogComponent} from './news/news-blog/news-blog.component';
 import {NewsSidebarComponent} from './news/news-sidebar/news-sidebar.component';
 import {JoinUsComponent} from './join-us/join-us.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {LoginComponent} from './sign-in/login/login.component';
 import {RegisterComponent} from './sign-in/register/register.component';
@@ -41,6 +41,7 @@ import {ServicesComponent} from './account-client/services/services.component';
 import {ScheduledControlsComponent} from './account-client/services/scheduled-controls/scheduled-controls.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
 import {FormAccessorieOrderComponent} from './accessorie-item/form-accessorie-order/form-accessorie-order.component';
+import { GallerieComponent } from './accessorie-item/gallerie/gallerie.component';
 
 
 @NgModule({
@@ -81,14 +82,16 @@ import {FormAccessorieOrderComponent} from './accessorie-item/form-accessorie-or
     ServicesComponent,
     ScheduledControlsComponent,
     AccessorieItemComponent,
-    FormAccessorieOrderComponent
+    FormAccessorieOrderComponent,
+    GallerieComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

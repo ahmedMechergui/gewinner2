@@ -1,0 +1,33 @@
+<div class="col-xl-12 pr-lg-0">
+  <div class="cz-product-gallery row">
+    <div class="cz-preview col-xl overflow-hidden order-xl-2">
+      <div class="cz-preview-item" [class.active]="selectedProductImage === 1" id="img-1"><img class="cz-image-zoom" src="assets/img/accessories/images/headrest.jpg" data-zoom="assets/img/accessories/images/headrest.jpg" alt="Product image">
+        <div class="cz-image-zoom-pane"></div>
+      </div>
+      <div class="cz-preview-item " [class.active]="selectedProductImage === 2" id="img-2"><img class="cz-image-zoom" src="assets/img/accessories/images/headrest-2.jpg" data-zoom="assets/img/accessories/images/headrest-2.jpg" alt="Product image">
+        <div class="cz-image-zoom-pane"></div>
+      </div>
+      <div class="cz-preview-item" [class.active]="selectedProductImage === 3" id="img-3"><img class="cz-image-zoom" src="assets/img/accessories/images/headrest-3.jpg" data-zoom="assets/img/accessories/images/headrest-3.jpg" alt="Product image">
+        <div class="cz-image-zoom-pane"></div>
+      </div>
+      <div class="cz-preview-item" [class.active]="selectedProductImage === 4" id="img-4"><img class="cz-image-zoom" src="assets/img/accessories/images/headrest-4.jpg" data-zoom="assets/img/accessories/images/headrest-4.jpg" alt="Product image">
+        <div class="cz-image-zoom-pane"></div>
+      </div>
+    </div>
+
+    <div class="cz-thumblist col-xl-3 overflow-hidden order-xl-1">
+      <a class="cz-thumblist-item" [class.active]="selectedProductImage === 1" (click)="selectedProductImage = 1">
+        <img src="assets/img/accessories/images/th-headrest.jpg"  alt="Product thumb">
+      </a>
+      <a class="cz-thumblist-item" [class.active]="selectedProductImage === 2" (click)="selectedProductImage = 2">
+        <img src="assets/img/accessories/images/th-headrest-2.jpg" alt="Product thumb">
+      </a>
+      <a class="cz-thumblist-item" [class.active]="selectedProductImage === 3" (click)="selectedProductImage = 3">
+        <img src="assets/img/accessories/images/th-headrest-3.jpg" alt="Product thumb">
+      </a>
+      <a class="cz-thumblist-item" [class.active]="selectedProductImage === 4" (click)="selectedProductImage = 4" >
+        <img src="assets/img/accessories/images/th-headrest-4.jpg" alt="Product thumb">
+      </a>
+    </div>
+  </div>
+</div>
