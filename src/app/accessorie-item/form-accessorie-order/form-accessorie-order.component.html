@@ -1,0 +1,405 @@
+<!-- Test Modal -->
+<div class="modal" id="accessorie-order-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+
+        <!-- MultiStep Form -->
+
+        <div class="row justify-content-center mt-0">
+          <div class="col-12">
+            <div class="card">
+              <div class="row">
+                <div class="col-md-12 mx-0">
+                  <form (ngSubmit)="alert()" [formGroup]="form" id="msform">
+
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                      <li class="step-title active" id="payment"><strong>Payment</strong></li>
+                      <li class="step-title" id="confirmation"><strong>Confirmation</strong></li>
+                    </ul>
+
+                    <!-- ====================================
+                          # Every fieldset represents a form step
+                         ====================================-->
+
+                    <fieldset>
+
+                      <div class="alert alert-info ml-md-3 mr-md-3">
+                        <h6 class="text-center">The payment should be done only with bank transfer to the company’s
+                          account
+                          which will be mentioned in the confirmation email.</h6>
+                      </div>
+                      <br>
+                      <div class="form-row">
+                        <div class="col-12">
+                          <p [class.show]="clientNature==='none'" class="text-left text-dark fade">Please specify if you
+                            are an
+                            individual or an organization : </p>
+                          <div class="form-group">
+                            <select #clientNatureSelect (change)="changeClientNature(clientNatureSelect.value)"
+                                    class="form-control"
+                                    formControlName="clientNature" id="client-nature">
+                              <option disabled selected value="">Select Here</option>
+                              <option value="individual">Individual</option>
+                              <option value="organisation">Organisation</option>
+                            </select>
+
+
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <!--==================
+                          # Individual form
+                          ==================-->
+                      <div *ngIf="clientNature === 'individual'">
+
+                        <section class="contact" style="padding: 0">
+
+
+                          <div class="row">
+
+                            <div class="col-lg-12">
+                              <div class="join-us-form">
+                                <div class="form-row">
+                                  <div class="col-md-6 form-group">
+                                    <input autocomplete="off" class="form-control" formControlName="iName"
+                                           id="i-name" placeholder="Your Name" type="text"/>
+                                    <small *ngIf="form.get('iName').invalid && form.get('iName').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter your name
+                                    </small>
+                                  </div>
+
+                                  <div class="col-md-6 form-group">
+                                    <input autocomplete="off" class="form-control" formControlName="iEmail"
+                                           id="i-email" placeholder="Your Email" type="email"/>
+                                    <small *ngIf="form.get('iEmail').invalid && form.get('iEmail').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please a valid email
+                                    </small>
+                                  </div>
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                      <select formControlName="iCountry" class="form-control countries order-alpha presel-byip " id="countryId">
+                                        <option value="">Select Country</option>
+                                      </select>
+
+                                      <small
+                                        *ngIf="(form.get('iCountry').invalid && form.get('iCountry').touched) || (form.get('iState').invalid && form.get('iState').touched)"
+                                        class="form-text text-danger">
+                                        <i class="icofont-warning-alt"></i>
+                                        Country and state needed
+                                      </small>
+
+                                    </div>
+
+
+                                  </div>
+
+                                  <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                      <select formControlName="iState" class="form-control states order-alpha" id="stateId">
+                                        <option value="">Select State</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="col-md-4 col-sm-8">
+                                    <div class="form-group">
+                                      <input autocomplete="off" class="form-control" formControlName="iAddress"
+                                             id="iAddress" placeholder="Your address" type="text"/>
+                                      <small
+                                        *ngIf="(form.get('iAddress').invalid && form.get('iAddress').touched)|| (form.get('iZipCode').invalid && form.get('iZipCode').touched)"
+                                        class="form-text text-danger">
+                                        <i class="icofont-warning-alt"></i>
+                                        Please enter your address and zip code
+                                      </small>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-2 col-sm-4">
+                                    <div class="form-group">
+                                      <input autocomplete="off" class="form-control" formControlName="iZipCode"
+                                             id="iZipCode" placeholder="ZIP code" type="number"/>
+                                    </div>
+                                  </div>
+
+
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="iPhone"
+                                           id="i-phone" oninput="!value.includes('-')||(value='')"
+                                           placeholder="Your Phone Number"
+                                           type="number"/>
+                                    <small *ngIf="form.get('iPhone').invalid && form.get('iPhone').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter a valid phone number
+                                    </small>
+                                  </div>
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="iHandicap" list="handicaps"
+                                           placeholder="Handicap Type (Specify if not listed)">
+                                    <small *ngIf="form.get('iHandicap').invalid && form.get('iHandicap').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please specify the handicap
+                                    </small>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                        </section>
+
+
+                      </div>
+                      <!--==================
+                          # Organisation form
+                          ==================-->
+                      <div *ngIf="clientNature === 'organisation'">
+                        <section class="contact" style="padding: 0">
+                          <div class="row">
+
+                            <div class="col-lg-12">
+                              <div class="join-us-form">
+                                <div class="form-row">
+
+                                  <div class="col-md-6 form-group">
+                                    <input autocomplete="off" class="form-control" formControlName="oName"
+                                           id="o-name" placeholder="Organisation name" type="text"/>
+                                    <small *ngIf="form.get('oName').invalid && form.get('oName').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the organisation name
+                                    </small>
+                                  </div>
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="oType" id="o-type"
+                                           list="organisations" placeholder="Organisation Type (Specify if not listed)">
+                                    <small *ngIf="form.get('oType').invalid && form.get('oType').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the organisation type
+                                    </small>
+                                    <datalist id="organisations">
+                                      <option value="Company">
+                                      <option value="Hospital">
+                                      <option value="Association">
+                                    </datalist>
+                                  </div>
+
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="oSector"
+                                           id="o-sector" placeholder="Organisation Sector" type="text">
+                                    <small *ngIf="form.get('oSector').invalid && form.get('oSector').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the organisation sector
+                                    </small>
+                                  </div>
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="oRegistrationNumber"
+                                           id="o-registration"
+                                           placeholder="Registration Number" type="text">
+                                    <small
+                                      *ngIf="form.get('oRegistrationNumber').invalid && form.get('oRegistrationNumber').touched"
+                                      class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the Registration number
+                                    </small>
+                                  </div>
+
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-md-6 form-group">
+                                    <input class="form-control" formControlName="oResponsibleName"
+                                           id="responsible" placeholder="Responsible Name" type="text">
+                                    <small
+                                      *ngIf="form.get('oResponsibleName').invalid && form.get('oResponsibleName').touched"
+                                      class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the responsible name
+                                    </small>
+                                  </div>
+
+                                  <div class="col-md-6 form-group">
+                                    <input autocomplete="off" class="form-control" formControlName="oPhone"
+                                           id="o-phone" placeholder="Organisation Phone Number" type="number"/>
+                                    <small *ngIf="form.get('oPhone').invalid && form.get('oPhone').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter the phone number
+                                    </small>
+                                  </div>
+
+
+
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-sm-6 col-md-3">
+                                      <div class="form-group">
+                                        <select formControlName="oCountry" class="form-control countries order-alpha presel-byip " id="countryId">
+                                          <option value="">Select Country</option>
+                                        </select>
+
+                                        <small
+                                          *ngIf="(form.get('oCountry').invalid && form.get('oCountry').touched) || (form.get('oState').invalid && form.get('oState').touched)"
+                                          class="form-text text-danger">
+                                          <i class="icofont-warning-alt"></i>
+                                          Country and state needed
+                                        </small>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="col-sm-6 col-md-3">
+                                      <div class="form-group">
+                                        <select formControlName="oState" class="form-control states order-alpha" id="stateId">
+                                          <option value="">Select State</option>
+                                        </select>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="col-md-4 col-sm-8">
+                                    <div class="form-group">
+                                      <input autocomplete="off" class="form-control" formControlName="oAddress"
+                                             id="oAddress" placeholder="Your full address" type="text"/>
+                                      <small
+                                        *ngIf="(form.get('oAddress').invalid && form.get('oAddress').touched)|| (form.get('oZipCode').invalid && form.get('oZipCode').touched)"
+                                        class="form-text text-danger">
+                                        <i class="icofont-warning-alt"></i>
+                                        Please enter your address and zip code
+                                      </small>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-2 col-sm-4">
+                                    <div class="form-group">
+                                      <input autocomplete="off" class="form-control" formControlName="oZipCode"
+                                             id="oZipCode" placeholder="ZIP code" type="number"/>
+                                    </div>
+                                  </div>
+
+
+
+                                </div>
+
+                                <div class="form-row">
+
+                                  <div class="col-md-12 form-group">
+                                    <input class="form-control" formControlName="oEmail"
+                                           id="o-email" placeholder="Organisation Email" type="text">
+                                    <small *ngIf="form.get('oEmail').invalid && form.get('oEmail').touched"
+                                           class="form-text text-danger">
+                                      <i class="icofont-warning-alt"></i>
+                                      Please enter a valid email
+                                    </small>
+                                  </div>
+
+
+                                </div>
+
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                        </section>
+
+                      </div>
+
+
+                      <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+                    </fieldset> <!-- Payment -->
+                    <fieldset>
+
+
+                      <div class="container-sm pl-sm-3 pr-sm-3 text-dark">
+                        <div class="d-flex mb-1">
+                          <div>Purchase price</div>
+                          <div class="ml-auto">198 &nbsp; TND</div>
+                        </div>
+
+                        <div class="d-flex mb-1">
+                          <div>Taxes</div>
+                          <div class="ml-auto">000 &nbsp; TND</div>
+                        </div>
+
+                        <div class="d-flex mb-1">
+                          <div>Shipping (8-12 weeks)</div>
+                          <div class="ml-auto">000 &nbsp; TND</div>
+                        </div>
+
+                        <div class="d-flex mb-1">
+                          <h6>Total</h6>
+                          <h6 class="ml-auto">198 &nbsp; TND</h6>
+                        </div>
+
+                      </div>
+
+
+                      <input class="previous btn action-button-previous" name="previous" type="button"
+                             value="Previous"/>
+                      <button class="confirm btn action-button" type="submit">Confirm Order</button>
+                    </fieldset> <!-- Confirmation -->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--       Modal footer -->
+        <div class="modal-footer">
+          <h6>Price : 198&nbsp;TND</h6>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<datalist id="handicaps">
+  <option value="paralysis">
+  <option value="paralysis 2">
+  <option value="paralysis 3">
+  <option value="paralysis 4">
+  <option value="paralysis 5">
+</datalist>

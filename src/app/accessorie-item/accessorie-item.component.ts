@@ -28,4 +28,5 @@ export class AccessorieItemComponent implements OnInit {
     }
   }
 
+
 }
