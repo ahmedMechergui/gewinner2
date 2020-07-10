@@ -1,0 +1,33 @@
+[debug] [2020-06-25T10:47:23.754Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T10:47:23.761Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ahmed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-06-25T10:47:23.762Z] CLI Version:   8.4.3
+[debug] [2020-06-25T10:47:23.762Z] Platform:      win32
+[debug] [2020-06-25T10:47:23.762Z] Node Version:  v12.16.1
+[debug] [2020-06-25T10:47:23.763Z] Time:          Thu Jun 25 2020 11:47:23 GMT+0100 (British Summer Time)
+[debug] [2020-06-25T10:47:23.763Z] ----------------------------------------------------------------------
+[debug] [2020-06-25T10:47:23.763Z] 
+[debug] [2020-06-25T10:47:23.780Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-25T10:47:23.781Z] > authorizing via signed-in user
+[debug] [2020-06-25T10:47:23.781Z] [iam] checking project gewinner for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-06-25T10:47:23.785Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gewinner:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-06-25T10:47:24.749Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 10:47:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=667","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-25T10:47:24.752Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/gewinner  
+ 
+[debug] [2020-06-25T10:47:25.200Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 10:47:25 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'gewinner'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-06-25T10:47:25.208Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gewinner/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-06-25T10:47:26.742Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 10:47:27 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[gewinner]: beginning deploy... 
+[info] i  hosting[gewinner]: found 167 files in dist/gewinnerWebsite 
+[debug] [2020-06-25T10:47:27.427Z] [hosting] hash cache [ZGlzdFxnZXdpbm5lcldlYnNpdGU] stored for 167 files
+[debug] [2020-06-25T10:47:27.428Z] [hosting][hash queue][FINAL] {"max":555,"min":17,"avg":132.0838323353294,"active":0,"complete":167,"success":167,"errored":0,"retried":0,"total":167,"elapsed":595}
+[debug] [2020-06-25T10:47:27.428Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/gewinner/versions/02a66b72edac1adf:populateFiles  
+ <request body omitted>
+[debug] [2020-06-25T10:47:29.058Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 25 Jun 2020 10:47:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-06-25T10:47:29.062Z] [hosting][populate queue][FINAL] {"max":1634,"min":1634,"avg":1634,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1637}
+[debug] [2020-06-25T10:47:29.062Z] [hosting] uploads queued: 3
