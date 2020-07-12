@@ -17,6 +17,7 @@ import {MoovobrainComponent} from './moovobrain/moovobrain.component';
 import {GeneralComponent} from './account-client/general/general.component';
 import {ServicesComponent} from './account-client/services/services.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
+import {AuthGuard} from './shared/services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -26,8 +27,8 @@ const routes: Routes = [
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
   {path: 'team', component: TeamComponent},
-  {path: 'account', component: GeneralComponent},
-  {path: 'services', component: ServicesComponent},
+  {path: 'account', component: GeneralComponent , canActivate: [AuthGuard]},
+  {path: 'services', component: ServicesComponent , canActivate: [AuthGuard]},
   {path: 'accessorie/:id', component: AccessorieItemComponent},
   {
     path: 'news', component: NewsComponent, children: [
