@@ -76,7 +76,7 @@ button:disabled {
   background: #1da1f2;
 }
 
-input.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched , .red-border{
   border:1px solid #FF9494;
   outline-color: #FF9494 !important;
 }

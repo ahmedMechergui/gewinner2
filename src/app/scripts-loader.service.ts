@@ -29,4 +29,12 @@ export class ScriptsLoaderService {
       renderer2.appendChild(this._document.body, s);
     });
   }
+
+  // a renderer2 must be created at the component to access its DOM
+  addScriptCustom(renderer2: Renderer2, script: string) {
+    const s = renderer2.createElement('script');
+    s.type = 'text/javascript';
+    s.text = script;
+    renderer2.appendChild(this._document.body, s);
+  }
 }

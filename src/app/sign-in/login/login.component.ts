@@ -1,16 +1,24 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../shared/services/auth.service';
+import {Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   form: FormGroup;
+  isLoading = false;
+  isError = false;
+  isError2 = false;
+  signInSubscription: Subscription = null;
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
+
 
   ngOnInit() {
     this.setupForm();
@@ -24,6 +32,24 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    window.alert('Login system will be implemented later with nodejs.');
+    this.isLoading = true;
+    this.isError = false;
+    this.signInSubscription = this.authService.signIn(this.form.value).subscribe(responseData => {
+      this.isLoading = false;
+      this.authService.createClient(responseData);
+      this.authService.redirectToServices();
+    }, error => {
+      this.isLoading = false;
+      this.isError = true;
+      this.isError2 = true;
+      this.form.patchValue({password: ''});
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.signInSubscription) {
+      this.signInSubscription.unsubscribe();
+    }
   }
 }
+

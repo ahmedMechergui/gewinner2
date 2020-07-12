@@ -27,9 +27,10 @@
         <li [routerLinkActive]="'active'"><a [routerLink]="'join-us'">Join us</a></li>
         <li [routerLinkActive]="'active'"><a [routerLink]="'news'">News</a></li>
         <li [routerLinkActive]="'active'"><a [routerLink]="'contact'">Contact us</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'sign-in'"><i class="icofont-ui-user"></i> Sign in</a></li>
+        <li [routerLinkActive]="'active'" *ngIf="!isAuthenticated"><a [routerLink]="'sign-in'"><i class="icofont-ui-user"></i> Sign in</a></li>
 
-        <li [routerLinkActive]="'active'" class="dropdown"><app-account-dropdown></app-account-dropdown></li>
+        <li [routerLinkActive]="'active'" class="dropdown" *ngIf="isAuthenticated"><app-account-dropdown></app-account-dropdown></li>
+        <li><a href="https://ge-admin.web.app/" target="_blank">Dashboard</a></li>
       </ul>
     </nav>
 

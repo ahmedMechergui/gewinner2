@@ -1,5 +1,6 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
+import {AuthService} from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,22 @@ import {ScriptsLoaderService} from '../scripts-loader.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isAuthenticated = false;
 
-  constructor(private rendeder2: Renderer2, private scriptLoader: ScriptsLoaderService) {
+  constructor(private renderer2: Renderer2,
+              private scriptLoader: ScriptsLoaderService,
+              private authService: AuthService) {
   }
 
   ngOnInit() {
     this.loadScripts();
+    this.authService.clientSubject.subscribe(client => {
+      this.isAuthenticated = !!client;
+    });
   }
 
   loadScripts() {
-    this.scriptLoader.addScripts(this.rendeder2, 'header');
+    this.scriptLoader.addScripts(this.renderer2, 'header');
   }
 
 }

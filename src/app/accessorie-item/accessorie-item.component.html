@@ -1,4 +1,4 @@
-<app-form-accessorie-order></app-form-accessorie-order>
+<app-form-accessorie-order [quantity]="[quantity]"></app-form-accessorie-order>
 <main id="main">
 
   <!-- ======= MOOVOBRAIN Section ======= -->
@@ -47,11 +47,13 @@
                 <p style="display: inline">Quantity </p>
                 <div class="input-group bootstrap-touchspin">
                   <span class="input-group-btn input-group-prepend bootstrap-touchspin-injected">
-                    <button class="btn btn-primary bootstrap-touchspin-down" (click)="quantityMinus()" type="button">-</button>
+                    <button class="btn btn-primary bootstrap-touchspin-down" (click)="quantityMinus()"
+                            type="button">-</button>
                   </span>
                   <input type="number" id="quantity" [(ngModel)]="quantity" class="touchspin form-control" value="1">
                   <span class="input-group-btn input-group-append bootstrap-touchspin-injected">
-                    <button class="btn btn-primary bootstrap-touchspin-up" (click)="quantityPlus()" type="button">+</button>
+                    <button class="btn btn-primary bootstrap-touchspin-up" (click)="quantityPlus()"
+                            type="button">+</button>
                   </span>
                 </div>
               </div>
@@ -59,7 +61,8 @@
 
               <div class="d-flex flex-column flex-sm-row">
                 <button class="btn btn-primary btn-padding mr-0 mr-sm-2 mb-1 mb-sm-0" data-toggle="modal"
-                        data-target="#accessorie-order-modal"><i class="feather icofont-cart-alt mr-25"></i>ORDER NOW
+                        data-target="#accessorie-order-modal"><i
+                  class="feather icofont-cart-alt mr-25"></i>ORDER NOW
                 </button>
               </div>
 

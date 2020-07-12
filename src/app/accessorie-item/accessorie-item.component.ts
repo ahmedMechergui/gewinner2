@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-accessorie-item',
@@ -6,9 +6,11 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./accessorie-item.component.css']
 })
 export class AccessorieItemComponent implements OnInit {
+  // this event is to tell the form component that quantity is changed
+  // @Output() eventQuantityChanged: EventEmitter<number>;
+
   isRated: boolean;
   ratings = 423;
-  // @ViewChild('quantity', {static: true}) quantityElement: ElementRef;
   quantity = 1;
 
   constructor() {
@@ -37,6 +39,10 @@ export class AccessorieItemComponent implements OnInit {
   quantityMinus() {
     this.quantity > 1 ? this.quantity-- : this.quantity = 1;
   }
+
+  // broadcastQuantity() {
+  //   this.eventQuantityChanged.emit(this.quantity);
+  // }
 
 
 }

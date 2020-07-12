@@ -6,6 +6,12 @@
       <img alt="image missing..." class="login-illustration" src="assets/img/illustrations/form/login3.svg">
       Sign in
     </h3>
+
+
+    <div class="alert alert-danger alert-dismissible fade show" *ngIf="isError">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Error!</strong> please verify email and password.
+    </div>
     <form (ngSubmit)="onSubmit()" [formGroup]="form" class="join-us-form" method="post">
 
       <div class="form-row">
@@ -16,7 +22,8 @@
                  id="email" name="email"
                  placeholder="Your E-mail"
                  type="email"
-                 tabindex="1" />
+                 tabindex="1"
+                  [class.red-border]="isError" />
 
           <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
             <i class="icofont-warning-alt"></i>
@@ -32,9 +39,12 @@
                  name="password"
                  placeholder="Your Password"
                  type="password"
-                 tabindex="2"/>
+                 tabindex="2"
+                 [class.red-border]="isError"
+                  (focus)="isError2=false"
+          />
 
-          <small *ngIf="form.get('password').invalid && form.get('password').touched" class="form-text text-danger d-inline">
+          <small *ngIf="form.get('password').invalid && form.get('password').touched && !isError2" class="form-text text-danger d-inline">
             <i class="icofont-warning-alt"></i>
             Password must have 8 characters at least.
           </small>
@@ -46,7 +56,7 @@
 
 
       <div class="text-center">
-        <button [disabled]="form.invalid" type="submit" tabindex="3"><i class="icofont-login"></i> Sign in</button>
+        <button [disabled]="form.invalid" type="submit" tabindex="3"> <app-loader radius="20" *ngIf="isLoading"></app-loader><i class="icofont-login" *ngIf="!isLoading"></i> Sign in</button>
       </div>
 
     </form>

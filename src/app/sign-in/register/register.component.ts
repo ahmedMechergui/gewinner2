@@ -1,12 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../../shared/services/auth.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
+  isLoading = false;
+  signUpSubscription: Subscription = null;
   countries: string[] = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda',
     'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh',
     'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina',
@@ -34,8 +38,9 @@ export class RegisterComponent implements OnInit {
     'Ukraine', 'United Arab Emirates', 'United Kingdom', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam',
     'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'];
   form: FormGroup;
+  errorMessage: string = null;
 
-  constructor() {
+  constructor(public authService: AuthService) {
   }
 
   ngOnInit() {
@@ -45,15 +50,33 @@ export class RegisterComponent implements OnInit {
   setupForm() {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
       clientID: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       country: new FormControl('', [Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.minLength(8)])
     });
   }
 
   onSubmit() {
-    window.alert('Login system will be implemented later with nodejs.');
+    // window.alert('Login system will be implemented later with nodejs.');
+    this.isLoading = true;
+    this.signUpSubscription = this.authService.signUp(this.form.value).subscribe(responseData => {
+      this.isLoading = false;
+      console.log('response data : ', responseData);
+      this.authService.createClient(responseData);
+      this.authService.redirectToServices();
+    }, error => {
+      this.isLoading = false;
+      this.errorMessage = error.error.error.includes('E11000') ? 'Account already exists' : 'Please verify your information';
+      console.log('error : ', error.error.error);
+    });
   }
+
+  ngOnDestroy(): void {
+    if (this.signUpSubscription) {
+      this.signUpSubscription.unsubscribe();
+    }
+  }
+
 
 }

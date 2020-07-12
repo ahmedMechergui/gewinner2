@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, Input, OnInit, Renderer2} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ScriptsLoaderService} from '../../scripts-loader.service';
 
@@ -10,6 +10,9 @@ import {ScriptsLoaderService} from '../../scripts-loader.service';
 export class FormAccessorieOrderComponent implements OnInit {
   form: FormGroup;
   clientNature = 'none';
+  // the quantity is passed as an array so we get reference instead of value and detect changes from parent component
+  @Input() quantity;
+  price: number;
 
   constructor(private scriptsLoader: ScriptsLoaderService, private  renderer2: Renderer2) {
   }
@@ -17,6 +20,7 @@ export class FormAccessorieOrderComponent implements OnInit {
   ngOnInit() {
     this.loadScriptForm();
     this.formInit();
+    this.price = 198;
   }
 
 

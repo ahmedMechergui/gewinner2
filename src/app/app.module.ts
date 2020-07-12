@@ -41,7 +41,10 @@ import {ServicesComponent} from './account-client/services/services.component';
 import {ScheduledControlsComponent} from './account-client/services/scheduled-controls/scheduled-controls.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
 import {FormAccessorieOrderComponent} from './accessorie-item/form-accessorie-order/form-accessorie-order.component';
-import { GallerieComponent } from './accessorie-item/gallerie/gallerie.component';
+import {GallerieComponent} from './accessorie-item/gallerie/gallerie.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { LoaderComponent } from './shared/loader/loader.component';
+import {AuthInterceptor} from './shared/services/auth.interceptor';
 
 
 @NgModule({
@@ -83,16 +86,18 @@ import { GallerieComponent } from './accessorie-item/gallerie/gallerie.component
     ScheduledControlsComponent,
     AccessorieItemComponent,
     FormAccessorieOrderComponent,
-    GallerieComponent
+    GallerieComponent,
+    LoaderComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        FormsModule,
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    RouterModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers: [{provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi : true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

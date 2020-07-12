@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-account-dropdown',
@@ -7,13 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountDropdownComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) {
+  }
 
   ngOnInit() {
   }
 
-  alert() {
-    window.alert('Logout will be implemented later with nodejs.');
-  }
 
 }
