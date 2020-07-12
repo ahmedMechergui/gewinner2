@@ -4,6 +4,7 @@ export interface AuthResponse {
     name: string,
     clientID: string,
     email: string,
+    phone: string,
     country: string,
     createdAt: Date,
     updatedAt: Date

@@ -1,6 +1,6 @@
 import {Component, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
-import {AuthService} from '../shared/services/auth.service';
+import {AuthService} from '../shared/authentication/auth.service';
 
 @Component({
   selector: 'app-header',

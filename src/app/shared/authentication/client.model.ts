@@ -3,6 +3,7 @@ export class Client {
     public id: string,
     public clientID: string,
     public email: string,
+    public phone: string,
     public name: string,
     public country: string,
     public token: string,

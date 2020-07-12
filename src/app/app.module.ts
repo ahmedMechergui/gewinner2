@@ -44,7 +44,7 @@ import {FormAccessorieOrderComponent} from './accessorie-item/form-accessorie-or
 import {GallerieComponent} from './accessorie-item/gallerie/gallerie.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoaderComponent } from './shared/loader/loader.component';
-import {AuthInterceptor} from './shared/services/auth.interceptor';
+import {AuthInterceptor} from './shared/authentication/auth.interceptor';
 
 
 @NgModule({

@@ -10,7 +10,7 @@
       <div class="row forms-container">
 
         <div class="col-md-12 order-md-1 custom-padding">
-          <form [formGroup]="formQualityControl" (ngSubmit)="onSubmit()" style="display: flow-root">
+          <form [formGroup]="formQualityControl" (ngSubmit)="requestQualityControl()" style="display: flow-root">
             <p class="header text-left text-dark font-weight-bold mb-0">
               Quarterly Quality Control :
             </p>
@@ -72,7 +72,8 @@
 
             </div>
 
-            <button type="submit" class="submit float-right">Submit</button>
+            <button type="submit" class="submit float-right">
+              <app-loader *ngIf="qualityControlIsLoading" addSpace="true"></app-loader>Submit</button>
 
           </form>
 

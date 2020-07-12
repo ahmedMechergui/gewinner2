@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {HostURLService} from './host-url.service';
+import {HostURLService} from '../services/host-url.service';
 import {BehaviorSubject} from 'rxjs';
-import {Client} from '../models/client';
-import {AuthResponse} from '../models/auth-response';
+import {Client} from './client.model';
+import {AuthResponse} from './auth-response';
 import {Router} from '@angular/router';
 
 
@@ -40,6 +40,7 @@ export class AuthService {
       response.client._id,
       response.client.clientID,
       response.client.email,
+      response.client.phone,
       response.client.name,
       response.client.country,
       response.token,

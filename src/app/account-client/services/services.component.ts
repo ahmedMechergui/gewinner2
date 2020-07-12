@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ServicesRequestService} from './services-request.service';
 
 @Component({
   selector: 'app-services',
@@ -12,7 +13,9 @@ export class ServicesComponent implements OnInit {
   formTrainingSession: FormGroup;
   formMaintenanceRequest: FormGroup;
 
-  constructor() {
+  qualityControlIsLoading = false;
+
+  constructor(private requestService: ServicesRequestService) {
   }
 
   ngOnInit() {
@@ -31,6 +34,14 @@ export class ServicesComponent implements OnInit {
 
   onSubmit() {
     window.alert('Services will be implemented later with nodejs.');
+  }
+
+  requestQualityControl() {
+    this.qualityControlIsLoading = true;
+    this.requestService.requestQuarterlyQualityControl(+this.formQualityControl.get('addedYears').value).subscribe(response => {
+        this.qualityControlIsLoading = false;
+      }
+    );
   }
 
 }

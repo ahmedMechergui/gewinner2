@@ -10,6 +10,8 @@ export class LoaderComponent implements OnInit {
   @Input() radius = 20;
 // in rem
   @Input() borderWidth = 0.2;
+  // if true adds an empty space after the loader , default is false
+  @Input() addSpace = false;
   constructor() { }
 
   ngOnInit() {

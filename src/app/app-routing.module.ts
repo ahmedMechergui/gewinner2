@@ -17,7 +17,7 @@ import {MoovobrainComponent} from './moovobrain/moovobrain.component';
 import {GeneralComponent} from './account-client/general/general.component';
 import {ServicesComponent} from './account-client/services/services.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
-import {AuthGuard} from './shared/services/auth-guard.service';
+import {AuthGuard} from './shared/authentication/auth-guard.service';
 
 
 const routes: Routes = [
