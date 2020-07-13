@@ -45,6 +45,8 @@ import {GallerieComponent} from './accessorie-item/gallerie/gallerie.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoaderComponent } from './shared/loader/loader.component';
 import {AuthInterceptor} from './shared/authentication/auth.interceptor';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -95,7 +97,9 @@ import {AuthInterceptor} from './shared/authentication/auth.interceptor';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [{provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi : true}],
   bootstrap: [AppComponent]

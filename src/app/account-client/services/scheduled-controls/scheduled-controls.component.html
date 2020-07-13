@@ -16,10 +16,11 @@
 
           <hr style="width: 98% ; margin-top: 0 ; margin-bottom: 0.5rem">
 
-          <p class="text-secondary">
+          <p class="text-secondary"  *ngIf="scheduledControls.length > 0">
             You will be having quarterly quality  control on :
           </p>
 
+          <p class="text-secondary text-center" *ngIf="scheduledControls.length < 1">No future quality control scheduled</p>
           <ul class="text-secondary">
             <li *ngFor="let date of scheduledControls">{{date | date:'fullDate'}}</li>
           </ul>

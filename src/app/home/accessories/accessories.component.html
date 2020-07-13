@@ -15,12 +15,16 @@
            data-aos="flip-right" data-aos-delay="100" data-aos-duration="1000">
           <div class="icon-box icon-box-cyan" [routerLink]="['/accessorie/'+accessorie.id]">
             <div class="accessories-item icon">
-              <img src="{{accessorie.imageURL}}" alt="image missing...">
+              <img src="{{url+accessorie.imageURL[0]}}" alt="image missing...">
             </div>
-            <h4 class="title">{{accessorie.title}}</h4>
-            <p class="description text-secondary">{{accessorie.description}}</p>
+            <h4 class="title">{{accessorie.name}}</h4>
+            <p class="description text-secondary">
+              {{accessorie.description | slice:0:90}}
+              <span *ngIf="accessorie.description.length > 90">...</span>
+            </p>
           </div>
       </div>
+
 
     </div>
   </div>

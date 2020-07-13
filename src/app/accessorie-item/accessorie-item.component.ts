@@ -1,4 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Accessorie} from '../shared/models/accessorie.model';
+import {ActivatedRoute} from '@angular/router';
+import {AccessoriesStorageService} from '../shared/services/accessories-storage.service';
 
 @Component({
   selector: 'app-accessorie-item',
@@ -8,17 +11,40 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class AccessorieItemComponent implements OnInit {
   // this event is to tell the form component that quantity is changed
   // @Output() eventQuantityChanged: EventEmitter<number>;
-
+  accessorie: Accessorie = null;
+  showGallerie = false;
   isRated: boolean;
   ratings = 423;
   quantity = 1;
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute,
+              private accessoriesStorageService: AccessoriesStorageService) {
   }
 
   ngOnInit() {
     this.starClicked(4);
     this.isRated = false;
+    this.fetchAccessorieData();
+  }
+
+  getAccessoriesID(): string {
+    return this.activatedRoute.snapshot.params.id;
+  }
+
+  fetchAccessorieData(): void {
+    this.accessoriesStorageService.getOneAccessorie(this.getAccessoriesID()).subscribe((accessorie: any) => {
+      this.accessorie = new Accessorie(
+        accessorie._id,
+        accessorie.name,
+        accessorie.description,
+        accessorie.isAvailable,
+        accessorie.price,
+        accessorie.imageURL.slice(),
+        accessorie.createdAt,
+        accessorie.updatedAt
+      );
+      this.showGallerie = true;
+    });
   }
 
   starClicked(starNumber: number) {

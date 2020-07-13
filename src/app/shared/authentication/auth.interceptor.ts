@@ -17,6 +17,9 @@ export class AuthInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
     return this.authService.clientSubject.pipe(take(1), exhaustMap(client => {
+      if (!client) {
+        return next.handle(request);
+      }
       const modifiedRequest = request.clone({headers: request.headers.append('Authorization', 'Bearer ' + client.token)});
       return next.handle(modifiedRequest);
     }));

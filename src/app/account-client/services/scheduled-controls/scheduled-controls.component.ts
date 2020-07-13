@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ServicesRequestService} from '../services-request.service';
 
 @Component({
   selector: 'app-scheduled-controls',
@@ -6,17 +7,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./scheduled-controls.component.css']
 })
 export class ScheduledControlsComponent implements OnInit {
-  scheduledControls: Date[] = [
-    new Date('9-3-20'),
-    new Date('12-3-2020'),
-    new Date('3-5-2021'),
-    new Date('6-6-2021')
-  ];
+  scheduledControls: Date[] = this.requestServices.scheduledControls;
 
-  constructor() {
+  constructor(private requestServices: ServicesRequestService) {
   }
 
   ngOnInit() {
   }
+
 
 }

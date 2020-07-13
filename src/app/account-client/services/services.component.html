@@ -72,14 +72,15 @@
 
             </div>
 
-            <button type="submit" class="submit float-right">
+            <button type="submit" class="submit float-right"
+                    [disabled]="formQualityControl.invalid || qualityControlIsLoading">
               <app-loader *ngIf="qualityControlIsLoading" addSpace="true"></app-loader>Submit</button>
 
           </form>
 
           <hr style="width: 98% ; margin-top: 0.5rem ; margin-bottom: 0.5rem">
 
-          <form [formGroup]="formTrainingSession" (ngSubmit)="onSubmit()" style="display: flow-root">
+          <form [formGroup]="formTrainingSession" (ngSubmit)="requestTrainingSession()" style="display: flow-root">
 
             <p class="header text-left text-dark font-weight-bold mb-0">
               Training Session :
@@ -142,13 +143,15 @@
 
             </div>
 
-            <button type="submit" class="submit float-right">Submit</button>
+            <button type="submit" class="submit float-right"
+                    [disabled]="formTrainingSession.invalid || trainingSessionIsLoading">
+              <app-loader *ngIf="trainingSessionIsLoading" addSpace="true"></app-loader>Submit</button>
 
           </form>
 
           <hr style="width: 98% ; margin-top: 0.5rem ; margin-bottom: 0.5rem">
 
-          <form [formGroup]="formMaintenanceRequest" (ngSubmit)="onSubmit()" style="display: flow-root">
+          <form [formGroup]="formMaintenanceRequest" (ngSubmit)="requestMaintenance()" style="display: flow-root">
             <p class="header text-left text-dark font-weight-bold mb-0">
               Maintenance :
             </p>
@@ -158,7 +161,8 @@
               vero voluptates voluptatibus.
             </p>
 
-            <button type="submit" class="submit float-right">Maintenance request</button>
+            <button type="submit" class="submit float-right" [disabled]="maintenanceRequestIsLoading">
+              <app-loader *ngIf="maintenanceRequestIsLoading"></app-loader>Maintenance request</button>
 
           </form>
 

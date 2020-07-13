@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {HostURLService} from '../../shared/services/host-url.service';
 
 @Component({
   selector: 'app-gallerie',
@@ -7,8 +8,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class GallerieComponent implements OnInit {
   selectedProductImage = 1;
+  url = this.urlService.url;
 
-  constructor() {
+  @Input() imageUrlArray = [
+    'assets/img/accessories/images/headrest-3.jpg'];
+
+  constructor(public urlService: HostURLService) {
   }
 
   ngOnInit() {

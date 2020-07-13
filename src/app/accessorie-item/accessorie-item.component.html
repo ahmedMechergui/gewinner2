@@ -4,22 +4,22 @@
   <!-- ======= MOOVOBRAIN Section ======= -->
   <div class="content-body">
     <!-- app ecommerce details start -->
-    <section class="app-ecommerce-details">
+    <section class="app-ecommerce-details" >
       <div class="card">
         <div class="card-body">
           <div class="row mb-5 mt-2">
             <div class="col-12 col-md-5 align-items-center justify-content-center mb-2 mb-md-0">
               <div class="align-items-center justify-content-center">
-                <app-gallerie></app-gallerie>
+                <app-gallerie *ngIf="showGallerie" [imageUrlArray]="accessorie.imageURL"></app-gallerie>
               </div>
             </div>
             <div class="col-12 col-md-6">
-              <h5>Headrest - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <h5 *ngIf="accessorie">{{accessorie.name}}
               </h5>
               <p class="text-muted">by Gewinner</p>
               <div class="ecommerce-details-price flex-wrap">
 
-                <p class="text-success price font-medium-3 mb-0">198 TND</p>
+                <p class="text-success price font-medium-3 mb-0" *ngIf="accessorie">{{accessorie.price}} TND</p>
                 <div class="rating">
                 <span class="rate" id="stars">
                 <i (click)="starClicked(1)" class="icofont-star" id="star1"></i>
@@ -29,18 +29,16 @@
                 <i (click)="starClicked(5)" class="icofont-star" id="star5"></i>
               </span>
                 </div>
-                <span class="ml-50 ml-1 text-dark font-medium-1">{{ratings}} ratings</span>
+                <span class="ml-50 ml-1 text-dark font-medium-1" *ngIf="accessorie">{{ratings}} ratings</span>
               </div>
               <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, non, ullam? Asperiores, at atque
-                corporis ducimus eius enim error eveniet ex excepturi illum in nesciunt odit omnis placeat possimus, qui
-                quia saepe similique tenetur ullam. A aspernatur dicta dolore error facilis illo necessitatibus
-                recusandae temporibus dicta dolore.</p>
+              <p *ngIf="accessorie">{{accessorie.description}}</p>
               <p class="font-weight-bold mb-25"><i class="feather icofont-free-delivery mr-50 font-medium-2"></i> Free
                 Shipping
               </p>
               <hr>
-              <p>Available - <span class="text-success">In stock</span></p>
+              <p *ngIf="accessorie && accessorie.isAvailable">Available - <span class="text-success">In stock</span></p>
+              <p *ngIf="accessorie && !accessorie.isAvailable">Available - <span class="text-danger">Out of stock</span></p>
 
 
               <div class="d-inline-block mb-1">

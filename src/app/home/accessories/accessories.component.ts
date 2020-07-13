@@ -1,43 +1,61 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../../scripts-loader.service';
-import {Accessorie} from './accessorie.model';
+import {Accessorie} from '../../shared/models/accessorie.model';
+import {AccessoriesStorageService} from '../../shared/services/accessories-storage.service';
+import {Subscription} from 'rxjs';
+import {HostURLService} from '../../shared/services/host-url.service';
 
 @Component({
   selector: 'app-accessories',
   templateUrl: './accessories.component.html',
   styleUrls: ['./accessories.component.css']
 })
-export class AccessoriesComponent implements OnInit {
-  // accessories shall be added by admin dashboard
-  accessories: Accessorie[] = [
-    new Accessorie(1,
-      'Camera',
-      'Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sintoccaecati cupiditate non provident',
-      'assets/img/accessories/icons/wheelchair-camera.jpg'),
-    new Accessorie(2,
-      'Adjustable table', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu\n' +
-      '            fugiat nulla pariatur', 'assets/img/accessories/icons/adjustable-table.jpg'),
-    new Accessorie(3,
-      'Rear-view mirror', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt\n' +
-      '            mollit anim id est laborum', 'assets/img/accessories/icons/rear-view-mirror.jpg'),
-    new Accessorie(4,
-      'Security belt', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium\n' +
-      '            voluptatum deleniti atque', 'assets/img/accessories/icons/wheelchair-security-belt.jpg'),
-    new Accessorie(5,
-      'Headrest neck support', 'Odio ducimus qui blanditiis praesentium, in culpa qui officia deserunt\n' +
-      '            occaecat cupidatat non proident dromo', 'assets/img/accessories/icons/headrest.jpg')
-  ];
+export class AccessoriesComponent implements OnInit, OnDestroy {
 
-  constructor(private renderer2: Renderer2, private scriptsLoader: ScriptsLoaderService) {
+  subscription: Subscription = null;
+  url = this.urlService.url;
+
+  // accessories shall be added by admin dashboard
+  accessories: Accessorie[] = [];
+
+  constructor(private renderer2: Renderer2,
+              private scriptsLoader: ScriptsLoaderService,
+              private accessoriesStorageService: AccessoriesStorageService,
+              public urlService: HostURLService
+  ) {
   }
 
 
   ngOnInit() {
     this.loadScripts();
-
+    this.loadAccessories();
+    this.loadAccessories();
   }
 
   loadScripts() {
     this.scriptsLoader.addScripts(this.renderer2, 'slick.min', 'accessories-carousel');
+  }
+
+  loadAccessories() {
+    this.subscription = this.accessoriesStorageService.fetchAccessories().subscribe((accessoriesArray: Array<any>) => {
+
+      accessoriesArray.forEach(x => {
+        const accessorie = new Accessorie(x._id,
+          x.name,
+          x.description,
+          x.isAvailable,
+          x.price,
+          x.imageURL.slice(),
+          x.createdAt,
+          x.updatedAt);
+        this.accessories.push(accessorie);
+      });
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
