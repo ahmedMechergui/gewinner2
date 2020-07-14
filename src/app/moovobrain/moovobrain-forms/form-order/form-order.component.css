@@ -152,6 +152,10 @@
   filter: none !important;
 }
 
+input:disabled {
+  cursor: not-allowed;
+}
+
 
 /*==============================
    # checkbox styles

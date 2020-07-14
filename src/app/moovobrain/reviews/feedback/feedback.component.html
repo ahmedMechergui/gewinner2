@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6" [class.col-md-12]="moovobrainRequestsService.hasFeedback">
     <div class="justify-content-center">
       <table class="text-left mx-auto">
         <tr>
@@ -9,7 +9,7 @@
               <div class="bar bar-5"></div>
             </div>
           </td>
-          <td>123</td>
+          <td>{{reviewsNumber[4]}}</td>
         </tr>
         <tr>
           <td class="rating-label">Good</td>
@@ -18,7 +18,7 @@
               <div class="bar bar-4"></div>
             </div>
           </td>
-          <td>23</td>
+          <td>{{reviewsNumber[3]}}</td>
         </tr>
         <tr>
           <td class="rating-label">Average</td>
@@ -27,7 +27,7 @@
               <div class="bar bar-3"></div>
             </div>
           </td>
-          <td>10</td>
+          <td>{{reviewsNumber[2]}}</td>
         </tr>
         <tr>
           <td class="rating-label">Bad</td>
@@ -36,7 +36,7 @@
               <div class="bar bar-2"></div>
             </div>
           </td>
-          <td>3</td>
+          <td>{{reviewsNumber[1]}}</td>
         </tr>
         <tr>
           <td class="rating-label">Brutal</td>
@@ -45,15 +45,15 @@
               <div class="bar bar-1"></div>
             </div>
           </td>
-          <td>0</td>
+          <td>{{reviewsNumber[0]}}</td>
         </tr>
       </table>
     </div>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" *ngIf="!moovobrainRequestsService.hasFeedback">
               <textarea class="form-control feedback-textArea" name="feedback" id="feedback"
                         width="100%" rows="3"
-                        placeholder="Leave a Feedback*"></textarea>
+                        placeholder="Leave a Feedback*" #description></textarea>
     <div class="stars-submit-container">
       <div class="rating">
                 <span class="rate" id="stars">
@@ -64,7 +64,9 @@
                 <i (click)="starClicked(5)" class="icofont-star" id="star5"></i>
               </span>
       </div>
-      <button class="send-button">Send Feedback</button>
+      <button class="send-button" [disabled]="!ratingGiven" (click)="submitFeedback(description)">
+        <app-loader addSpace="true" *ngIf="isLoading" radius="18" ></app-loader>Send Feedback
+      </button>
     </div>
   </div>
 </div>

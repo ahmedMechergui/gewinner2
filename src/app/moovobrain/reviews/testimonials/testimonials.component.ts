@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Testimonial} from '../../testimonial';
+import {MoovobrainRequestsService} from '../../moovobrain-requests.service';
 
 @Component({
   selector: 'app-testimonials',
@@ -6,11 +8,26 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./testimonials.component.css']
 })
 export class TestimonialsComponent implements OnInit {
-  reviews = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-  constructor() {
+  testimonials = this.moovobrainRequestsService.testimonials;
+
+  constructor(public moovobrainRequestsService: MoovobrainRequestsService) {
   }
 
   ngOnInit() {
+    this.loadFakeTestimonial();
   }
+
+  // clients feedback isn't really submitted to server , it is just stored locally and
+  // showed to that specific client
+  loadFakeTestimonial() {
+    const testimonial: Testimonial = JSON.parse(localStorage.getItem('feedback'));
+    if (!testimonial) {
+      return;
+    }
+    this.moovobrainRequestsService.hasFeedback = true;
+    this.moovobrainRequestsService.testimonials.push(testimonial);
+    this.moovobrainRequestsService.reviewsNumber[testimonial.rating - 1]++;
+  }
+
 }

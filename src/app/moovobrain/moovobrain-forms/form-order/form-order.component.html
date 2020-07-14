@@ -5,7 +5,7 @@
     <div class="card">
       <div class="row">
         <div class="col-md-12 mx-0">
-          <form (ngSubmit)="alert()" [formGroup]="form" id="msform">
+          <form (ngSubmit)="orderMoovobrain()" [formGroup]="form" id="msform">
 
             <!-- progressbar -->
             <ul id="progressbar">
@@ -681,7 +681,14 @@
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+              <input class="next btn action-button"
+                     name="next"
+                     type="button"
+                     value="Next Step"
+                     [title]="!((form.get('iName').valid && form.get('iEmail').valid && form.get('iBirthday').valid && form.get('iAddress').valid && form.get('iZipCode').valid && form.get('iPhone').valid && form.get('iHandicap').valid) || (form.get('oName').valid && form.get('oType').valid && form.get('oSector').valid && form.get('oRegistrationNumber').valid && form.get('oResponsibleName').valid && form.get('oHandicap').valid && form.get('oAddress').valid && form.get('oZipCode').valid && form.get('oPhone').valid && form.get('oEmail').valid)) ? 'one of the two forms must be filled' : ''"
+
+                     [disabled]="!((form.get('iName').valid && form.get('iEmail').valid && form.get('iBirthday').valid && form.get('iAddress').valid && form.get('iZipCode').valid && form.get('iPhone').valid && form.get('iHandicap').valid) || (form.get('oName').valid && form.get('oType').valid && form.get('oSector').valid && form.get('oRegistrationNumber').valid && form.get('oResponsibleName').valid && form.get('oHandicap').valid && form.get('oAddress').valid && form.get('oZipCode').valid && form.get('oPhone').valid && form.get('oEmail').valid))"
+              />
             </fieldset> <!-- Payment -->
             <fieldset>
 
@@ -711,7 +718,9 @@
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <button class="confirm btn action-button" type="submit">Confirm Order</button>
+              <button class="confirm btn action-button" type="submit">
+               <app-loader *ngIf="isLoading" addSpace="true"></app-loader>Confirm Order
+              </button>
             </fieldset> <!-- Confirmation -->
           </form>
         </div>

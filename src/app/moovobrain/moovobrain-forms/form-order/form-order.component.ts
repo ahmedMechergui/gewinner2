@@ -1,6 +1,8 @@
 import {Component, Input, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../../../scripts-loader.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {MoovobrainRequestsService} from '../../moovobrain-requests.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-form-order',
@@ -10,6 +12,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class FormOrderComponent implements OnInit {
   @Input() countries: string[];
   form: FormGroup;
+  isLoading = false;
   trainingSessionCheckbox = false;
   controlCheckbox = false;
   moreYearsRadio = false;
@@ -26,7 +29,10 @@ export class FormOrderComponent implements OnInit {
   trainingPriceBeforeDisabling = 0;
   controlPriceBeforeDisabling = 0;
 
-  constructor(private renderer2: Renderer2, private scriptsLoader: ScriptsLoaderService) {
+  constructor(private renderer2: Renderer2,
+              private scriptsLoader: ScriptsLoaderService,
+              private moovobrainRequestsService: MoovobrainRequestsService,
+              private toast: ToastrService) {
   }
 
   ngOnInit() {
@@ -63,26 +69,26 @@ export class FormOrderComponent implements OnInit {
       // Client Nature , individual or organisation
       clientNature: new FormControl(''),
       //  Individuals form
-      iName: new FormControl(null, [Validators.required]),
-      iEmail: new FormControl(null, [Validators.required, Validators.email]),
+      iName: new FormControl('', [Validators.required]),
+      iEmail: new FormControl('', [Validators.required, Validators.email]),
       iBirthday: new FormControl(null, [Validators.required]),
       // iCountry: new FormControl('', [this.countrySelected.bind(this)]),
-      iAddress: new FormControl(null, [Validators.required]),
-      iZipCode: new FormControl(null, [Validators.required]),
-      iPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
-      iHandicap: new FormControl(null, [Validators.required]),
+      iAddress: new FormControl('', [Validators.required]),
+      iZipCode: new FormControl('', [Validators.required]),
+      iPhone: new FormControl('', [Validators.required, Validators.min(0), Validators.minLength(8)]),
+      iHandicap: new FormControl('', [Validators.required]),
       //  Organisation form
-      oName: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
-      oType: new FormControl(null, [Validators.required]),
-      oSector: new FormControl(null, [Validators.required]),
-      oRegistrationNumber: new FormControl(null, [Validators.required]),
-      oResponsibleName: new FormControl(null, [Validators.required]),
-      oHandicap: new FormControl(null, [Validators.required]),
+      oName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
+      oType: new FormControl('', [Validators.required]),
+      oSector: new FormControl('', [Validators.required]),
+      oRegistrationNumber: new FormControl('', [Validators.required]),
+      oResponsibleName: new FormControl('', [Validators.required]),
+      oHandicap: new FormControl('', [Validators.required]),
       // oCountry: new FormControl('', [this.countrySelected.bind(this)]),
-      oAddress: new FormControl(null, [Validators.required]),
-      oZipCode: new FormControl(null, [Validators.required]),
-      oPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
-      oEmail: new FormControl(null, [Validators.required, Validators.email])
+      oAddress: new FormControl('', [Validators.required]),
+      oZipCode: new FormControl('', [Validators.required]),
+      oPhone: new FormControl('', [Validators.required, Validators.min(0), Validators.minLength(8)]),
+      oEmail: new FormControl('', [Validators.required, Validators.email])
     });
   }
 
@@ -150,5 +156,18 @@ export class FormOrderComponent implements OnInit {
 
   controlRadioSelected(event: Event, price: number) {
     this.controlPrice = price;
+  }
+
+  orderMoovobrain() {
+    this.isLoading = true;
+    const toastParams = {disableTimeOut: true, closeButton: true, positionClass: 'toast-bottom-right'};
+    this.moovobrainRequestsService.orderMoovobrain(this.form.value).subscribe(response => {
+      this.isLoading = false;
+      this.toast.success('We will inform you once your order is validated', 'Order submitted', toastParams);
+    }, error => {
+      console.log(error);
+      this.isLoading = false;
+      this.toast.error('verify your information or try again later', 'ERROR :', toastParams);
+    });
   }
 }
