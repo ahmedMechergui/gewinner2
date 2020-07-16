@@ -1,6 +1,9 @@
-import {Component, OnInit, Renderer2, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {HostURLService} from '../shared/services/host-url.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-join-us',
@@ -9,8 +12,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class JoinUsComponent implements OnInit {
   form: FormGroup;
+  url = this.urlService.url;
+  isLoading = false;
 
-  constructor(private scriptLoader: ScriptsLoaderService, private renderer2: Renderer2) {
+  constructor(private scriptLoader: ScriptsLoaderService,
+              private renderer2: Renderer2,
+              private http: HttpClient,
+              private urlService: HostURLService,
+              private toast: ToastrService
+  ) {
   }
 
   ngOnInit() {
@@ -37,8 +47,36 @@ export class JoinUsComponent implements OnInit {
   }
 
 
-  onSubmit() {
-    alert('User interface not interacting with a back-end yet.');
+  sendRequest() {
+// to send files we need to turn the form to formData
+    const formData = new FormData();
+    formData.append('cv', this.form.get('cv').value);
+    formData.append('name', this.form.get('name').value);
+    formData.append('email', this.form.get('email').value);
+    formData.append('applyType', this.form.get('applyType').value);
+    formData.append('motivation', this.form.get('motivation').value);
+
+    this.isLoading = true;
+    const toastParams = {
+      positionClass: 'toast-bottom-right',
+      disableTimeOut: false
+    };
+    this.http.post(this.url + '/join-us', formData).subscribe(() => {
+      this.isLoading = false;
+      this.toast.success('We will respond soon', 'Thanks for applying', toastParams);
+    }, () => {
+      this.isLoading = false;
+      this.toast.error('Please try again later', 'ERROR :', toastParams);
+    });
   }
 
+  // this function to update the "cv" form field whenever a file is selected
+  onFileChange(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.form.patchValue({
+        cv: file
+      });
+    }
+  }
 }

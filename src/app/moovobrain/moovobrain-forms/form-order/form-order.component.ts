@@ -146,6 +146,7 @@ export class FormOrderComponent implements OnInit {
   }
 
   priceUpdate(event: Event, price: number) {
+    // @ts-ignore
     const checked = event.target.checked;
     this.purchasePrice += checked ? price : -price;
   }

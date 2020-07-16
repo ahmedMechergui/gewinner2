@@ -1,6 +1,6 @@
 export interface AuthResponse {
   client: {
-    _id: string,
+    id: string,
     name: string,
     clientID: string,
     email: string,

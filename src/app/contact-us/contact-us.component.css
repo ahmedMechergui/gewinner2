@@ -107,6 +107,15 @@
   transition: 0.4s;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
+input.ng-invalid.ng-touched , textarea.ng-invalid.ng-touched{
+  border:1px solid #FF9494;
+  outline-color: #FF9494 !important;
+}
+
 .contact .php-email-form button[type="submit"]:hover {
   background: #8dbad2;
 }

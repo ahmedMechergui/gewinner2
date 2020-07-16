@@ -8,7 +8,7 @@
 }
 
 .margin-bottom {
-  margin: 0 0 60px;
+  margin: 0 0 30px;
 }
 
 figure img:hover{
@@ -17,7 +17,7 @@ figure img:hover{
 
 
 figure img{
-  transition: 0.2s;
+  transition: 0.3s;
   text-align: center;
 }
 
@@ -44,6 +44,14 @@ figure {
     height: unset;
     overflow: unset;
   }
+}
+
+a {
+  cursor: pointer;
+}
+
+li:disabled , li:disabled a , .disabled{
+  cursor: not-allowed !important;
 }
 
 

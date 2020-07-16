@@ -37,7 +37,7 @@ export class AuthService {
 
   createClient(response: AuthResponse) {
     const client = new Client(
-      response.client._id,
+      response.client.id,
       response.client.clientID,
       response.client.email,
       response.client.phone,
@@ -47,7 +47,15 @@ export class AuthService {
       new Date(response.client.createdAt),
       new Date(response.client.updatedAt)
     );
-    console.log(client);
+    this.clientSubject.next(client);
+    this.storeClient(client);
+  }
+
+  updateClient(updatedClient) {
+    const client = this.clientSubject.getValue();
+    client.name = updatedClient.name;
+    client.email = updatedClient.email;
+    client.phone = updatedClient.phone;
     this.clientSubject.next(client);
     this.storeClient(client);
   }

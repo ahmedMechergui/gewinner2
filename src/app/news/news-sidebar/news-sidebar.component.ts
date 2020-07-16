@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NewsStorageService} from '../../shared/services/news-storage.service';
 
 @Component({
   selector: 'app-news-sidebar',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news-sidebar.component.css']
 })
 export class NewsSidebarComponent implements OnInit {
+  events = [];
 
-  constructor() { }
+  constructor(private newsStorageService: NewsStorageService) {
+  }
 
   ngOnInit() {
+    this.fetchComingEvents();
+  }
+
+  fetchComingEvents() {
+    this.newsStorageService.getComingEvents().subscribe((events: Array<any>) => {
+      this.events = events;
+    });
   }
 
 }

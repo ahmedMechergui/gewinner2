@@ -18,26 +18,17 @@
   </div>
 
 
-  <div style="margin-top: 15px;">
+  <div style="margin-top: 15px;" *ngIf="events.length>0">
     <h3 class="quotes-title">Coming events <i class="icofont-megaphone-alt"></i></h3>
-    <div class="future-events-item">
-      <div class="media-body">
-        <a>
-          <h3 class="future-event-title">Blockchain : La technologie de Bitcoin</h3>
-        </a>
-        <a class="future-event-date">
-          Sunday, December 22, 2020, 7:13 PM
-        </a>
-      </div>
-    </div>
 
-    <div class="future-events-item">
+    <div class="future-events-item" *ngFor="let event of events">
       <div class="media-body">
         <a>
-          <h3 class="future-event-title">Volunteering Experience</h3>
+          <h3 class="future-event-title">{{event.title}}</h3>
         </a>
         <a class="future-event-date">
-          Sunday, October 18, 2020, 5:00 PM
+<!--          Sunday, December 22, 2020, 7:13 PM-->
+          {{event.date | date:'fullDate'}}
         </a>
       </div>
     </div>

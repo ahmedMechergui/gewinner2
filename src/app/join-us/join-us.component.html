@@ -13,7 +13,7 @@
       <div class="row">
 
         <div class="col-lg-12">
-          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="join-us-form" method="post">
+          <form [formGroup]="form" (ngSubmit)="sendRequest()" class="join-us-form">
             <div class="form-row">
 
               <div class="col-md-6 form-group">
@@ -42,9 +42,9 @@
 
                 <div class="form-group">
                   <div class="custom-file">
-                    <input accept="application/pdf" class="custom-file-input" formControlName="cv"
+                    <input accept="application/pdf" class="custom-file-input"
                            id="validatedCustomFile"
-                           required type="file">
+                           required type="file" (change)="onFileChange($event)">
                     <label class="custom-file-label" for="validatedCustomFile">Upload your CV</label>
                   </div>
 
@@ -77,7 +77,9 @@
             </div>
 
             <div class="text-center">
-              <button [disabled]="form.invalid" type="submit">Apply Now</button>
+              <button [disabled]="form.invalid || isLoading" type="submit">
+               <app-loader *ngIf="isLoading" addSpace="true"></app-loader> Apply Now
+              </button>
             </div>
 
           </form>
@@ -89,3 +91,5 @@
   </section>
 
 </main>
+
+
