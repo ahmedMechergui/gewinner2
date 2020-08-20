@@ -1,9 +1,14 @@
-<main id="main">
+<main>
 
 
   <!-- ======= Team Section ======= -->
-  <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+  <section style="padding: 0" class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
     <div class="container">
+
+      <div class="section-title">
+        <h2>Our Team</h2>
+<!--        <p>There is only ONE WAY to LOOK at things until SOMEONE shows us HOW to look at them with DIFFERENT EYES.</p>-->
+      </div>
 
       <div class="row">
 
@@ -13,7 +18,7 @@
           </p>
 
 
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" *ngFor="let teamMember of teamMembers">
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" *ngFor="let teamMember of teamMembers">
           <div class="member">
             <div class="member-img">
               <img src="{{url+teamMember.imageURL}}" class="img-fluid" alt="">

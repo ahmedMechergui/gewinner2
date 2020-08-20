@@ -8,6 +8,7 @@ import {ServicesRequestService} from '../services-request.service';
 })
 export class ScheduledControlsComponent implements OnInit {
   scheduledControls: Date[] = this.requestServices.scheduledControls;
+  isValidated = this.requestServices.isScheduledControlsValidated;
 
   constructor(private requestServices: ServicesRequestService) {
   }

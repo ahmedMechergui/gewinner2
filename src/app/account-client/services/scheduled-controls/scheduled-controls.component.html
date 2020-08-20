@@ -21,8 +21,8 @@
           </p>
 
           <p class="text-secondary text-center" *ngIf="scheduledControls.length < 1">No future quality control scheduled</p>
-          <ul class="text-secondary">
-            <li *ngFor="let date of scheduledControls">{{date | date:'fullDate'}}</li>
+          <ul class="text-secondary" [class.text-muted]="!isValidated">
+            <li [title]="isValidated ? '' : 'request not validated yet'" *ngFor="let date of scheduledControls">{{date | date:'fullDate'}}</li>
           </ul>
 
         </section>

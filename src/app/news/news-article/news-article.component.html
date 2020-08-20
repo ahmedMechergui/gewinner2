@@ -11,19 +11,31 @@
 
     <div class="socials-lg">
       <div class="facebook-share social">
-        <a (click)="onShare()">
+        <a mat-fab shareButton="facebook"
+           #fbBtn="shareButton"
+           image="{{article.imageURL}}"
+           title="{{article.title}}"
+           description="{{article.description}}">
           <i class="bx bxl-facebook"></i>
         </a>
       </div>
 
       <div class="linkedin-share social">
-        <a (click)="onShare()">
+        <a mat-fab shareButton="linkedin"
+           #fbBtn="shareButton"
+           image="{{article.imageURL}}"
+           title="{{article.title}}"
+           description="{{article.description}}">
           <i class="bx bxl-linkedin"></i>
         </a>
       </div>
 
       <div class="twitter-share social">
-        <a (click)="onShare()">
+        <a mat-fab shareButton="twitter"
+           #fbBtn="shareButton"
+           image="{{article.imageURL}}"
+           title="{{article.title}}"
+           description="{{article.description}}">
           <i class="bx bxl-twitter"></i>
         </a>
       </div>
@@ -33,14 +45,22 @@
     <div class="socials-sm">
       <ul class="clr">
 
-        <li class="share-button" (click)="onShare()">
+        <li class="share-button" mat-fab shareButton="facebook"
+            #fbBtn="shareButton"
+            image="{{article.imageURL}}"
+            title="{{article.title}}"
+            description="{{article.description}}" >
           <a role="button" class="facebook-button">
             <i class="bx bxl-facebook"></i>
             <span class="wpex-label">Share</span>
           </a>
         </li>
 
-        <li class="share-button" (click)="onShare()">
+        <li class="share-button" mat-fab shareButton="twitter"
+            #fbBtn="shareButton"
+            image="{{article.imageURL}}"
+            title="{{article.title}}"
+            description="{{article.description}}">
           <a role="button" class="twitter-button">
             <span aria-hidden="true" class="bx bxl-twitter"></span>
             <span class="wpex-label">Tweet</span>
@@ -48,7 +68,11 @@
         </li>
 
 
-        <li class="share-button" (click)="onShare()">
+        <li class="share-button" mat-fab shareButton="linkedin"
+            #fbBtn="shareButton"
+            image="{{article.imageURL}}"
+            title="{{article.title}}"
+            description="{{article.description}}">
           <a role="button" class="linkedin-button">
             <span aria-hidden="true" class="bx bxl-linkedin"></span>
             <span class="wpex-label">Share</span>
@@ -58,10 +82,13 @@
       </ul>
     </div>
 
+      <div class="article-author">
+        <i class="icofont-quill-pen" style="color: #677294;"></i> {{article.author}}  <span class="article-date-sm"> | <i class="icofont-clock-time"></i> {{article.createdAt | date:'dd MMM'}} </span>
+      </div>
 
-    <div class="article-author">
-      <i class="icofont-quill-pen" style="color: #677294;"></i> {{article.author}}  <span class="article-date-sm"> | <i class="icofont-clock-time"></i> {{article.createdAt | date:'dd MMM'}} </span>
-    </div>
+
+
+
 
     <h5 class="article-title">
       {{article.title}}

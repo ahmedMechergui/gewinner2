@@ -17,7 +17,8 @@ export class AccessorieItemComponent implements OnInit {
   ratings = 423;
   quantity = 1;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(
+              private activatedRoute: ActivatedRoute,
               private accessoriesStorageService: AccessoriesStorageService) {
   }
 

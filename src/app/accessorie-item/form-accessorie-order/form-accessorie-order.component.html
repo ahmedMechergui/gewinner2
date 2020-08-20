@@ -13,7 +13,7 @@
             <div class="card">
               <div class="row">
                 <div class="col-md-12 mx-0">
-                  <form (ngSubmit)="alert()" [formGroup]="form" id="msform">
+                  <form (ngSubmit)="submitOrder()" [formGroup]="form" id="msform">
 
                     <!-- progressbar -->
                     <ul id="progressbar">
@@ -91,7 +91,8 @@
 
                                   <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
-                                      <select formControlName="iCountry" class="form-control countries order-alpha presel-byip " id="countryId">
+                                      <select formControlName="iCountry"
+                                              class="form-control countries order-alpha presel-byip " id="iCountryId">
                                         <option value="">Select Country</option>
                                       </select>
 
@@ -109,12 +110,12 @@
 
                                   <div class="col-sm-6 col-md-3">
                                     <div class="form-group">
-                                      <select formControlName="iState" class="form-control states order-alpha" id="stateId">
+                                      <select formControlName="iState" class="form-control states order-alpha"
+                                              id="stateId">
                                         <option value="">Select State</option>
                                       </select>
                                     </div>
                                   </div>
-
 
 
                                   <div class="col-md-4 col-sm-8">
@@ -263,33 +264,34 @@
                                   </div>
 
 
-
                                 </div>
 
                                 <div class="form-row">
 
                                   <div class="col-sm-6 col-md-3">
-                                      <div class="form-group">
-                                        <select formControlName="oCountry" class="form-control countries order-alpha presel-byip " id="countryId">
-                                          <option value="">Select Country</option>
-                                        </select>
+                                    <div class="form-group">
+                                      <select formControlName="oCountry"
+                                              class="form-control countries order-alpha presel-byip " id="countryId">
+                                        <option value="">Select Country</option>
+                                      </select>
 
-                                        <small
-                                          *ngIf="(form.get('oCountry').invalid && form.get('oCountry').touched) || (form.get('oState').invalid && form.get('oState').touched)"
-                                          class="form-text text-danger">
-                                          <i class="icofont-warning-alt"></i>
-                                          Country and state needed
-                                        </small>
-                                      </div>
+                                      <small
+                                        *ngIf="(form.get('oCountry').invalid && form.get('oCountry').touched) || (form.get('oState').invalid && form.get('oState').touched)"
+                                        class="form-text text-danger">
+                                        <i class="icofont-warning-alt"></i>
+                                        Country and state needed
+                                      </small>
+                                    </div>
                                   </div>
 
 
                                   <div class="col-sm-6 col-md-3">
-                                      <div class="form-group">
-                                        <select formControlName="oState" class="form-control states order-alpha" id="stateId">
-                                          <option value="">Select State</option>
-                                        </select>
-                                      </div>
+                                    <div class="form-group">
+                                      <select formControlName="oState" class="form-control states order-alpha"
+                                              id="oStateId">
+                                        <option value="">Select State</option>
+                                      </select>
+                                    </div>
                                   </div>
 
 
@@ -312,7 +314,6 @@
                                              id="oZipCode" placeholder="ZIP code" type="number"/>
                                     </div>
                                   </div>
-
 
 
                                 </div>
@@ -355,13 +356,9 @@
                         </div>
 
                         <div class="d-flex mb-1">
-                          <div>Taxes</div>
-                          <div class="ml-auto">000 &nbsp; TND</div>
-                        </div>
-
-                        <div class="d-flex mb-1">
-                          <div>Shipping (8-12 weeks)</div>
-                          <div class="ml-auto">000 &nbsp; TND</div>
+                          <div>Quantity</div>
+                <!--the added span is to show a space equals the to other lines-->
+                          <div class="ml-auto">{{quantity[0]}} <span style="visibility: hidden"> &nbsp; 00TND</span></div>
                         </div>
 
                         <div class="d-flex mb-1">
@@ -374,7 +371,12 @@
 
                       <input class="previous btn action-button-previous" name="previous" type="button"
                              value="Previous"/>
-                      <button class="confirm btn action-button" type="submit">Confirm Order</button>
+                      <button class="confirm btn action-button" type="submit"
+                              [disabled]="orderSubmitted"
+                              [title]="orderSubmitted ? 'this order is already submitted' : ''">
+                        <app-loader *ngIf="isLoading"></app-loader>
+                        Confirm Order
+                      </button>
                     </fieldset> <!-- Confirmation -->
                   </form>
                 </div>

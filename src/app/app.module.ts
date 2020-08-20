@@ -9,7 +9,7 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
-import {TeamComponent} from './team/team.component';
+import {TeamComponent} from './about-us/team/team.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AccessoriesComponent} from './home/accessories/accessories.component';
 import {NewsComponent} from './news/news.component';
@@ -43,11 +43,12 @@ import {AccessorieItemComponent} from './accessorie-item/accessorie-item.compone
 import {FormAccessorieOrderComponent} from './accessorie-item/form-accessorie-order/form-accessorie-order.component';
 import {GallerieComponent} from './accessorie-item/gallerie/gallerie.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { LoaderComponent } from './shared/loader/loader.component';
+import {LoaderComponent} from './shared/loader/loader.component';
 import {AuthInterceptor} from './shared/authentication/auth.interceptor';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { ShareModule } from 'ngx-sharebuttons';
+import {Platform} from '@angular/cdk/platform';
 
 @NgModule({
   declarations: [
@@ -99,9 +100,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    ShareModule
   ],
-  providers: [{provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi : true}],
+  providers: [Platform, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

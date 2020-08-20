@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
-import {TeamComponent} from './team/team.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NewsComponent} from './news/news.component';
 import {NewsBlogComponent} from './news/news-blog/news-blog.component';
@@ -18,6 +17,7 @@ import {GeneralComponent} from './account-client/general/general.component';
 import {ServicesComponent} from './account-client/services/services.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
 import {AuthGuard} from './shared/authentication/auth-guard.service';
+import {LoginGuard} from './shared/authentication/login.guard';
 
 
 const routes: Routes = [
@@ -26,9 +26,8 @@ const routes: Routes = [
   {path: 'moovobrain', component: MoovobrainComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
-  {path: 'team', component: TeamComponent},
-  {path: 'account', component: GeneralComponent , canActivate: [AuthGuard]},
-  {path: 'services', component: ServicesComponent , canActivate: [AuthGuard]},
+  {path: 'account', component: GeneralComponent, canActivate: [AuthGuard]},
+  {path: 'services', component: ServicesComponent, canActivate: [AuthGuard]},
   {path: 'accessorie/:id', component: AccessorieItemComponent},
   {
     path: 'news', component: NewsComponent, children: [
@@ -38,7 +37,7 @@ const routes: Routes = [
   },
   {path: 'join-us', component: JoinUsComponent},
   {
-    path: 'sign-in', component: SignInComponent, children: [
+    path: 'sign-in', component: SignInComponent, canActivate: [LoginGuard], children: [
       {path: '', component: LoginComponent, pathMatch: 'full'},
       {path: 'register', component: RegisterComponent},
       {path: 'password-forgotten', component: PasswordForgottenComponent}

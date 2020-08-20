@@ -23,6 +23,6 @@ export class PasswordForgottenComponent implements OnInit {
   }
 
   onSubmit() {
-    window.alert('Login system will be implemented later with nodejs.');
+    window.alert('Email services do not work on local servers');
   }
 }

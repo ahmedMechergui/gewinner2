@@ -10,5 +10,4 @@ export interface AuthResponse {
     updatedAt: Date
   };
   token: string;
-
 }

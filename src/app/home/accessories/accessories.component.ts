@@ -40,7 +40,7 @@ export class AccessoriesComponent implements OnInit, OnDestroy {
     this.subscription = this.accessoriesStorageService.fetchAccessories().subscribe((accessoriesArray: Array<any>) => {
 
       accessoriesArray.forEach(x => {
-        const accessorie = new Accessorie(x._id,
+        const accessorie = new Accessorie(x.id,
           x.name,
           x.description,
           x.isAvailable,

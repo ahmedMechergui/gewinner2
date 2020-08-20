@@ -8,6 +8,7 @@ import {HostURLService} from '../../shared/services/host-url.service';
 export class ServicesRequestService {
   url = this.urlService.url;
   scheduledControls: Date[] = [];
+  isScheduledControlsValidated = false;
 
   constructor(private http: HttpClient, private  urlService: HostURLService) {
   }
@@ -46,11 +47,15 @@ export class ServicesRequestService {
       this.scheduledControls.pop();
     }
 
-    this.getScheduledControls().subscribe((response: Array<any>) => {
+    this.getScheduledControls().subscribe((response: any) => {
+      const schedules: Array<any> = response.schedules;
+      this.isScheduledControlsValidated = response.isValidated;
+      console.log(this.isScheduledControlsValidated);
       if (response.length === 0) {
         return;
       }
-      response.forEach(i => {
+      console.log(schedules);
+      schedules.forEach(i => {
         this.scheduledControls.push(i.schedule);
       });
     });

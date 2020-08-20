@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {TeamMember} from '../shared/models/teamMember.model';
-import {TeamMembersStorageService} from '../shared/services/team-members-storage.service';
-import {HostURLService} from '../shared/services/host-url.service';
+import {TeamMember} from '../../shared/models/teamMember.model';
+import {TeamMembersStorageService} from '../../shared/services/team-members-storage.service';
+import {HostURLService} from '../../shared/services/host-url.service';
 
 @Component({
   selector: 'app-team',
