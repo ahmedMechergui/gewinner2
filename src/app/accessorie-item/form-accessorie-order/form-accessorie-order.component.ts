@@ -21,6 +21,7 @@ export class FormAccessorieOrderComponent implements OnInit {
 
   @Input() price: number;
   @Input() accessorieName: string;
+  @Input() accessorieID: string;
   isLoading = false;
 
   constructor(private scriptsLoader: ScriptsLoaderService,
@@ -34,6 +35,7 @@ export class FormAccessorieOrderComponent implements OnInit {
     this.loadScriptForm();
     this.formInit();
     // this.price = 198;
+    console.log('accessorieID : ', this.accessorieID);
   }
 
 
@@ -59,7 +61,6 @@ export class FormAccessorieOrderComponent implements OnInit {
       oState: new FormControl('', [Validators.required]),
       oRegistrationNumber: new FormControl(null, [Validators.required]),
       oResponsibleName: new FormControl(null, [Validators.required]),
-      oHandicap: new FormControl(null, [Validators.required]),
       oAddress: new FormControl(null, [Validators.required]),
       oZipCode: new FormControl(null, [Validators.required]),
       oPhone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
@@ -96,7 +97,7 @@ export class FormAccessorieOrderComponent implements OnInit {
       closeButton: true
     };
     this.isLoading = true;
-    this.httpRequests.orderAccessorie(this.form, this.quantity[0], this.price, this.accessorieName).subscribe(() => {
+    this.httpRequests.orderAccessorie(this.form, this.quantity[0], this.price, this.accessorieName, this.accessorieID).subscribe(() => {
       this.toaster.success('You will be getting a confirmation email soon', 'Order submitted', toasterParams);
       this.orderSubmitted = true;
       this.isLoading = false;

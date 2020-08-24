@@ -35,7 +35,7 @@ export class AccessorieItemComponent implements OnInit {
   fetchAccessorieData(): void {
     this.accessoriesStorageService.getOneAccessorie(this.getAccessoriesID()).subscribe((accessorie: any) => {
       this.accessorie = new Accessorie(
-        accessorie._id,
+        accessorie.id,
         accessorie.name,
         accessorie.description,
         accessorie.isAvailable,
@@ -45,6 +45,7 @@ export class AccessorieItemComponent implements OnInit {
         accessorie.updatedAt
       );
       this.showGallerie = true;
+      console.log(this.accessorie);
     });
   }
 

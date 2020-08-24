@@ -20,10 +20,17 @@ export class AccessoriesStorageService {
     return this.http.get(this.url + '/accessories/' + id);
   }
 
-  orderAccessorie(orderForm: FormGroup, quantity: number, unitPrice: number, accessorieName: string) {
+  orderAccessorie(orderForm: FormGroup, quantity: number, unitPrice: number, accessorieName: string, accessorieID: string) {
     const totalPrice = unitPrice * quantity;
     this.cleanObject(orderForm.value);
-    return this.http.post(this.url + '/accessories-order', {...orderForm.value, quantity, unitPrice, totalPrice, accessorieName});
+    return this.http.post(this.url + '/accessories-order', {
+      ...orderForm.value,
+      quantity,
+      unitPrice,
+      totalPrice,
+      accessorieName,
+      accessorieID
+    });
   }
 
   /*
