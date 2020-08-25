@@ -1,10 +1,15 @@
-<div *ngIf="articles.length===0">
+<!--<div *ngIf="articles.length===0">-->
+<div *ngIf="isError">
   <h4 class="text-dark">Error 404: </h4>
   <p class="text-dark">it seems that there is no older news to show</p>
 </div>
 
-<div class="row">
 
+<div style="text-align: center" class="align-content-center">
+  <app-loader radius="50"  borderWidth="0.4" *ngIf="articles.length === 0 && !isError"></app-loader>
+</div>
+
+<div class="row">
 
   <div class="col-sm-6 margin-bottom" *ngFor="let article of articles">
     <div class="news-item">

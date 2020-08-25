@@ -68,9 +68,4 @@ export class AccessorieItemComponent implements OnInit {
     this.quantity > 1 ? this.quantity-- : this.quantity = 1;
   }
 
-  // broadcastQuantity() {
-  //   this.eventQuantityChanged.emit(this.quantity);
-  // }
-
-
 }

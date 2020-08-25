@@ -12,6 +12,7 @@ export class NewsBlogComponent implements OnInit {
   articles: Article[] = [];
   url = this.urlService.url;
   currentPage = this.newsStorageService.currentPage;
+  isError = false;
 
   constructor(private newsStorageService: NewsStorageService, private urlService: HostURLService) {
   }
@@ -21,10 +22,22 @@ export class NewsBlogComponent implements OnInit {
   }
 
   loadArticlesByPage(page: number): void {
+    this.isError = false;
     this.articles = [];
     this.newsStorageService.getManyArticles(page).subscribe(articles => {
       this.articles = articles;
       this.currentPage = page;
+    }, () => {
+      this.isError = true;
+    });
+    this.gotoTop();
+  }
+
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
     });
   }
 
