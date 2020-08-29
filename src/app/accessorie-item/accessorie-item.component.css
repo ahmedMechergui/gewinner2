@@ -1,3 +1,10 @@
+/*
+pre-wrap is to preserve the line breaks coming from server in
+paragraphs because these line breaks are originally taken from a textArea
+ */
+p {
+  white-space: pre-wrap;
+}
 
 main {
   font-size: 14px;
@@ -25,7 +32,7 @@ p {
   color: #fff !important;
 }
 
-.btn-padding{
+.btn-padding {
   padding: 10px 28px !important;
   font-size: 14px;
 }
@@ -254,7 +261,7 @@ h5, .h5 {
   font-weight: 500;
 }
 
-.bootstrap-touchspin-up{
+.bootstrap-touchspin-up {
   padding: 0;
   min-width: 22px;
   min-height: 22px;

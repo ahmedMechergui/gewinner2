@@ -18,8 +18,8 @@ export class AccessorieItemComponent implements OnInit {
   quantity = 1;
 
   constructor(
-              private activatedRoute: ActivatedRoute,
-              private accessoriesStorageService: AccessoriesStorageService) {
+    private activatedRoute: ActivatedRoute,
+    private accessoriesStorageService: AccessoriesStorageService) {
   }
 
   ngOnInit() {

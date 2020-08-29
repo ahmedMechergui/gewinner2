@@ -135,15 +135,6 @@ export class FormOrderComponent implements OnInit {
     this.clientNature = clientNature;
   }
 
-  // countrySelected(control: FormControl): { [s: string]: boolean } {
-  //   return control.value.length > 0 ? null : {s: true};
-  // }
-
-  alert() {
-    // this.form does not show disabled controls so we use this.form.getRawValue();
-    console.log(this.form.getRawValue());
-    alert('function not implemented yet , waiting for nodejs integration');
-  }
 
   priceUpdate(event: Event, price: number) {
     // @ts-ignore
@@ -162,11 +153,10 @@ export class FormOrderComponent implements OnInit {
   orderMoovobrain() {
     this.isLoading = true;
     const toastParams = {disableTimeOut: true, closeButton: true, positionClass: 'toast-bottom-right'};
-    this.moovobrainRequestsService.orderMoovobrain(this.form.value).subscribe(response => {
+    this.moovobrainRequestsService.orderMoovobrain(this.form.getRawValue()).subscribe(response => {
       this.isLoading = false;
       this.toast.success('We will inform you once your order is validated', 'Order submitted', toastParams);
-    }, error => {
-      console.log(error);
+    }, () => {
       this.isLoading = false;
       this.toast.error('verify your information or try again later', 'ERROR :', toastParams);
     });
