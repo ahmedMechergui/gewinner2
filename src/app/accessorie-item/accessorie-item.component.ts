@@ -45,7 +45,6 @@ export class AccessorieItemComponent implements OnInit {
         accessorie.updatedAt
       );
       this.showGallerie = true;
-      console.log(this.accessorie);
     });
   }
 
