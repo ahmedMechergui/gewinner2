@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Accessorie} from '../shared/models/accessorie.model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AccessoriesStorageService} from '../shared/services/accessories-storage.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class AccessorieItemComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private accessoriesStorageService: AccessoriesStorageService) {
+    private accessoriesStorageService: AccessoriesStorageService,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -45,6 +46,8 @@ export class AccessorieItemComponent implements OnInit {
         accessorie.updatedAt
       );
       this.showGallerie = true;
+    }, () => {
+      this.router.navigate(['/not-found']).then();
     });
   }
 

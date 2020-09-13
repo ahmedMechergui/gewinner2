@@ -4,9 +4,14 @@
 a {
   cursor: pointer;
 }
-#article{
+
+#article {
   padding-top: -30px !important;
   padding-bottom: 60px;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
 }
 
 /*--------------------------------------------------------------
@@ -29,7 +34,7 @@ a {
   font: 300 15px/28px "Poppins", sans-serif;
   letter-spacing: 0px;
   color: #677294;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   background-color: white;
   position: relative;
@@ -60,10 +65,12 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-.social i{
+
+.social i {
   transition: 0.5s;
 }
-.social:hover i{
+
+.social:hover i {
   color: white;
   font-size: 35px;
 }
@@ -73,36 +80,43 @@ a {
   right: 250px;
 
 }
-.twitter-share i{
+
+.twitter-share i {
   color: #00acee;
 }
-.twitter-share:hover{
+
+.twitter-share:hover {
   background-color: #00acee;
 }
 
 .linkedin-share {
   right: 150px;
 }
-.linkedin-share i{
+
+.linkedin-share i {
   color: #0e76a8;
 }
-.linkedin-share:hover{
+
+.linkedin-share:hover {
   background-color: #0e76a8;
 }
 
 .facebook-share {
   right: 50px;
 }
-.facebook-share i{
-  color:#3b5998;
+
+.facebook-share i {
+  color: #3b5998;
 }
-.facebook-share:hover{
+
+.facebook-share:hover {
   background-color: #3b5998;
 }
 
 .socials-sm {
   display: none;
 }
+
 .article-date {
   visibility: hidden;
 }
@@ -115,9 +129,11 @@ a {
   .article-date {
     visibility: visible;
   }
-  .article-date-sm{
+
+  .article-date-sm {
     display: none;
   }
+
   .socials-sm {
     display: block;
   }
@@ -153,32 +169,35 @@ a {
   margin: 0 3px 3px 0;
 }
 
-.share-button a{
+.share-button a {
   cursor: pointer;
   text-align: center;
   padding: .385em .769em;
-  color: #fff!important;
+  color: #fff !important;
   border-radius: 3px;
 }
 
 .facebook-button {
   background: #3b5998;
 }
-.facebook-button:hover{
+
+.facebook-button:hover {
   background: #324b80;
 }
 
-.linkedin-button{
+.linkedin-button {
   background: #4875b4;
 }
-.linkedin-button:hover{
+
+.linkedin-button:hover {
   background: #3e659c;
 }
 
-.twitter-button{
+.twitter-button {
   background: #00aced;
 }
-.twitter-button:hover{
+
+.twitter-button:hover {
   background: #0093cb;;
 }
 
@@ -201,17 +220,17 @@ a {
 /*--------------------------------------------------------------
 # Aricle date : Responsive++
 --------------------------------------------------------------*/
-.article-date h2{
+.article-date h2 {
   text-align: center;
   box-sizing: border-box;
   margin-top: 0;
   font: 800 30px/20px "Poppins", sans-serif;
-  margin-bottom:0;
+  margin-bottom: 0;
   color: #2c2c51;
   padding-top: 5px;
 }
 
-.article-date h2 span{
+.article-date h2 span {
   font-weight: 300;
   font-size: 14px;
   display: block;
@@ -224,7 +243,7 @@ a {
 --------------------------------------------------------------*/
 .article-author {
   font: 400 15px/25px "Poppins", sans-serif;
-  color: #677294 ;
+  color: #677294;
   padding-bottom: 5px;
 }
 
@@ -244,7 +263,7 @@ a {
   text-align: left;
   font: 300 15px/28px "Poppins", sans-serif;
   letter-spacing: 0px;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   font-size: 1.25rem;
   margin: 0 0 40px;
@@ -259,7 +278,7 @@ a {
   letter-spacing: 0px;
   font-style: italic;
   margin-top: 0;
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
   font-size: 18px;
   line-height: 30px;
   font-family: "Poppins", sans-serif;
@@ -271,7 +290,7 @@ a {
   font: 300 15px/28px "Poppins", sans-serif;
   letter-spacing: 0px;
   color: #677294;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   display: block;
   font-size: 20px;
@@ -292,34 +311,6 @@ a {
   font-weight: 400;
   font-size: 15px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*a {*/
@@ -449,7 +440,6 @@ a {
 /*!*  display: block;*!*/
 /*!*  padding-top: 5px;*!*/
 /*!*}*!*/
-
 
 
 /*.article-author {*/
