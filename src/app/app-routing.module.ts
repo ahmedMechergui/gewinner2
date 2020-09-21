@@ -18,6 +18,7 @@ import {ServicesComponent} from './account-client/services/services.component';
 import {AccessorieItemComponent} from './accessorie-item/accessorie-item.component';
 import {AuthGuard} from './shared/authentication/auth-guard.service';
 import {LoginGuard} from './shared/authentication/login.guard';
+import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
       {path: 'password-forgotten', component: PasswordForgottenComponent}
     ]
   },
+  {path: 'reset/:id', component: ResetPasswordComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

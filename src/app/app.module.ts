@@ -49,6 +49,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ShareModule } from 'ngx-sharebuttons';
 import {Platform} from '@angular/cdk/platform';
+import { ResetPasswordComponent } from './sign-in/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import {Platform} from '@angular/cdk/platform';
     AccessorieItemComponent,
     FormAccessorieOrderComponent,
     GallerieComponent,
-    LoaderComponent
+    LoaderComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

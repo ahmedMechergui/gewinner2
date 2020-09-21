@@ -30,12 +30,12 @@
 
           <small *ngIf="form.get('clientID').invalid && form.get('clientID').touched" class="form-text text-danger">
             <i class="icofont-warning-alt"></i>
-            Please enter your client ID
+            Please enter your wheelchair ID
           </small>
         </div> <!-- Client ID -->
 
         <div class="col-sm-6 form-group">
-          <input autocomplete="off" class="form-control" formControlName="email" id="email" name="email"
+          <input class="form-control" formControlName="email" id="email" name="email"
                  placeholder="Your E-mail"
                  type="email"/>
 
