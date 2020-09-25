@@ -2,3 +2,8 @@
 .toast-container .ngx-toastr {
   width: 350px !important;
 }
+
+.toast-container , .ngx-toastr{
+  z-index: 10000000000 !important;
+}
+

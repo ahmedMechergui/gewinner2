@@ -52,7 +52,13 @@
               <small *ngIf="form.get('country').invalid && form.get('country').touched"
                      class="form-text text-danger">
                 <i class="icofont-warning-alt"></i>
-                Please specify your country
+                <span *ngIf="form.get('country').value.length===0">
+                  Please specify your country
+                </span>
+
+                <span *ngIf="form.get('country').value.length>0 && form.get('country').value.toUpperCase() !== 'TUNISIA'">
+                  Testing not available in your country
+                </span>
               </small>
             </div>
           </div>

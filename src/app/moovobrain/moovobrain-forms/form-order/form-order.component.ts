@@ -152,10 +152,17 @@ export class FormOrderComponent implements OnInit {
 
   orderMoovobrain() {
     this.isLoading = true;
-    const toastParams = {disableTimeOut: true, closeButton: true, positionClass: 'toast-bottom-right'};
+    const toastParams = {
+      disableTimeOut: true,
+      closeButton: true,
+      positionClass: 'toast-bottom-right',
+      enableHtml: true
+    };
     this.moovobrainRequestsService.orderMoovobrain(this.form.getRawValue()).subscribe(response => {
       this.isLoading = false;
-      this.toast.success('We will inform you once your order is validated', 'Order submitted', toastParams);
+      this.toast.success(
+        'Check your email for bank transfer instructions.<br>PS: you might find our email in the <strong>spam</strong> folder',
+        'Order submitted', toastParams);
     }, () => {
       this.isLoading = false;
       this.toast.error('verify your information or try again later', 'ERROR :', toastParams);

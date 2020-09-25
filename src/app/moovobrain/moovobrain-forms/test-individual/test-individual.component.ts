@@ -26,7 +26,7 @@ export class TestIndividualComponent implements OnInit {
       name: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       birthday: new FormControl(null, [Validators.required]),
-      country: new FormControl('', [this.countrySelected.bind(this)]),
+      country: new FormControl('', [this.countrySelected.bind(this), this.countryIsTunisia.bind(this)]),
       phone: new FormControl(null, [Validators.required, Validators.min(0), Validators.minLength(8)]),
       handicap: new FormControl(null, [Validators.required])
     });
@@ -36,8 +36,8 @@ export class TestIndividualComponent implements OnInit {
     return control.value.length > 0 ? null : {s: true};
   }
 
-  alert() {
-    alert('function not implemented yet , waiting for nodejs integration');
+  countryIsTunisia(control: FormControl): { [s: string]: boolean } {
+    return control.value.toUpperCase() === 'TUNISIA' ? null : {isTunisia: true};
   }
 
   submitTest() {
