@@ -25,7 +25,7 @@ import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-paymen
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'moovobrain-payment', component: MoovobrainPaymentComponent},
+  {path: 'moovobrain-payment/:id', component: MoovobrainPaymentComponent},
   {path: 'moovobrain', component: MoovobrainComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
