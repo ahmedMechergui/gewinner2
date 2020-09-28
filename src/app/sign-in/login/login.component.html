@@ -23,7 +23,8 @@
                  placeholder="Your E-mail"
                  type="email"
                  tabindex="1"
-                  [class.red-border]="isError" />
+                  [class.red-border]="isError"
+          />
 
           <small *ngIf="form.get('email').invalid && form.get('email').touched" class="form-text text-danger">
             <i class="icofont-warning-alt"></i>

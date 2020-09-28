@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
@@ -14,6 +14,7 @@ export class JoinUsComponent implements OnInit {
   form: FormGroup;
   url = this.urlService.url;
   isLoading = false;
+  @ViewChild('cvInputElement', {static: true}) cvInputElement: HTMLLabelElement;
 
   constructor(private scriptLoader: ScriptsLoaderService,
               private renderer2: Renderer2,
@@ -77,6 +78,7 @@ export class JoinUsComponent implements OnInit {
       this.form.patchValue({
         cv: file
       });
+      // this.cvInputElement.innerHTML = file.name;
     }
   }
 }

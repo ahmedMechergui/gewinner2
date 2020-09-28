@@ -6,6 +6,7 @@ import {DOCUMENT} from '@angular/common';
 })
 export class ScriptsLoaderService {
 
+
   // tslint:disable-next-line:variable-name
   constructor(@Inject(DOCUMENT) private _document) {
   }
@@ -37,4 +38,31 @@ export class ScriptsLoaderService {
     s.text = script;
     renderer2.appendChild(this._document.body, s);
   }
+
+
+  // Paths should from /assets folder
+  // example : /assets/js/myScript.js
+  addOneScriptAsync(path): Promise<any> {
+    return new Promise((resolve, reject) => {
+      const scriptElement = window.document.createElement('script');
+      scriptElement.src = path;
+
+      scriptElement.onload = () => {
+        resolve();
+      };
+      scriptElement.onerror = () => {
+        reject();
+      };
+      window.document.body.appendChild(scriptElement);
+    });
+  }
+
+  // Paths should from /assets folder
+  // example : /assets/js/myScript.js
+  addManyScriptsAsync = async (...paths): Promise<void> => {
+    for (const path of paths) {
+      await this.addOneScriptAsync(path);
+    }
+  }
+
 }

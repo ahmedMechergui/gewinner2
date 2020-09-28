@@ -19,11 +19,13 @@ import {AccessorieItemComponent} from './accessorie-item/accessorie-item.compone
 import {AuthGuard} from './shared/authentication/auth-guard.service';
 import {LoginGuard} from './shared/authentication/login.guard';
 import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.component';
+import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-payment.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'moovobrain-payment', component: MoovobrainPaymentComponent},
   {path: 'moovobrain', component: MoovobrainComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},

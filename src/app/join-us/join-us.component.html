@@ -42,10 +42,10 @@
 
                 <div class="form-group">
                   <div class="custom-file">
-                    <input accept="application/pdf" class="custom-file-input"
+                    <input accept="application/pdf" class="custom-file-input cursor-pointer"
                            id="validatedCustomFile"
                            required type="file" (change)="onFileChange($event)">
-                    <label class="custom-file-label" for="validatedCustomFile">Upload your CV</label>
+                    <label class="custom-file-label" for="validatedCustomFile" #cvInputElement>Upload your CV</label>
                   </div>
 
                   <small *ngIf="form.get('cv').invalid && form.get('cv').touched"

@@ -50,6 +50,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ShareModule } from 'ngx-sharebuttons';
 import {Platform} from '@angular/cdk/platform';
 import { ResetPasswordComponent } from './sign-in/reset-password/reset-password.component';
+import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-payment.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { ResetPasswordComponent } from './sign-in/reset-password/reset-password.
     FormAccessorieOrderComponent,
     GallerieComponent,
     LoaderComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    MoovobrainPaymentComponent
   ],
   imports: [
     BrowserModule,

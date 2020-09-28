@@ -27,13 +27,11 @@ export class AccessoriesComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.loadScripts();
-    this.loadAccessories();
     this.loadAccessories();
   }
 
   loadScripts() {
-    this.scriptsLoader.addScripts(this.renderer2, 'slick.min', 'accessories-carousel');
+    this.scriptsLoader.addManyScriptsAsync('assets/js/slick.min.js', 'assets/js/accessories-carousel.js').then();
   }
 
   loadAccessories() {
@@ -50,6 +48,7 @@ export class AccessoriesComponent implements OnInit, OnDestroy {
           x.updatedAt);
         this.accessories.push(accessorie);
       });
+      this.loadScripts();
     });
   }
 

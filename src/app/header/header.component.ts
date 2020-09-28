@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
       positionClass: 'toast-top-left',
       disableTimeOut: true,
       enableHtml: true,
-      closeButton : true
+      closeButton: true
     });
   }
 
