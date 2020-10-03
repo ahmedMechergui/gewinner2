@@ -32,7 +32,7 @@
           <p class="text-secondary mb-custom">After performing the transfer, please attach slip and fill in transfer
             date and time.</p>
 
-          <form (ngSubmit)="isPaid = true">
+          <form (ngSubmit)="sendHttpRequest()">
             <div class="custom-file col-lg-6">
               <input class="custom-file-input cursor-pointer"
                      id="validatedCustomFile"
@@ -44,7 +44,7 @@
             <div class="text-right mt-2 mt-lg-0">
               <button [disabled]="form.invalid" type="submit"
               [title]="form.valid ? 'Confirm payment' : 'Attach transfer slip to confirm'">
-                <app-loader *ngIf="false" addSpace="true"></app-loader>
+                <app-loader *ngIf="isLoading" addSpace="true"></app-loader>
                 Confirm
               </button>
             </div>
