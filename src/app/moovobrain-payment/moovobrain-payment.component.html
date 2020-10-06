@@ -1,4 +1,4 @@
-<main id="main">
+<main id="main" *ngIf="showPage">
 
 
   <!-- ======= Join-us Section ======= -->
@@ -17,7 +17,7 @@
           <div *ngIf="!isPaid">
           <h2>Bank transfer instructions</h2>
           <p class="text-secondary mb-2">
-            Amount to transfer : <strong>16 250 DT</strong><br>
+            Amount to transfer : <strong>{{order.price || 0}} DT</strong><br>
             1. Transfer money to the following bank account below.<br>
             2. After the transfer , please attach slip and fill in transfer date and time.
           </p>
@@ -55,7 +55,9 @@
           <div class="text-center" *ngIf="isPaid">
             <img src="assets/img/illustrations/form/payment3.svg" alt="image missing" width="300">
             <h1 class="success-green">Thank you for your payment!</h1>
-            <p>Your request is waiting for validation, we will inform you once the payment is validated.</p>
+            <p *ngIf="order.status === 'pending' || order.status === 'submitted'">Your order request is <span class="text-warning">waiting</span> for validation, we will inform you once the payment is validated.</p>
+            <p *ngIf="order.status === 'rejected'">Your order request is <span class="text-danger">rejected</span> by Gewinner, contact our team for more information.</p>
+            <p *ngIf="order.status === 'validated'">Your order request is <span class="text-success">validated</span> by Gewinner, we will be contacting you soon.</p>
           </div>
         </div>
       </div>

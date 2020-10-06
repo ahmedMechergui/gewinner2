@@ -3,6 +3,12 @@
   width: 350px !important;
 }
 
-.toast-container , .ngx-toastr{
+/* these styles are to make modals and toasters appear on front of the chat widget */
+.toast-container, .ngx-toastr {
   z-index: 10000000000 !important;
 }
+
+.modal {
+  z-index: 20000000000 !important;
+}
+
