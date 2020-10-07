@@ -47,10 +47,10 @@ import {LoaderComponent} from './shared/loader/loader.component';
 import {AuthInterceptor} from './shared/authentication/auth.interceptor';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ShareModule } from 'ngx-sharebuttons';
 import {Platform} from '@angular/cdk/platform';
-import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.component';
-import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-payment.component';
-import {ShareModule} from 'ngx-sharebuttons';
+import { ResetPasswordComponent } from './sign-in/reset-password/reset-password.component';
+import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-payment.component';
 
 @NgModule({
   declarations: [
@@ -99,13 +99,13 @@ import {ShareModule} from 'ngx-sharebuttons';
   imports: [
     BrowserModule,
     RouterModule,
-    ShareModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    ShareModule
   ],
   providers: [Platform, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

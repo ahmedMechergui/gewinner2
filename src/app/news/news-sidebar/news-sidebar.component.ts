@@ -36,7 +36,7 @@ export class NewsSidebarComponent implements OnInit {
 
   fetchComingEvents() {
     this.newsStorageService.getComingEvents().subscribe((events: Array<any>) => {
-      this.events = events.reverse();
+      this.events = events;
     });
   }
 
