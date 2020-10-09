@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@nguniversal/express-engine": "^8.2.6",
     "@types/jquery": "^3.3.33",
     "express": "^4.17.1",
     "jquery": "^3.4.1",
