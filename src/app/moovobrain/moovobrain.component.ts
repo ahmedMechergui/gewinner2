@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-moovobrain',
   templateUrl: './moovobrain.component.html',
   styleUrls: ['./moovobrain.component.css']
 })
-export class MoovobrainComponent implements OnInit {
+export class MoovobrainComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
   }
 
 }

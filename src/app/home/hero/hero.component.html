@@ -1,4 +1,4 @@
-<section class="d-flex justify-cntent-center align-items-center" id="hero">
+<section class="d-flex justify-cntent-center align-items-center" id="hero" [class.bg-moovobrain-hero]="!isOnHome" [ngClass]="isOnHome ? 'bg-home-hero' : 'bg-moovobrain-hero'" #herosection>
   <div class="container carousel carousel-fade" data-ride="carousel" id="heroCarousel">
 
     <!-- Slides for home page -->
