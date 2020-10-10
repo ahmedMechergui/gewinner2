@@ -2,6 +2,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../scripts-loader.service';
 import {AuthService} from '../shared/authentication/auth.service';
 import {ToastrService} from 'ngx-toastr';
+import {BrowserDetectorService} from '../shared/services/browser-detector.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
   constructor(private renderer2: Renderer2,
               private scriptLoader: ScriptsLoaderService,
               private authService: AuthService,
-              private toaster: ToastrService) {
+              private toaster: ToastrService,
+              private browserDetector: BrowserDetectorService) {
   }
 
   ngOnInit() {
@@ -22,7 +24,9 @@ export class HeaderComponent implements OnInit {
     this.authService.clientSubject.subscribe(client => {
       this.isAuthenticated = !!client;
     });
-    this.showDemoToaster();
+    if (this.browserDetector.isOnBrowser()) {
+      this.showDemoToaster();
+    }
   }
 
   loadScripts() {

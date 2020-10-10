@@ -5,6 +5,7 @@ import {BehaviorSubject} from 'rxjs';
 import {Client} from './client.model';
 import {AuthResponse} from './auth-response';
 import {Router} from '@angular/router';
+import {BrowserDetectorService} from '../services/browser-detector.service';
 
 
 @Injectable({
@@ -17,7 +18,11 @@ export class AuthService {
 
   url = this.urlService.url;
 
-  constructor(private http: HttpClient, private urlService: HostURLService, private router: Router) {
+  constructor(
+    private browserDetector: BrowserDetectorService,
+    private http: HttpClient,
+    private urlService: HostURLService,
+    private router: Router) {
   }
 
   signIn(credentials) {
@@ -31,7 +36,9 @@ export class AuthService {
   logOut() {
     this.http.post(this.url + '/clients/logout', {}).subscribe();
     this.clientSubject.next(null);
-    localStorage.removeItem('clientData');
+    if (this.browserDetector.isOnBrowser()) {
+      localStorage.removeItem('clientData');
+    }
     this.redirectToSignIn();
   }
 
@@ -61,16 +68,20 @@ export class AuthService {
   }
 
   autoLogin() {
-    const client: Client = JSON.parse(localStorage.getItem('clientData'));
-    if (!client) {
-      return;
+    if (this.browserDetector.isOnBrowser()) {
+      const client: Client = JSON.parse(localStorage.getItem('clientData'));
+      if (!client) {
+        return;
+      }
+      this.clientSubject.next(client);
     }
-    this.clientSubject.next(client);
   }
 
   // stores client in jSON format to local storage
   storeClient(client: Client): void {
-    localStorage.setItem('clientData', JSON.stringify(client));
+    if (this.browserDetector.isOnBrowser()) {
+      localStorage.setItem('clientData', JSON.stringify(client));
+    }
   }
 
   redirectToServices() {

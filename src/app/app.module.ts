@@ -97,7 +97,7 @@ import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-paym
     MoovobrainPaymentComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule,
     HttpClientModule,
     AppRoutingModule,

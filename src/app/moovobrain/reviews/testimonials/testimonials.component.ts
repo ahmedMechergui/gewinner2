@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Testimonial} from '../../testimonial';
 import {MoovobrainRequestsService} from '../../moovobrain-requests.service';
+import {BrowserDetectorService} from '../../../shared/services/browser-detector.service';
 
 @Component({
   selector: 'app-testimonials',
@@ -11,7 +12,7 @@ export class TestimonialsComponent implements OnInit {
 
   testimonials = this.moovobrainRequestsService.testimonials;
 
-  constructor(public moovobrainRequestsService: MoovobrainRequestsService) {
+  constructor(private browserDetector: BrowserDetectorService, public moovobrainRequestsService: MoovobrainRequestsService) {
   }
 
   ngOnInit() {
@@ -21,13 +22,15 @@ export class TestimonialsComponent implements OnInit {
   // clients feedback isn't really submitted to server , it is just stored locally and
   // showed to that specific client
   loadFakeTestimonial() {
-    const testimonial: Testimonial = JSON.parse(localStorage.getItem('feedback'));
-    if (!testimonial) {
-      return;
+    if (this.browserDetector.isOnBrowser()) {
+      const testimonial: Testimonial = JSON.parse(localStorage.getItem('feedback'));
+      if (!testimonial) {
+        return;
+      }
+      this.moovobrainRequestsService.hasFeedback = true;
+      this.moovobrainRequestsService.testimonials.push(testimonial);
+      this.moovobrainRequestsService.reviewsNumber[testimonial.rating - 1]++;
     }
-    this.moovobrainRequestsService.hasFeedback = true;
-    this.moovobrainRequestsService.testimonials.push(testimonial);
-    this.moovobrainRequestsService.reviewsNumber[testimonial.rating - 1]++;
   }
 
 }

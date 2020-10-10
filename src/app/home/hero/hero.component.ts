@@ -1,6 +1,7 @@
 import {Component, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../../scripts-loader.service';
 import {HeroSlide} from './heroSlide.model';
+import {BrowserDetectorService} from '../../shared/services/browser-detector.service';
 
 @Component({
   selector: 'app-hero',
@@ -31,7 +32,9 @@ export class HeroComponent implements OnInit, OnDestroy {
   @Input() isOnHome = true; // if true we are on home page , if false we are on moovobrain page
 
 
-  constructor(private scriptloader: ScriptsLoaderService, private renderer: Renderer2) {
+  constructor(private browserDetectorService: BrowserDetectorService,
+              private scriptloader: ScriptsLoaderService,
+              private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -40,15 +43,19 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   updateHeader(): void {
-    document.getElementById('header').classList.add('header-transparent');
-    document.getElementById('logo').classList.add('hide-on-sd');
-    document.getElementById('header').classList.remove('box-shadow');
+    if (this.browserDetectorService.isOnBrowser()) {
+      document.getElementById('header').classList.add('header-transparent');
+      document.getElementById('logo').classList.add('hide-on-sd');
+      document.getElementById('header').classList.remove('box-shadow');
+    }
   }
 
   ngOnDestroy(): void {
-    document.getElementById('header').classList.remove('header-transparent');
-    document.getElementById('logo').classList.remove('hide-on-sd');
-    document.getElementById('header').classList.add('box-shadow');
+    if (this.browserDetectorService.isOnBrowser()) {
+      document.getElementById('header').classList.remove('header-transparent');
+      document.getElementById('logo').classList.remove('hide-on-sd');
+      document.getElementById('header').classList.add('box-shadow');
+    }
   }
 
   loadScripts() {

@@ -6,7 +6,3 @@
 .toast-container , .ngx-toastr{
   z-index: 10000000000 !important;
 }
-
-.bg-none {
-  --bg-url: none !important;
-}

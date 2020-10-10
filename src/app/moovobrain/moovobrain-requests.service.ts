@@ -4,6 +4,7 @@ import {take} from 'rxjs/operators';
 import {Testimonial} from './testimonial';
 import {HttpClient} from '@angular/common/http';
 import {HostURLService} from '../shared/services/host-url.service';
+import {BrowserDetectorService} from '../shared/services/browser-detector.service';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +51,10 @@ export class MoovobrainRequestsService {
     }
   ];
 
-  constructor(private authService: AuthService, private http: HttpClient, private urlService: HostURLService) {
+  constructor(private browserDetector: BrowserDetectorService,
+              private authService: AuthService,
+              private http: HttpClient,
+              private urlService: HostURLService) {
   }
 
   storeFeedback(description, rating) {
@@ -73,8 +77,9 @@ export class MoovobrainRequestsService {
     this.testimonials[1].date = testimonial.date;
     this.testimonials[1].description = testimonial.description;
     this.testimonials[1].rating = testimonial.rating;
-
-    localStorage.setItem('feedback', JSON.stringify(testimonial));
+    if (this.browserDetector.isOnBrowser()) {
+      localStorage.setItem('feedback', JSON.stringify(testimonial));
+    }
   }
 
   /*=============================

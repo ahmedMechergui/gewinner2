@@ -8,7 +8,7 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private authService: AuthService, private toaster: ToastrService) {
+  constructor(private authService: AuthService) {
   }
 
   title = 'Gewinner';
