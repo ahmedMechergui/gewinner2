@@ -30,7 +30,8 @@ export class HeaderComponent implements OnInit {
   }
 
   loadScripts() {
-    this.scriptLoader.addScripts(this.renderer2, 'header');
+    this.scriptLoader.addOneScriptAsync('/assets/js/header.js').then(() => {
+    });
   }
 
   showDemoToaster(): void {

@@ -6,9 +6,6 @@
 
 
 <!-- ======= Header ======= -->
-<!-- header-transparent class is added only for home page -->
-<!--<header id="header" class="fixed-top header-transparent">-->
-
 
 
 <header id="header" class="fixed-top box-shadow">
@@ -18,14 +15,14 @@
       <a [routerLink]="'home'"><img src="assets/img/logo-white.png" alt="logo missing..." class="img-fluid"></a>
     </div>
 
-    <nav class="nav-menu float-xl-right d-none d-lg-block">
+    <nav class="nav-menu float-xl-right d-none d-lg-block" #nav>
       <ul>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'home'">Home</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'moovobrain'">MOOVOBRAIN</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'about'">About us</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'join-us'">Join us</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'news'">News</a></li>
-        <li [routerLinkActive]="'active'"><a [routerLink]="'contact'">Contact us</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="home">Home</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="moovobrain">MOOVOBRAIN</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="about">About us</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="join-us">Join us</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="news">News</a></li>
+        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="contact">Contact us</a></li>
         <li [routerLinkActive]="'active'" *ngIf="!isAuthenticated"><a [routerLink]="'sign-in'"><i class="icofont-ui-user"></i> Sign in</a></li>
 
         <li [routerLinkActive]="'active'" class="dropdown" *ngIf="isAuthenticated"><app-account-dropdown></app-account-dropdown></li>
