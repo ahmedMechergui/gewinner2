@@ -18,6 +18,10 @@ svg{
   background-image: url("src/assets/img/hero-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+/* this part gives the parallax effect */
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .home-promo-video a.video-link span .video-icon {

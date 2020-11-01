@@ -47,10 +47,11 @@ import {LoaderComponent} from './shared/loader/loader.component';
 import {AuthInterceptor} from './shared/authentication/auth.interceptor';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ShareModule } from 'ngx-sharebuttons';
+import {ShareModule} from 'ngx-sharebuttons';
 import {Platform} from '@angular/cdk/platform';
-import { ResetPasswordComponent } from './sign-in/reset-password/reset-password.component';
-import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-payment.component';
+import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.component';
+import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-payment.component';
+import {MoovobrainTabletAppComponent} from './moovobrain/moovobrain-tablet-app/moovobrain-tablet-app.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-paym
     ProductComponent,
     MoovobrainVideoComponent,
     MoovobrainMobileAppComponent,
+    MoovobrainTabletAppComponent,
     ReviewsComponent,
     TestimonialsComponent,
     FeedbackComponent,
@@ -97,7 +99,7 @@ import { MoovobrainPaymentComponent } from './moovobrain-payment/moovobrain-paym
     MoovobrainPaymentComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     RouterModule,
     HttpClientModule,
     AppRoutingModule,

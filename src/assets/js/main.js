@@ -1,6 +1,11 @@
 !(function ($) {
   "use strict";
 
+  // TABLET APP VIDEO PLAY BUTTON TRIGGER
+  $(".text-video-btn").on("click", function () {
+    $(".vjs-big-play-button").trigger("click");
+  });
+
   // Toggle .header-scrolled class to #header when page is scrolled
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -11,6 +16,7 @@
       $('#header').removeClass('box-shadow');
     }
   });
+
 
 
   if ($(window).scrollTop() > 100) {

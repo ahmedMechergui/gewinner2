@@ -1,0 +1,454 @@
+.section-overlay.content-bg {
+  background-color: rgba(29, 3, 40, 0.8);
+}
+
+.slide-bg::before, #magic-line, .section-overlay {
+  top: 0px;
+  left: 0px;
+}
+
+ .slide-bg, .slide-bg::before, .section-overlay, .btn-effect::before {
+   height: 100%;
+   width: 100%;
+ }
+
+ .section-overlay {
+   position: absolute;
+ }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  font-weight: 700;
+  -webkit-transition-duration: 450ms;
+  transition-duration: 450ms;
+}
+
+*:active,
+*:focus {
+  outline: none !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+
+/* Video CSS */
+
+.flax-align {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.video-text h3 {
+  letter-spacing: 2px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.video-text p {
+  margin-top: 23px;
+  padding-right: 65px;
+}
+
+.video-text .text-video-btn {
+  border: medium none;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 15px;
+  overflow: hidden;
+  padding: 10px 35px;
+  text-shadow: 0 0 0.3px rgb(255, 255, 255);
+  -webkit-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
+  letter-spacing: 1px;
+}
+
+.video-text .text-video-btn:hover span {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}
+
+.video-text .text-video-btn span {
+  font-size: 22px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.video-content {
+  background: url("src/assets/img/tablet-app/iPad.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  padding: 18px 48px 20px
+}
+
+.video-main {
+  background: rgb(63, 63, 63) none repeat scroll 0 0;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.video-main .video-js .vjs-big-play-button {
+  background: rgba(0, 0, 0, 0) url("src/assets/img/tablet-app/video-play-xxl.png") no-repeat scroll 0 0;
+  background-size: 100% 100%;
+  border: medium none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-size: initial;
+  height: 60px;
+  left: 50%;
+  line-height: initial;
+  margin-left: -30px;
+  top: 50%;
+  -webkit-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+  width: 60px;
+  margin-top: -30px;
+}
+
+.video-main .video-js .vjs-big-play-button:hover {
+  opacity: 0.6;
+}
+
+.video-main .vjs-playing .vjs-big-play-button {
+  display: none;
+}
+
+.video-main .video-js .vjs-control-text {
+  text-indent: -999999px;
+}
+
+
+
+/*==========================
+General , delete some of it
+===========================*/
+.section-has-bg {
+  color: #fff;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.video-text .text-video-btn {
+  border: medium none;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 15px;
+  overflow: hidden;
+  padding: 10px 35px;
+  text-shadow: 0 0 0.3px rgb(255, 255, 255);
+  -webkit-transition: background 0.3s ease 0s;
+  transition: background 0.3s ease 0s;
+  letter-spacing: 1px;
+}
+
+.text-video-btn {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background: #347cdb;
+}
+
+.text-video-btn span {
+  font-size: 22px;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+
+.fix {
+  overflow: hidden !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.magic-line li,
+#fetured-nav li,
+.feature-app-icon a,
+.testimonial-img {
+  float: left;
+}
+
+.float_right {
+  float: right;
+}
+
+.section-overlay.content-bg {
+  /*background-color: rgba(29, 3, 40, 0.8);*/
+  background-image: linear-gradient(to right, rgba(30, 67, 86, 0.4), rgba(30, 67, 86, 0)), url("src/assets/img/hero-bg.jpg") !important;
+  background-attachment: fixed;
+background-position: center center;
+  background-size: cover;
+}
+
+.video-main .video-js .vjs-big-play-button:hover {
+  opacity: 0.6;
+}
+
+
+.vjs-big-play-button, .video-js .vjs-play-control {
+  font-family: VideoJS;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+.magic-line,
+.magic-line li a,
+.single-slide,
+.slider-content,
+.btn-effect,
+.bullet,
+.feature-app-icon a,
+.feature-app-icon,
+.section-has-bg,
+.section-has-bg-content,
+.whychoose-img,
+.section-title,
+.question-img,
+.accordion-title,
+.accordion-heading,
+.single-member-img,
+.testimonial,
+.testimonial-img,
+.single-price,
+.screenshots-area .owl-carousel .owl-item img,
+.screenshot-slide {
+  position: relative;
+}
+
+#magic-line,
+.section-overlay,
+.slide-bg,
+.slide-bg:before,
+.btn-effect:before,
+.magic-line.nav-menu li a:before,
+#magic-line2,
+#magic-line2:before,
+.single-img,
+.section-saparator,
+.section-saparator:before,
+.section-saparator:after,
+.acco-title-icon,
+.acco-expand-icon,
+.member-social-icon,
+.testimonial:after,
+.owl-dots,
+.owl-dot.active:before,
+.testimonial:after,
+.testimonial-img span.icon-quote,
+.single-price:before,
+#mainslider .owl-dot.active:before,
+.testimonial-carousel .owl-dot.active:before,
+.screenshot-app-bg {
+  position: absolute;
+}
+
+.main-wrapper,
+.single-slide,
+.slider-content,
+.slider .owl-stage-outer,
+.slider .owl-stage,
+.slider .owl-stage .owl-item {
+  height: 100%;
+}
+
+.slide-bg,
+.slide-bg:before,
+.section-overlay,
+.btn-effect:before {
+  height: 100%;
+  width: 100%;
+}
+
+.slide-bg:before,
+#magic-line,
+.section-overlay {
+  top: 0;
+  left: 0;
+}
+
+.slide-bg,
+.single-img {
+  top: 0;
+  left: 0;
+}
+
+.section-has-bg,
+#accordion.panel-group {
+  padding: 100px 0;
+}
+
+.screenshot-slide,
+.ourteam-member,
+.price-content {
+  padding-top: 80px;
+}
+
+.screenshots-area,
+.ourteam-area,
+.pricing-area {
+  padding: 100px 0;
+}
+
+.section-title {
+  height: 75px;
+}
+
+.section-saparator {
+  border: 8px solid rgba(0, 0, 0, 0);
+  left: 50%;
+  margin: 30px 0 0 -22.5px;
+  width: 45px;
+}
+
+.section-saparator:before,
+.section-saparator:after {
+  content: "";
+  height: 1px;
+  top: -9px;
+  width: 78px;
+}
+
+.section-saparator:before {
+  margin-right: 8px;
+  right: 100%;
+}
+
+.section-saparator:after {
+  left: 100%;
+  margin-left: 8px;
+}
+
+/* Typography CSS */
+
+body,
+.nav-menu li a,
+.slide-text h2,
+.feture-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.slide-text h2 span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.slide-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #fff !important;
+}
+
+.price-header h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Miscellaneous CSS */
+
+body {
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.subscribe input[type="email"],
+.subscribe input[type="submit"],
+.footer-bottom.text-center>p,
+.video-text .text-video-btn {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.whychoose-single-text h5,
+.member-info h4,
+.price-header h3 {
+  font-size: 16px
+}
+
+.testimonial-text h5 span.time {
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.subscribe input[type="email"],
+.subscribe input[type="submit"],
+.footer-bottom.text-center>p {
+  font-size: 13px;
+}
+
+.price-header h3,
+.download-text h3 {
+  font-size: 20px
+}
+
+.nav-menu li a,
+.slide-text p,
+#fetured-nav li a h5,
+#accordion .accordion-heading a h5,
+.download-text h5,
+.footer-content h6 {
+  font-size: 15px;
+}
+
+.member-info h4 {
+  font-size: 16px;
+}
+
+.slide-text h2 {
+  font-size: 48px;
+}
+
+.fullscreenbanner .rv-text.tp-caption p {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.fullscreenbanner .rv-title.tp-caption {
+  line-height: 90px;
+  font-weight: 900;
+}
+
+.testimonial-text h5,
+.price-header h4 {
+  font-size: 18px;
+}
+
+.price-list li {
+  font-size: 14px
+}

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 import {HostURLService} from '../shared/services/host-url.service';
 
@@ -8,6 +8,8 @@ import {HostURLService} from '../shared/services/host-url.service';
   styleUrls: ['./moovobrain.component.css']
 })
 export class MoovobrainComponent implements OnInit, AfterViewInit {
+  // this variable determines if we're on voice mode or brain mode
+ @Input() isVoiceMode = false;
   constructor(private metadata: Meta, private urlService: HostURLService) {
   }
 
