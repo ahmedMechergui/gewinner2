@@ -1,10 +1,10 @@
 !(function ($) {
   "use strict";
 
-  // TABLET APP VIDEO PLAY BUTTON TRIGGER
-  $(".text-video-btn").on("click", function () {
-    $(".vjs-big-play-button").trigger("click");
-  });
+  // // TABLET APP VIDEO PLAY BUTTON TRIGGER
+  // $(".text-video-btn").on("click", function () {
+  //   $(".vjs-big-play-button").trigger("click");
+  // });
 
   // Toggle .header-scrolled class to #header when page is scrolled
   $(window).scroll(function () {
