@@ -83,7 +83,7 @@ export class FormOrderComponent implements OnInit {
       oSector: new FormControl('', [Validators.required]),
       oRegistrationNumber: new FormControl('', [Validators.required]),
       oResponsibleName: new FormControl('', [Validators.required]),
-      oHandicap: new FormControl('', [Validators.required]),
+      oHandicap: new FormControl(''),
       // oCountry: new FormControl('', [this.countrySelected.bind(this)]),
       oAddress: new FormControl('', [Validators.required]),
       oZipCode: new FormControl('', [Validators.required]),

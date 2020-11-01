@@ -602,12 +602,7 @@
 
                           <div class="col-md-6 form-group">
                             <input class="form-control" formControlName="oHandicap" id="o-handicap" list="handicaps"
-                                   placeholder="Handicap Type (Specify if not listed)">
-                            <small *ngIf="form.get('oHandicap').invalid && form.get('oHandicap').touched"
-                                   class="form-text text-danger">
-                              <i class="icofont-warning-alt"></i>
-                              Please specify the handicap
-                            </small>
+                                   placeholder="Handicap Type (Optional)">
                             <datalist id="handicaps">
                               <option value="paralysis">
                               <option value="paralysis 2">
