@@ -72,9 +72,40 @@
 # Hero Section
 --------------------------------------------------------------*/
 
+.is-moovobrain-page #hero {
+  width: 100% !important;
+  height: 90vh !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.is-moovobrain-page #hero::after {
+  left: 50% !important;
+  height: 95% !important;
+  border-radius: 0 0 50% 50% !important;
+  transform: translateX(-50%) rotate(0deg) !important;
+  background-attachment: unset !important;
+}
+
+.is-moovobrain-page #hero::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 130%;
+    height: 96%;
+    background: #68A4C4;
+    opacity: 0.3;
+    z-index: 0;
+    border-radius: 0 0 50% 50%;
+    transform: translateX(-50%) translateY(18px) rotate(2deg);
+
+  }
+
 #hero {
   width: 100%;
-  height: 90vh;
+  /*height: 90vh;*/
+  height: 100vh;
   overflow: hidden;
   position: relative;
 
@@ -85,30 +116,32 @@
 #hero::after {
   content: '';
   position: absolute;
-  left: 50%;
+  /*left: 50%;*/
   top: 0;
   width: 130%;
-  height: 95%;
+  /*height: 95%;*/
+  height: 100vh;
   background: var(--bg-url);
   background-size: cover;
   z-index: 0;
-  border-radius: 0 0 50% 50%;
-  transform: translateX(-50%) rotate(0deg);
+  /*border-radius: 0 0 50% 50%;*/
+  /*transform: translateX(-50%) rotate(0deg);*/
+  background-attachment: fixed;
 }
 
-#hero::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 130%;
-  height: 96%;
-  background: #68A4C4;
-  opacity: 0.3;
-  z-index: 0;
-  border-radius: 0 0 50% 50%;
-  transform: translateX(-50%) translateY(18px) rotate(2deg);
-}
+/*#hero::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  left: 50%;*/
+/*  top: 0;*/
+/*  width: 130%;*/
+/*  height: 96%;*/
+/*  background: #68A4C4;*/
+/*  opacity: 0.3;*/
+/*  z-index: 0;*/
+/*  border-radius: 0 0 50% 50%;*/
+/*  transform: translateX(-50%) translateY(18px) rotate(2deg);*/
+/*}*/
 
 #hero .carousel-container {
   /*display: flex;*/

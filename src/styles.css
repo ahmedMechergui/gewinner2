@@ -6,3 +6,10 @@
 .toast-container , .ngx-toastr{
   z-index: 10000000000 !important;
 }
+
+/*===========================
+ # Remove this when accessories are back to the home page
+  ===========================*/
+html {
+  height: 100%;
+}

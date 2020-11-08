@@ -1,4 +1,6 @@
-<section class="d-flex justify-cntent-center align-items-center" id="hero" [class.bg-moovobrain-hero]="!isOnHome" [ngClass]="isOnHome ? 'bg-home-hero' : 'bg-moovobrain-hero'" #herosection>
+<span [class.is-moovobrain-page]="!isOnHome" >
+<section class="d-flex justify-cntent-center bg-fixed align-items-center p-0" id="hero" [class.bg-moovobrain-hero]="!isOnHome"
+         [ngClass]="isOnHome ? 'bg-home-hero' : 'bg-moovobrain-hero'" #herosection>
   <div class="container carousel carousel-fade" data-ride="carousel" id="heroCarousel">
 
     <!-- Slides for home page -->
@@ -7,7 +9,12 @@
         <div class="carousel-container">
           <h2 class="animated fadeInDown">{{slide.title}}</h2>
           <p class="animated fadeInUp">{{slide.description}}</p>
-          <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp">Know More</a>
+
+          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'voice'}" class="btn-get-started animated fadeInUp">
+            Moovobrain VOICE mode</a>
+
+          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'brain'}" class="btn-get-started animated fadeInUp">
+            Moovobrain BRAIN mode</a>
         </div>
       </div>
     </div>
@@ -34,7 +41,7 @@
   </a>
 
 </section><!-- End Hero -->
-
+</span>
 <!-- ======= Logo on SD Section======= -->
 <div *ngIf="isOnHome" class="logo float-left show-on-sd" data-aos="fade-down" id="logoSD">
   <a href="index.html"><img alt="logo missing..." class="img-fluid" src="assets/img/logo-black.png"></a>

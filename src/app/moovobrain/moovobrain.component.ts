@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 import {HostURLService} from '../shared/services/host-url.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-moovobrain',
@@ -9,11 +10,18 @@ import {HostURLService} from '../shared/services/host-url.service';
 })
 export class MoovobrainComponent implements OnInit, AfterViewInit {
   // this variable determines if we're on voice mode or brain mode
- @Input() isVoiceMode = false;
-  constructor(private metadata: Meta, private urlService: HostURLService) {
+  @Input() isVoiceMode = false;
+
+  constructor(private metadata: Meta,
+              private urlService: HostURLService,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.isVoiceMode = params.mode.toLowerCase() === 'voice';
+    });
+    this.activatedRoute.fragment.subscribe();
     this.updateMetadata();
   }
 

@@ -18,7 +18,7 @@
     <nav class="nav-menu float-xl-right d-none d-lg-block" #nav>
       <ul>
         <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="home">Home</a></li>
-        <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="moovobrain">MOOVOBRAIN</a></li>
+        <li [routerLinkActive]="'active'" class="dropdown remove-href"><app-moovobrain-dropdown></app-moovobrain-dropdown></li>
         <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="about">About us</a></li>
         <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="join-us">Join us</a></li>
         <li [routerLinkActive]="'active'"><a class="remove-href" routerLink="news">News</a></li>

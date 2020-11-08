@@ -52,6 +52,7 @@ import {Platform} from '@angular/cdk/platform';
 import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.component';
 import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-payment.component';
 import {MoovobrainTabletAppComponent} from './moovobrain/moovobrain-tablet-app/moovobrain-tablet-app.component';
+import {MoovobrainDropdownComponent} from './header/moovobrain-dropdown/moovobrain-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import {MoovobrainTabletAppComponent} from './moovobrain/moovobrain-tablet-app/m
     GallerieComponent,
     LoaderComponent,
     ResetPasswordComponent,
-    MoovobrainPaymentComponent
+    MoovobrainPaymentComponent,
+    MoovobrainDropdownComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
