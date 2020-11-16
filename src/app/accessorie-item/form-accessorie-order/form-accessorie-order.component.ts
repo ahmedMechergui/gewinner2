@@ -34,8 +34,6 @@ export class FormAccessorieOrderComponent implements OnInit {
   ngOnInit() {
     this.loadScriptForm();
     this.formInit();
-    // this.price = 198;
-    console.log('accessorieID : ', this.accessorieID);
   }
 
 
@@ -82,14 +80,6 @@ export class FormAccessorieOrderComponent implements OnInit {
     this.loadScriptCountryState();
   }
 
-  alert() {
-    // this.form does not show disabled controls so we use this.form.getRawValue();
-
-    // add quantity,totalPrice and unitPrice to the post request => follow on postman request
-    console.log(this.form.getRawValue());
-    alert('function not implemented yet , waiting for nodejs integration');
-  }
-
   submitOrder() {
     const toasterParams = {
       positionClass: 'toast-bottom-right',
@@ -101,8 +91,7 @@ export class FormAccessorieOrderComponent implements OnInit {
       this.toaster.success('You will be getting a confirmation email soon', 'Order submitted', toasterParams);
       this.orderSubmitted = true;
       this.isLoading = false;
-    }, error => {
-      console.log(error);
+    }, () => {
       this.toaster.error('Unable to submit your order', 'Error :', toasterParams);
       this.isLoading = false;
     });

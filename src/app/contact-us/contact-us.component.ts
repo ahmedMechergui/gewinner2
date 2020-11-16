@@ -59,7 +59,6 @@ export class ContactUsComponent implements OnInit {
       this.isLoading = false;
       this.toast.success('Message sent successfully', 'Success', toastParams);
     }, error => {
-      console.log(error);
       this.toast.error('Please verify your data', 'Error :', toastParams);
       this.isLoading = false;
     });

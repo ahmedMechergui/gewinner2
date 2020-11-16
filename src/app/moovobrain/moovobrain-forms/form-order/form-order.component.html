@@ -1,11 +1,10 @@
 <!-- MultiStep Form -->
-
-<div class="row justify-content-center mt-0">
-  <div class="col-12">
-    <div class="card">
-      <div class="row">
-        <div class="col-md-12 mx-0">
-          <form (ngSubmit)="orderMoovobrain()" [formGroup]="form" id="msform">
+<form (ngSubmit)="orderMoovobrain()" [formGroup]="form" id="msform">
+  <div class="row justify-content-center mt-0">
+    <div class="col-12">
+      <div class="card">
+        <div class="row">
+          <div class="col-md-12 mx-0">
 
             <!-- progressbar -->
             <ul id="progressbar">
@@ -697,7 +696,8 @@
 
                 <div class="d-flex mb-1">
                   <div class="text-center">
-                    <strong>Shipping</strong> costs and <strong>taxes</strong> will be mentioned in the confirmation email
+                    <strong>Shipping</strong> costs and <strong>taxes</strong> will be mentioned in the confirmation
+                    email
                   </div>
                 </div>
 
@@ -706,19 +706,38 @@
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <button class="confirm btn action-button" type="submit">
-               <app-loader *ngIf="isLoading" addSpace="true"></app-loader>Confirm Order
+              <button class="confirm btn action-button" type="submit" [disabled]="isOrderAlreadySubmitted" [title]="isOrderAlreadySubmitted ? 'Order already submitted' : ''">
+                <app-loader *ngIf="isLoading" addSpace="true"></app-loader>
+                Confirm Order
               </button>
             </fieldset> <!-- Confirmation -->
-          </form>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<!--  Modal footer -->
-<div class="modal-footer">
-  <h6>Price : {{purchasePrice + trainingPrice + controlPrice}}&nbsp;TND</h6>
-</div>
+  <!--  Modal footer -->
+  <div class="modal-footer container pt-2">
+    <div class="d-flex row" style="width: 100%">
+
+      <div>
+        <h6 class="d-inline">Quantity &nbsp;</h6>
+        <input
+          min="1"
+          id="quantity" name="quantity"
+          step="1" style="width: 40px" type="number"
+          formControlName="quantity">
+      </div>
+
+      <div class="ml-auto">
+        <h6>Price : {{(purchasePrice + trainingPrice + controlPrice) * form.get('quantity').value}}&nbsp;TND</h6>
+      </div>
+
+
+    </div>
+  </div>
+
+</form>

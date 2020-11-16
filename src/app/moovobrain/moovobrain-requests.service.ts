@@ -5,6 +5,7 @@ import {Testimonial} from './testimonial';
 import {HttpClient} from '@angular/common/http';
 import {HostURLService} from '../shared/services/host-url.service';
 import {BrowserDetectorService} from '../shared/services/browser-detector.service';
+import {FormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -95,8 +96,17 @@ export class MoovobrainRequestsService {
    # Moovobrain orders section
     ============================= */
 
-  orderMoovobrain(requestBody) {
-    return this.http.post(this.url + '/moovobrain', requestBody);
+  // this is for voice mode
+  orderMoovobrain(requestBody, pricePurchase) {
+    console.log(requestBody);
+    return this.http.post(this.url + '/moovobrain', {...requestBody, pricePurchase});
+  }
+
+  // this is for brain mode preorder
+  preOrderMoovobrain(requestBody: FormGroup) {
+    requestBody = requestBody.getRawValue();
+    console.log(requestBody);
+    return this.http.post(this.url + '/moovobrain', {...requestBody, pricePurchase: 0, mode: 'brain', status: 'pre-ordered'});
   }
 
 }

@@ -53,6 +53,7 @@ import {ResetPasswordComponent} from './sign-in/reset-password/reset-password.co
 import {MoovobrainPaymentComponent} from './moovobrain-payment/moovobrain-payment.component';
 import {MoovobrainTabletAppComponent} from './moovobrain/moovobrain-tablet-app/moovobrain-tablet-app.component';
 import {MoovobrainDropdownComponent} from './header/moovobrain-dropdown/moovobrain-dropdown.component';
+import {FormPreorderBrainmodeComponent} from './moovobrain/moovobrain-forms/form-preorder-brainmode/form-preorder-brainmode.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import {MoovobrainDropdownComponent} from './header/moovobrain-dropdown/moovobra
     TestimonialsComponent,
     FeedbackComponent,
     MoovobrainFormsComponent,
+    FormPreorderBrainmodeComponent,
     TestIndividualComponent,
     FormOrderComponent,
     AccountDropdownComponent,

@@ -50,11 +50,9 @@ export class ServicesRequestService {
     this.getScheduledControls().subscribe((response: any) => {
       const schedules: Array<any> = response.schedules;
       this.isScheduledControlsValidated = response.isValidated;
-      console.log(this.isScheduledControlsValidated);
       if (response.length === 0) {
         return;
       }
-      console.log(schedules);
       schedules.forEach(i => {
         this.scheduledControls.push(i.schedule);
       });

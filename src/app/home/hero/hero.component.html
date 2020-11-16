@@ -1,7 +1,7 @@
 <span [class.is-moovobrain-page]="!isOnHome" >
 <section class="d-flex justify-cntent-center bg-fixed align-items-center p-0" id="hero" [class.bg-moovobrain-hero]="!isOnHome"
          [ngClass]="isOnHome ? 'bg-home-hero' : 'bg-moovobrain-hero'" #herosection>
-  <div class="container carousel carousel-fade" data-ride="carousel" id="heroCarousel">
+  <div class="container carousel carousel-fade" data-ride="carousel" data-pause="hover" id="heroCarousel">
 
     <!-- Slides for home page -->
     <div *ngIf="isOnHome">
@@ -11,10 +11,11 @@
           <p class="animated fadeInUp">{{slide.description}}</p>
 
           <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'voice'}" class="btn-get-started animated fadeInUp">
-            Moovobrain VOICE mode</a>
+            Know more</a>
 
-          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'brain'}" class="btn-get-started animated fadeInUp">
-            Moovobrain BRAIN mode</a>
+<!-- Uncomment the code below when you want to show two buttons -->
+<!--          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'brain'}" class="btn-get-started animated fadeInUp">-->
+<!--            Moovobrain BRAIN mode</a>-->
         </div>
       </div>
     </div>
@@ -26,8 +27,8 @@
           <h2 class="animated fadeInDown">{{slide.title}}</h2>
           <p class="animated fadeInUp">{{slide.description}}</p>
           <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#order-modal"
-             data-toggle="modal">Order</a>
-          <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#test-modal"
+             data-toggle="modal">{{isVoiceMode ? 'Order' : 'Pre-order'}}</a>
+          <a [routerLink]="'/moovobrain'" *ngIf="isVoiceMode" class="btn-get-started animated fadeInUp" data-target="#test-modal"
              data-toggle="modal">Test</a>
         </div>
       </div>

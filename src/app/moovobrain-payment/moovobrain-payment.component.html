@@ -16,8 +16,37 @@
         <div class="col-lg-12 join-us-form container pl-lg-5" [class.margin-top]="isPaid">
           <div *ngIf="!isPaid">
             <h2>Bank transfer instructions</h2>
-            <p class="text-secondary mb-2">
-              Amount to transfer : <strong>{{order.price || 0}} DT</strong><br>
+            <div class="text-secondary mb-2">
+              <table>
+
+                <tr>
+                  <td>Quantity :</td>
+                  <td><strong>{{order.quantity || 1}}</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Purchase price :</td>
+                  <td><strong>{{order.pricePurchase || 0}} DT</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Shipping costs :</td>
+                  <td><strong>{{order.priceShipping || 0}} DT</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Taxes :</td>
+                  <td><strong>{{order.priceTaxes || 0}} DT</strong></td>
+                </tr>
+
+                <tr>
+                  <td>Total amount :</td>
+                  <td><strong>{{order.priceTotal || 0}} DT</strong></td>
+                </tr>
+
+              </table>
+            </div>
+            <p>
               1. Transfer money to the following bank account below.<br>
               2. After the transfer , please attach slip and fill in transfer date and time.
             </p>
@@ -37,7 +66,8 @@
                 <input class="custom-file-input cursor-pointer"
                        id="validatedCustomFile"
                        required type="file" (change)="onFileChange($event)">
-                <label class="custom-file-label" id="slipInputLabel" for="validatedCustomFile" #slipInputLabel>Upload your transfer
+                <label class="custom-file-label" id="slipInputLabel" for="validatedCustomFile" #slipInputLabel>Upload
+                  your transfer
                   slip</label>
               </div>
 
@@ -55,9 +85,12 @@
           <div class="text-center" *ngIf="isPaid">
             <img src="assets/img/illustrations/form/payment3.svg" alt="image missing" width="300">
             <h1 class="success-green">Thank you for your payment!</h1>
-            <p *ngIf="order.status === 'pending' || order.status === 'submitted'">Your order request is <span class="text-warning">waiting</span> for validation, we will inform you once the payment is validated.</p>
-            <p *ngIf="order.status === 'rejected'">Your order request is <span class="text-danger">rejected</span> by Gewinner, contact our team for more information.</p>
-            <p *ngIf="order.status === 'validated'">Your order request is <span class="text-success">validated</span> by Gewinner, we will be contacting you soon.</p>
+            <p *ngIf="order.status === 'pending' || order.status === 'submitted'">Your order request is <span
+              class="text-warning">waiting</span> for validation, we will inform you once the payment is validated.</p>
+            <p *ngIf="order.status === 'rejected'">Your order request is <span class="text-danger">rejected</span> by
+              Gewinner, contact our team for more information.</p>
+            <p *ngIf="order.status === 'validated'">Your order request is <span class="text-success">validated</span> by
+              Gewinner, we will be contacting you soon.</p>
           </div>
         </div>
       </div>

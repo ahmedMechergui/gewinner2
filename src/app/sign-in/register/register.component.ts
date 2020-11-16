@@ -66,7 +66,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }, error => {
       this.isLoading = false;
       this.errorMessage = error.error.error.includes('E11000') ? 'Account already exists' : 'Please verify your information';
-      console.log('error : ', error.error.error);
     });
   }
 

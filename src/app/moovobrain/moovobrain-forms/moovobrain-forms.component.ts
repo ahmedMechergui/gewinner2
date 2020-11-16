@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-moovobrain-forms',
@@ -32,11 +33,17 @@ export class MoovobrainFormsComponent implements OnInit {
     'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda',
     'Ukraine', 'United Arab Emirates', 'United Kingdom', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam',
     'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'];
+  isVoiceMode: boolean;
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
   }
 
+
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.isVoiceMode = params.mode.toLowerCase() === 'voice';
+    });
+    this.activatedRoute.fragment.subscribe();
   }
 
 }

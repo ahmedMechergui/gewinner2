@@ -13,6 +13,8 @@ export class FormOrderComponent implements OnInit {
   @Input() countries: string[];
   form: FormGroup;
   isLoading = false;
+  // this attribute ensures that the user only submits the order once , then we deactivate the order button
+  isOrderAlreadySubmitted = false;
   trainingSessionCheckbox = false;
   controlCheckbox = false;
   moreYearsRadio = false;
@@ -42,6 +44,7 @@ export class FormOrderComponent implements OnInit {
 
   formInit() {
     this.form = new FormGroup({
+      quantity: new FormControl(1, [Validators.min(1)]),
       // Wheelchair
       steeringSystem: new FormControl({value: true, disabled: true}),
       headset: new FormControl({value: true, disabled: true}),
@@ -158,11 +161,13 @@ export class FormOrderComponent implements OnInit {
       positionClass: 'toast-bottom-right',
       enableHtml: true
     };
-    this.moovobrainRequestsService.orderMoovobrain(this.form.getRawValue()).subscribe(response => {
+    const purchasePrice = (this.purchasePrice + this.trainingPrice + this.controlPrice) * this.form.get('quantity').value;
+    this.moovobrainRequestsService.orderMoovobrain(this.form.getRawValue(), purchasePrice).subscribe(() => {
       this.isLoading = false;
+      this.isOrderAlreadySubmitted = true;
       this.toast.success(
         'Check your email for bank transfer instructions.<br>PS: you might find our email in the <strong>spam</strong> folder',
-        'Order submitted', toastParams);
+        'We will get back to you soon', toastParams);
     }, () => {
       this.isLoading = false;
       this.toast.error('verify your information or try again later', 'ERROR :', toastParams);
