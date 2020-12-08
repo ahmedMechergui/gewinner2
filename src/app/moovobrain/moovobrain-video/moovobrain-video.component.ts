@@ -1,4 +1,4 @@
-import {Component, OnInit, Renderer2} from '@angular/core';
+import {Component, Input, OnInit, Renderer2} from '@angular/core';
 import {ScriptsLoaderService} from '../../scripts-loader.service';
 
 @Component({
@@ -7,8 +7,10 @@ import {ScriptsLoaderService} from '../../scripts-loader.service';
   styleUrls: ['./moovobrain-video.component.css']
 })
 export class MoovobrainVideoComponent implements OnInit {
+  @Input() isVoiceMode: boolean;
+  @Input() isBrainMode: boolean;
 
-  constructor(private scriptsLoader: ScriptsLoaderService,private renderer2: Renderer2) {
+  constructor(private scriptsLoader: ScriptsLoaderService, private renderer2: Renderer2) {
   }
 
   ngOnInit() {

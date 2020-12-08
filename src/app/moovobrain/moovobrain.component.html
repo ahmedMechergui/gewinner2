@@ -6,8 +6,8 @@
 
   <!-- ======= MOOVOBRAIN Section ======= -->
   <section style="padding-top: 0 ;">
-    <app-product></app-product>
-    <app-moovobrain-video></app-moovobrain-video>
+    <app-product [isVoiceMode]="isVoiceMode"></app-product>
+    <app-moovobrain-video [isVoiceMode]="isVoiceMode" [isBrainMode]="!isVoiceMode"></app-moovobrain-video>
     <app-moovobrain-mobile-app *ngIf="!isVoiceMode"></app-moovobrain-mobile-app>
     <app-moovobrain-tablet-app *ngIf="isVoiceMode"></app-moovobrain-tablet-app>
     <app-reviews></app-reviews>

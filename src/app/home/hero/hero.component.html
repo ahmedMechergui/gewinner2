@@ -22,12 +22,12 @@
 
     <!-- Slides for MOOVOBRAIN page -->
     <div *ngIf="!isOnHome">
-      <div *ngFor="let slide of slidesMoovobrain ; let i=index" [class.active]="i===0" class="carousel-item">
+      <div *ngFor="let slide of isVoiceMode ? slidesMoovobrainVoice : slidesMoovobrainBrain; let i=index" [class.active]="i===0" class="carousel-item">
         <div class="carousel-container">
           <h2 class="animated fadeInDown">{{slide.title}}</h2>
           <p class="animated fadeInUp">{{slide.description}}</p>
           <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#order-modal"
-             data-toggle="modal">{{isVoiceMode ? 'Order' : 'Pre-order'}}</a>
+             data-toggle="modal">{{isVoiceMode ? 'Pre-order' : 'Pre-order'}}</a>
           <a [routerLink]="'/moovobrain'" *ngIf="isVoiceMode" class="btn-get-started animated fadeInUp" data-target="#test-modal"
              data-toggle="modal">Test</a>
         </div>

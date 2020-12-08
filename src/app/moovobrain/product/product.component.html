@@ -2,53 +2,69 @@
   <div class="container overflow-hidden">
     <div class="section-header">
       <h2 class="section-title text-center">Features</h2>
-      <p class="text-center">
-        smart indoor / outdoor wheelchair that make your life easier without using neither upper nor lower members
+      <p class="text-center" *ngIf="!isVoiceMode">
+        Smart indoor / outdoor wheelchair that make your life easier without using neither upper nor lower members
         <br> With your brain, you can pilot your wheelchair
         two speed level (low speed, high speed)<br> 150 Kg max weight supported - 6 hours full functional
-
       </p>
+
+      <p class="text-center" *ngIf="isVoiceMode">
+        Smart indoor / outdoor wheelchair that make your life easier <br>
+        With your voice, you can pilot your wheelchair with two speed levels (low speed, high speed) <br>
+        150 Kg max weight supported - 6 hours full functional
+      </p>
+
     </div>
     <div class="row">
 
-      <div class="col-lg-6 text-center" id="moovobrain-img" data-aos="fade-right" data-aos-duration="500" data-aos-easing="ease-in-out">
+      <div class="col-lg-6 text-center" id="moovobrain-img" data-aos="fade-right" data-aos-duration="500"
+           data-aos-easing="ease-in-out">
         <img class="img-fluid" src="assets/img/wheelchair-1.jpeg" alt="image missing...">
       </div>
 
-      <div class="col-lg-6" id="moovobrain-info" data-aos="fade-left" data-aos-duration="500" data-aos-easing="ease-in-out">
+      <div class="col-lg-6" id="moovobrain-info" data-aos="fade-left" data-aos-duration="500"
+           data-aos-easing="ease-in-out">
         <div class="media service-box">
           <div class="pull-left">
-            <i class="icofont-brain-alt"></i>
+            <i *ngIf="!isVoiceMode" class="icofont-brain-alt"></i>
+            <i *ngIf="isVoiceMode" class="icofont-mic"></i>
           </div>
           <div class="media-body">
-            <h4 class="media-heading">Brain Piloting</h4>
-            <p>You can change the speed by your attention, the direction by your eyes blinking</p>
+            <h4 class="media-heading">{{isVoiceMode ? 'Voice mode driving' : 'Brain Piloting'}}</h4>
+            <p *ngIf="!isVoiceMode">You can change the speed by your attention, the direction by your eyes blinking</p>
+            <p *ngIf="isVoiceMode">You should record 7 key words with his own dialect to pilot his wheelchair</p>
           </div>
         </div>
 
         <div class="media service-box">
           <div class="pull-left">
-            <i class="icofont-iphone"></i>
+            <i *ngIf="!isVoiceMode" class="icofont-iphone"></i>
+            <i *ngIf="isVoiceMode" class="icofont-safety"></i>
           </div>
           <div class="media-body">
-            <h4 class="media-heading">Associated Mobile App</h4>
-            <p>A Realtime remote control and stakeout mean of wheelchair’s state and headset’s states</p>
+            <h4 class="media-heading">{{isVoiceMode ? 'Security system' : 'Associated Mobile App' }}</h4>
+            <p *ngIf="!isVoiceMode">A Realtime remote control and stakeout mean of wheelchair’s state and headset’s
+              states</p>
+            <p *ngIf="isVoiceMode">MOOVOBRAIN based on speaker dependent technology, only the user can pilot his
+              wheelchair</p>
           </div>
         </div>
 
         <div class="media service-box">
           <div class="pull-left">
-            <i class="icofont-safety"></i>
+            <i *ngIf="!isVoiceMode" class="icofont-safety"></i>
+            <i *ngIf="isVoiceMode" class="icofont-surface-tablet"></i>
           </div>
           <div class="media-body">
-            <h4 class="media-heading">Security system</h4>
-            <p>Notifications to the assistant when normal states change with obstacles detection </p>
+            <h4 class="media-heading">{{isVoiceMode? 'MOOVOBRAIN Display ' : 'Security system'}}</h4>
+            <p *ngIf="!isVoiceMode">Notifications to the assistant when normal states change with obstacles detection </p>
+            <p *ngIf="isVoiceMode">You can use the manual mode to pilot your wheelchair by simple screen touch, listen to music and locate your position</p>
           </div>
         </div>
 
         <div class="buttons text-center text-md-right">
           <button class="btn custom-margin" data-toggle="modal" data-target="#order-modal">
-           <i class="icofont-cart-alt order-icon"></i> <span class="btn-text"> Order Now</span>
+            <i class="icofont-cart-alt order-icon"></i> <span class="btn-text"> Pre-order</span>
           </button>
 
           <button class="btn " data-toggle="modal" data-target="#test-modal">

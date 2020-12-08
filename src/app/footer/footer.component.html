@@ -8,20 +8,20 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a routerLink="/home">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a routerLink="/about">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a routerLink="/moovobrain" [queryParams]="{mode:'voice'}">MOOVOBRAIN voice mode</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a routerLink="/moovobrain" [queryParams]="{mode:'brain'}">MOOVOBRAIN brain mode</a></li>
+            <li><i class="bx bx-chevron-right"></i> Legal policy</li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Training Sessions </a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Repair & Maintenance</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Quarterly Quality Control</a></li>
+            <li><i class="bx bx-chevron-right"></i> Training Sessions</li>
+            <li><i class="bx bx-chevron-right"></i> Repair & Maintenance</li>
+            <li><i class="bx bx-chevron-right"></i> Quarterly Quality Control</li>
           </ul>
         </div>
 
@@ -39,8 +39,11 @@
         </div>
 
         <div class="col-lg-3 col-md-6 footer-info">
-          <h3>About Gewinner</h3>
-          <p>GEWINNER is a Tunisian Healthtech startup that was founded in 2017 by four ladies to make disabled people’s life easier.</p>
+          <h3>About GEWINNER</h3>
+          <p class="text-justify">GEWINNER is a Tunisian HealthTech startup which provide smart solutions for people with special needs</p>
+          <div style="width: 100%">
+            <img src="assets/img/start-up-logo.png" width="50" class="mt-2" alt="startup act logo">
+          </div>
           <div class="social-links mt-3">
             <a href="https://twitter.com/GewinnerContact" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
             <a href="https://www.youtube.com/channel/UCrenyVoZ2udY4eELGN_cy6w" class="youtube" target="_blank"><i class="bx bxl-youtube"></i></a>

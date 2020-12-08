@@ -41,14 +41,6 @@ export class MoovobrainRequestsService {
       name: 'Ahmed',
       rating: 5,
       date: new Date()
-    },
-    {
-      title: 'Moovobrain made me more',
-      description: this.loremIpsum,
-      country: 'Tunisia',
-      name: 'Ahmed',
-      rating: 3,
-      date: new Date()
     }
   ];
 

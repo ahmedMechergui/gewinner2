@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {AuthService} from './shared/authentication/auth.service';
-import {Router} from '@angular/router';
 import {IsOnHomeService} from './shared/services/is-on-home.service';
 
 @Component({
@@ -9,13 +8,16 @@ import {IsOnHomeService} from './shared/services/is-on-home.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private authService: AuthService , public isOnHomeService: IsOnHomeService) {
+  constructor(private authService: AuthService,
+              public isOnHomeService: IsOnHomeService,
+              private changeDetectorRef: ChangeDetectorRef) {
   }
 
   title = 'Gewinner';
 
   ngOnInit() {
     this.authService.autoLogin();
+    this.changeDetectorRef.detectChanges();
   }
 
 
