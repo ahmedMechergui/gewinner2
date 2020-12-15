@@ -24,9 +24,13 @@ export class HeaderComponent implements OnInit {
     this.authService.clientSubject.subscribe(client => {
       this.isAuthenticated = !!client;
     });
-    if (this.browserDetector.isOnBrowser()) {
-      this.showDemoToaster();
-    }
+
+    /*=============================
+     Uncomment this on demo version
+     ==============================*/
+    // if (this.browserDetector.isOnBrowser()) {
+    //   this.showDemoToaster();
+    // }
   }
 
   loadScripts() {
