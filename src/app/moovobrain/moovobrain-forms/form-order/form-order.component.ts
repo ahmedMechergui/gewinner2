@@ -15,21 +15,9 @@ export class FormOrderComponent implements OnInit {
   isLoading = false;
   // this attribute ensures that the user only submits the order once , then we deactivate the order button
   isOrderAlreadySubmitted = false;
-  trainingSessionCheckbox = false;
-  controlCheckbox = false;
-  moreYearsRadio = false;
-  controlMorePrice = 0;
   clientNature = 'none';
   // this doesn't include the services , it shall not be presented alone to user
   purchasePrice = 5900;
-  // training price and control price is hold in its own variable and method because radio buttons are causing problems since
-  // they don't consider uncheck as a change event
-  trainingPrice = 0;
-  controlPrice = 0;
-  // when disabling training session or quarterly control , this variable will hold the old price value
-  // in case the user enables it again
-  trainingPriceBeforeDisabling = 0;
-  controlPriceBeforeDisabling = 0;
 
   constructor(private renderer2: Renderer2,
               private scriptsLoader: ScriptsLoaderService,
@@ -47,28 +35,16 @@ export class FormOrderComponent implements OnInit {
       quantity: new FormControl(1, [Validators.min(1)]),
       // Wheelchair
       steeringSystem: new FormControl({value: true, disabled: true}),
-      headset: new FormControl({value: true, disabled: true}),
       wheelchair: new FormControl({value: true, disabled: true}),
-      mobileApp: new FormControl({value: true, disabled: true}),
+      microphone: new FormControl({value: true, disabled: true}),
+      smartDisplay: new FormControl({value: true, disabled: true}),
       // Safety
-      obstacleDetection: new FormControl({value: true, disabled: true}),
-      camera: new FormControl({value: true, disabled: true}),
-      gps: new FormControl(false),
-      notifications: new FormControl(false),
-      sms: new FormControl(false),
+      speakerDependentTechnology: new FormControl({value: true, disabled: true}),
+      geolocationApp: new FormControl({value: true, disabled: true}),
       //  Accessories
       securityBelt: new FormControl({value: true, disabled: true}),
       headrest: new FormControl({value: true, disabled: true}),
-      mirror: new FormControl(false),
-      table: new FormControl(false),
-      rearCamera: new FormControl(false),
-      // Services
-      trainingSession: new FormControl(false),
-      trainingHours: new FormControl({value: null, disabled: true}),
-      control: new FormControl(false),
-      controlYears: new FormControl({value: null, disabled: true}),
-      controlYearsAdded: new FormControl(),
-      demo: new FormControl({value: true, disabled: true}),
+
       // Client Nature , individual or organisation
       clientNature: new FormControl(''),
       //  Individuals form
@@ -99,41 +75,6 @@ export class FormOrderComponent implements OnInit {
     this.scriptsLoader.addScripts(this.renderer2, 'form-order');
   }
 
-  trainingClicked() {
-    this.trainingSessionCheckbox = !this.trainingSessionCheckbox;
-
-    if (this.trainingSessionCheckbox) {
-      this.form.get('trainingHours').enable();
-      this.trainingPrice = this.trainingPriceBeforeDisabling;
-    } else {
-      this.trainingPriceBeforeDisabling = this.trainingPrice;
-      this.trainingPrice = 0;
-      this.form.get('trainingHours').disable();
-    }
-  }
-
-  controlClicked() {
-    this.controlCheckbox = !this.controlCheckbox;
-
-    if (this.controlCheckbox) {
-      this.form.get('controlYears').enable();
-      this.controlPrice = this.controlPriceBeforeDisabling;
-    } else {
-      this.controlPriceBeforeDisabling = this.controlPrice;
-      this.controlPrice = 0;
-      this.form.get('controlYears').disable();
-    }
-  }
-
-  moreYearsClicked(isMoreYears: boolean) {
-    this.moreYearsRadio = isMoreYears;
-  }
-
-  calculateControlPrice(addedYears: number) {
-    addedYears === 0 ? this.controlMorePrice = 0 : this.controlMorePrice = 4000 + 3600 * (addedYears - 2);
-    this.controlPrice = this.controlMorePrice;
-  }
-
   changeClientNature(clientNature: string) {
     this.clientNature = clientNature;
   }
@@ -145,13 +86,6 @@ export class FormOrderComponent implements OnInit {
     this.purchasePrice += checked ? price : -price;
   }
 
-  trainingRadioSelected(event: Event, price: number) {
-    this.trainingPrice = price;
-  }
-
-  controlRadioSelected(event: Event, price: number) {
-    this.controlPrice = price;
-  }
 
   orderMoovobrain() {
     this.isLoading = true;
@@ -161,7 +95,7 @@ export class FormOrderComponent implements OnInit {
       positionClass: 'toast-bottom-right',
       enableHtml: true
     };
-    const purchasePrice = (this.purchasePrice + this.trainingPrice + this.controlPrice) * this.form.get('quantity').value;
+    const purchasePrice = (this.purchasePrice - 200) * this.form.get('quantity').value;
     this.moovobrainRequestsService.orderMoovobrain(this.form.getRawValue(), purchasePrice).subscribe(() => {
       this.isLoading = false;
       this.isOrderAlreadySubmitted = true;

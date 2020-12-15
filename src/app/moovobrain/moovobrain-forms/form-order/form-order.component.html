@@ -66,9 +66,9 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="headset" id="headset"
+                      <input class="cb" formControlName="microphone" id="microphone"
                              type="checkbox">
-                      <label class="lbl" for="headset">Microphone <span class="text-success">(included)</span></label>
+                      <label class="lbl" for="microphone">Microphone <span class="text-success">(included)</span></label>
                     </div>
                   </div>
                   <!--                  <div class="text-secondary pl-5 text-left">-->
@@ -78,16 +78,12 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="mobileApp"
-                             id="mobile-app" type="checkbox">
-                      <label class="lbl" for="mobile-app">Smart Display<span
+                      <input class="cb" formControlName="smartDisplay"
+                             id="smartDisplay" type="checkbox">
+                      <label class="lbl" for="smartDisplay">Smart Display<span
                         class="text-success">(included)</span></label>
                     </div>
                   </div>
-<!--                  <div class="text-secondary pl-5 text-left">-->
-<!--                    Basic version of moovobrain app for the assistant to <B>Realtime</B> track the wheelchair’s state-->
-<!--                    and headset’s state.-->
-<!--                  </div>-->
                 </div>
               </div>
 
@@ -100,10 +96,10 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="obstacleDetection"
-                             id="obstacle-detection"
+                      <input class="cb" formControlName="speakerDependentTechnology"
+                             id="speakerDependentTechnology"
                              type="checkbox">
-                      <label class="lbl" for="obstacle-detection">Speaker dependent technology <span class="text-success">(included)</span></label>
+                      <label class="lbl" for="speakerDependentTechnology">Speaker dependent technology <span class="text-success">(included)</span></label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
@@ -115,9 +111,9 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="camera" id="camera"
+                      <input class="cb" formControlName="geolocationApp" id="geolocationApp"
                              type="checkbox">
-                      <label class="lbl" for="camera">Geolocation app <span class="text-success">(included)</span></label>
+                      <label class="lbl" for="geolocationApp">Geolocation app <span class="text-success">(included)</span></label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
@@ -467,7 +463,7 @@
               <div class="container-sm pl-sm-3 pr-sm-3 text-dark">
                 <div class="d-flex mb-1">
                   <div>Purchase price</div>
-                  <div class="ml-auto">{{purchasePrice + trainingPrice + controlPrice}} &nbsp; TND</div>
+                  <div class="ml-auto">{{(purchasePrice - 200) * form.get('quantity').value}} &nbsp; USD</div>
                 </div>
 
 
