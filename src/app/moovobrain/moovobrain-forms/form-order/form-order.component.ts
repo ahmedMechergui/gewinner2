@@ -21,7 +21,7 @@ export class FormOrderComponent implements OnInit {
   controlMorePrice = 0;
   clientNature = 'none';
   // this doesn't include the services , it shall not be presented alone to user
-  purchasePrice = 15000;
+  purchasePrice = 5900;
   // training price and control price is hold in its own variable and method because radio buttons are causing problems since
   // they don't consider uncheck as a change event
   trainingPrice = 0;
@@ -52,7 +52,7 @@ export class FormOrderComponent implements OnInit {
       mobileApp: new FormControl({value: true, disabled: true}),
       // Safety
       obstacleDetection: new FormControl({value: true, disabled: true}),
-      camera: new FormControl(false),
+      camera: new FormControl({value: true, disabled: true}),
       gps: new FormControl(false),
       notifications: new FormControl(false),
       sms: new FormControl(false),

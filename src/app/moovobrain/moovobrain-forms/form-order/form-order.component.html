@@ -1,3 +1,8 @@
+<!-- ====================================
+                  # VOICE MODE
+     ====================================-->
+
+
 <!-- MultiStep Form -->
 <form (ngSubmit)="orderMoovobrain()" [formGroup]="form" id="msform">
   <div class="row justify-content-center mt-0">
@@ -11,7 +16,6 @@
               <li class="active step-title" id="wheelchair"><strong>Wheelchair</strong></li>
               <li class="step-title" id="security"><strong>Safety</strong></li>
               <li class="step-title" id="accessories"><strong>Accessories</strong></li>
-              <li class="step-title" id="services"><strong>Services</strong></li>
               <li class="step-title" id="payment"><strong>Payment</strong></li>
               <li class="step-title" id="confirmation"><strong>Confirmation</strong></li>
             </ul>
@@ -28,33 +32,18 @@
                     <div class="fi-w position-relative _cb _ha">
                       <input class="cb" formControlName="steeringSystem" id="steering-system"
                              type="checkbox">
-                      <label class="lbl" for="steering-system">Brain mode steering system
+                      <label class="lbl" for="steering-system">Voice mode steering system
                         <span class="text-success">(included)</span>
                       </label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
-                    The user can move forward when he concentrate, stop the wheelchair by blinking his eyes
-                    and turn it right with 45 degree when he blink his eyes.
+                    The user can pilot the wheelchair by 7 keys words
                   </div>
                 </div>
 
 
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="headset" id="headset"
-                             type="checkbox">
-                      <label class="lbl" for="headset">Headset <span class="text-success">(included)</span></label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    A Neurosky mobile headset will be offered to detect brain waves with 6 hours autonomy
-                  </div>
-                </div>
-              </div>
 
-              <div class="row">
 
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
@@ -66,41 +55,59 @@
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
-                    A Comfortable wheelchair designed for indoor use.
+                    A comfortable wheelchair designed for Indoor/Outdoor use
                   </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="d-flex -j-bet -i-base">
+                    <div class="fi-w position-relative _cb _ha">
+                      <input class="cb" formControlName="headset" id="headset"
+                             type="checkbox">
+                      <label class="lbl" for="headset">Microphone <span class="text-success">(included)</span></label>
+                    </div>
+                  </div>
+                  <!--                  <div class="text-secondary pl-5 text-left">-->
+                  <!--                    A Neurosky mobile headset will be offered to detect brain waves with 6 hours autonomy-->
+                  <!--                  </div>-->
                 </div>
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
                       <input class="cb" formControlName="mobileApp"
                              id="mobile-app" type="checkbox">
-                      <label class="lbl" for="mobile-app">Mobile application <span
+                      <label class="lbl" for="mobile-app">Smart Display<span
                         class="text-success">(included)</span></label>
                     </div>
                   </div>
-                  <div class="text-secondary pl-5 text-left">
-                    Basic version of moovobrain app for the assistant to <B>Realtime</B> track the wheelchair’s state
-                    and headset’s state.
-                  </div>
+<!--                  <div class="text-secondary pl-5 text-left">-->
+<!--                    Basic version of moovobrain app for the assistant to <B>Realtime</B> track the wheelchair’s state-->
+<!--                    and headset’s state.-->
+<!--                  </div>-->
                 </div>
               </div>
 
-              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
+              <input class="next btn action-button mt-3" name="next" type="button" value="Next Step"/>
             </fieldset> <!-- Wheelchair -->
+
             <fieldset>
 
-              <div class="row">
+              <div class="row pb-3">
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
                       <input class="cb" formControlName="obstacleDetection"
                              id="obstacle-detection"
                              type="checkbox">
-                      <label class="lbl" for="obstacle-detection">Obstacles Detection <span class="text-success">(included)</span></label>
+                      <label class="lbl" for="obstacle-detection">Speaker dependent technology <span class="text-success">(included)</span></label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
-                    The wheelchair can detect obstacles to insure the security of the patient.
+                    Only the user can pilot his wheelchair
                   </div>
                 </div>
 
@@ -108,74 +115,27 @@
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="camera" id="camera"
+                      <input class="cb" formControlName="camera" id="camera"
                              type="checkbox">
-                      <label class="lbl" for="camera">Camera <span class="text-success">(+1500 TND)</span></label>
+                      <label class="lbl" for="camera">Geolocation app <span class="text-success">(included)</span></label>
                     </div>
                   </div>
                   <div class="text-secondary pl-5 text-left">
-                    A camera installed on the wheelchair to help the assistant remote control the
-                    wheelchair if needed using the mobile app
+                    The user can navigate with maps
                   </div>
                 </div>
               </div>
 
-              <div class="row">
-
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="gps" id="gps"
-                             type="checkbox">
-                      <label class="lbl" for="gps">GPS <span class="text-success">(+500 TND)</span></label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    The assistant can track the wheelchair on a map with gps using
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,200)" class="cb" formControlName="notifications"
-                             id="notifications" type="checkbox">
-                      <label class="lbl" for="notifications">Notifications
-                        <span class="text-success">(+200 TND)</span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    When the assistant install the mobile app, he can receive notifications of the
-                    wheelchair battery’s state, the headset battery’s state, etc.
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,200)" class="cb" formControlName="sms" id="sms"
-                             type="checkbox">
-                      <label class="lbl" for="sms">SMS <span class="text-success">(+200 TND)</span></label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    The assistant install can receive SMS to control in Realtime the wheelchair
-                    battery’s state, the headset battery’s state, etc.
-                  </div>
-                </div>
-              </div>
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
               <input class="next btn  action-button" name="next" type="button" value="Next Step"/>
-            </fieldset> <!-- Security System -->
+
+            </fieldset> <!-- Safety -->
+
             <fieldset>
 
 
-              <div class="row">
+              <div class="row pb-3">
                 <div class="col-md-6">
                   <div class="d-flex -j-bet -i-base">
                     <div class="fi-w position-relative _cb _ha">
@@ -200,198 +160,16 @@
                 </div>
               </div>
 
-              <div class="row">
 
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,250)" class="cb" formControlName="mirror" id="mirror"
-                             type="checkbox">
-                      <label class="lbl" for="mirror">Rear-View Mirror <span
-                        class="text-success">(+250 TND)</span></label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,390)" class="cb" formControlName="table" id="table"
-                             type="checkbox">
-                      <label class="lbl" for="table">Adjustable Table <span
-                        class="text-success">(+390 TND)</span></label>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (change)="priceUpdate($event,1500)" class="cb" formControlName="rearCamera"
-                             id="rear-camera" type="checkbox">
-                      <label class="lbl" for="rear-camera">Rear-View Camera <span
-                        class="text-success">(+1500 TND)</span></label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    LCD Screen added to the steering system to make <span style="white-space: nowrap">rear-view</span>
-                    accessible to the user and the
-                    assistant
-                  </div>
-                </div>
-
-              </div>
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
               <input
                 class="next action-button btn" name="next" type="button" value="Next Step"/>
             </fieldset> <!-- Accessories -->
-            <fieldset>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (click)="trainingClicked()" class="cb" formControlName="trainingSession" id="training"
-                             type="checkbox">
-                      <label class="lbl" for="training">
-                        Training Session
-                      </label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    Occupational therapist help the user to pilot and adapt to Moovobrain
-
-                    <div class="d-flex -j-bet -i-base">
-                      <div class="fi-w position-relative _cb _ha">
-                        <input (change)="trainingRadioSelected($event,2000)" class="cb" formControlName="trainingHours"
-                               id="hours-2" type="radio"
-                               value="2">
-                        <label class="lbl radio" for="hours-2">
-                          2 Hours
-                          <span class="text-success">(+2000 TND)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="d-flex -j-bet -i-base">
-                      <div class="fi-w position-relative _cb _ha">
-                        <input (change)="trainingRadioSelected($event,2500)" class="cb" formControlName="trainingHours"
-                               id="hours-3" type="radio"
-                               value="3">
-                        <label class="lbl radio" for="hours-3">
-                          3 Hours
-                          <span class="text-success">(+2500 TND)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="d-flex -j-bet -i-base">
-                      <div class="fi-w position-relative _cb _ha">
-                        <input (change)="trainingRadioSelected($event,4000)" class="cb" formControlName="trainingHours"
-                               id="hours-more"
-                               type="radio"
-                               value="more">
-                        <label class="lbl radio" for="hours-more">
-                          More
-                          <span class="text-success">(+4000 TND)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
 
 
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input (click)="controlClicked()" class="cb" formControlName="control" id="control"
-                             type="checkbox">
-                      <label class="lbl" for="control">Quarterly Quality Control</label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    One of our workers take charge to technically control the quality of your moovobrain, TND
-                    900/quarter
-                    (period can be extended)
 
-                    <div class="d-flex -j-bet -i-base">
-                      <div class="fi-w position-relative _cb _ha">
-                        <input (change)="controlRadioSelected($event,4000)" (click)="moreYearsClicked(false)" class="cb"
-                               formControlName="controlYears"
-                               id="years-2"
-                               type="radio"
-                               value="2">
-                        <label class="lbl radio" for="years-2">
-                          2 Years
-                          <span class="text-success">(+4000 TND)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="d-flex -j-bet -i-base">
-                      <div class="fi-w position-relative _cb _ha d-flex">
-                        <input (change)="controlRadioSelected($event,controlMorePrice)" (click)="moreYearsClicked(true)"
-                               class="cb"
-                               formControlName="controlYears"
-                               id="years-more"
-                               type="radio"
-                               value="more">
-                        <label class="lbl radio" for="years-more">
-                          More
-                        </label>
-
-                        <div [class.show-more]="controlCheckbox && moreYearsRadio"
-                             class="d-flex -j-bet -i-base hide-on-unchecked">
-                          <div class="fi-w position-relative _cb _ha" style="padding-top: 0 ; padding-left: 6px">
-                            <input #addedYears (change)="calculateControlPrice(+addedYears.value)"
-                                   (input)="calculateControlPrice(+addedYears.value)"
-                                   [max]="20"
-                                   [min]="3"
-                                   id="added-years" name="added-years"
-                                   oninput=" +value!==0 && +value<21 ||(value='');"
-                                   step="0.25" style="width: 50px" type="number" value="3"
-                                   formControlName="controlYearsAdded">
-                            <label class="lbl radio" for="added-years">
-                              <span class="text-success pl-2"> +{{controlMorePrice}} TND</span>
-                            </label>
-                          </div>
-
-                          <small class="text-secondary position-absolute">20 years maximum</small>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="d-flex -j-bet -i-base">
-                    <div class="fi-w position-relative _cb _ha">
-                      <input class="cb" formControlName="demo" id="demo" type="checkbox">
-                      <label class="lbl" for="demo">Video Demo <span
-                        class="text-success">(included)</span></label>
-                    </div>
-                  </div>
-                  <div class="text-secondary pl-5 text-left">
-                    A user Manuel will be offered.
-                  </div>
-                </div>
-
-              </div>
-
-
-              <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <input class="next btn action-button" name="next" type="button" value="Next Step"/>
-            </fieldset> <!-- Services -->
             <fieldset>
 
               <div class="alert alert-info ml-md-3 mr-md-3">
@@ -682,6 +460,7 @@
                      [disabled]="!((form.get('iName').valid && form.get('iEmail').valid && form.get('iBirthday').valid && form.get('iAddress').valid && form.get('iZipCode').valid && form.get('iPhone').valid && form.get('iHandicap').valid) || (form.get('oName').valid && form.get('oType').valid && form.get('oSector').valid && form.get('oRegistrationNumber').valid && form.get('oResponsibleName').valid && form.get('oHandicap').valid && form.get('oAddress').valid && form.get('oZipCode').valid && form.get('oPhone').valid && form.get('oEmail').valid))"
               />
             </fieldset> <!-- Payment -->
+
             <fieldset>
 
 
@@ -704,7 +483,8 @@
 
 
               <input class="previous btn action-button-previous" name="previous" type="button" value="Previous"/>
-              <button class="confirm btn action-button" type="submit" [disabled]="isOrderAlreadySubmitted" [title]="isOrderAlreadySubmitted ? 'Order already submitted' : ''">
+              <button class="confirm btn action-button" type="submit" [disabled]="isOrderAlreadySubmitted"
+                      [title]="isOrderAlreadySubmitted ? 'Order already submitted' : ''">
                 <app-loader *ngIf="isLoading" addSpace="true"></app-loader>
                 Confirm Order
               </button>
@@ -731,7 +511,8 @@
       </div>
 
       <div class="ml-auto">
-        <h6>Price : {{(purchasePrice + trainingPrice + controlPrice) * form.get('quantity').value}}&nbsp;TND</h6>
+        <h6>Price : {{purchasePrice * form.get('quantity').value}}&nbsp;USD</h6>
+        <span class="text-success"><strong>{{(purchasePrice - 200) * form.get('quantity').value}}&nbsp;USD</strong> if you pre-oder now</span>
       </div>
 
 

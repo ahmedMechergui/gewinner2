@@ -90,14 +90,12 @@ export class MoovobrainRequestsService {
 
   // this is for voice mode
   orderMoovobrain(requestBody, pricePurchase) {
-    console.log(requestBody);
     return this.http.post(this.url + '/moovobrain', {...requestBody, pricePurchase});
   }
 
   // this is for brain mode preorder
   preOrderMoovobrain(requestBody: FormGroup) {
     requestBody = requestBody.getRawValue();
-    console.log(requestBody);
     return this.http.post(this.url + '/moovobrain', {...requestBody, pricePurchase: 0, mode: 'brain', status: 'pre-ordered'});
   }
 
