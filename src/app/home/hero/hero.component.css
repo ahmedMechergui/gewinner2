@@ -1,13 +1,13 @@
 .bg-home-hero {
-  --bg-url : linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("src/assets/img/hero-bg.jpg") center top no-repeat !important;
+  --bg-url: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("src/assets/img/hero-bg.jpg") center top no-repeat !important;
 }
 
 .bg-moovobrain-hero {
-  --bg-url : linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("src/assets/img/hero.jpg") center top no-repeat !important;
+  --bg-url: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("src/assets/img/hero.jpg") center top no-repeat !important;
 }
 
 
-.btn-get-started{
+.btn-get-started {
   display: inline-block;
 }
 
@@ -15,7 +15,7 @@
 # Removing bootstrap carousel arrows
 --------------------------------------------------------------*/
 
-.carousel-control-prev , .carousel-control-next{
+.carousel-control-prev, .carousel-control-next {
   display: none !important;
 }
 
@@ -33,6 +33,7 @@
   z-index: 1;
   cursor: pointer;
 }
+
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
@@ -59,6 +60,7 @@
 .show-on-sd {
   display: none;
 }
+
 @media only screen and (max-width: 550px) {
   .show-on-sd {
     display: block;
@@ -88,24 +90,23 @@
 }
 
 .is-moovobrain-page #hero::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 130%;
-    height: 96%;
-    background: #68A4C4;
-    opacity: 0.3;
-    z-index: 0;
-    border-radius: 0 0 50% 50%;
-    transform: translateX(-50%) translateY(18px) rotate(2deg);
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 130%;
+  height: 96%;
+  background: #68A4C4;
+  opacity: 0.3;
+  z-index: 0;
+  border-radius: 0 0 50% 50%;
+  transform: translateX(-50%) translateY(18px) rotate(2deg);
 
-  }
+}
 
 #hero {
   width: 100%;
-  /*height: 90vh;*/
-  height: 100vh;
+  height: 100vh !important;
   overflow: hidden;
   position: relative;
 
@@ -124,27 +125,11 @@
   background: var(--bg-url);
   background-size: cover;
   z-index: 0;
-  /*border-radius: 0 0 50% 50%;*/
-  /*transform: translateX(-50%) rotate(0deg);*/
   background-attachment: fixed;
 }
 
-/*#hero::before {*/
-/*  content: '';*/
-/*  position: absolute;*/
-/*  left: 50%;*/
-/*  top: 0;*/
-/*  width: 130%;*/
-/*  height: 96%;*/
-/*  background: #68A4C4;*/
-/*  opacity: 0.3;*/
-/*  z-index: 0;*/
-/*  border-radius: 0 0 50% 50%;*/
-/*  transform: translateX(-50%) translateY(18px) rotate(2deg);*/
-/*}*/
 
 #hero .carousel-container {
-  /*display: flex;*/
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -210,6 +195,7 @@
   #hero p {
     width: 60%;
   }
+
   #hero .carousel-control-prev, #hero .carousel-control-next {
     width: 5%;
   }
@@ -219,16 +205,18 @@
   #hero h2 {
     font-size: 28px;
   }
+
   #hero::after {
     width: 180%;
-    height: 95%;
-    border-radius: 0 0 50% 50%;
-    transform: translateX(-50%) rotate(0deg);
+    height: 100%;
+    /*border-radius: 0 0 50% 50%;*/
+    /*transform: translateX(-50%) rotate(0deg);*/
   }
+
   #hero::before {
     top: 0;
     width: 180%;
-    height: 94%;
+    height: 100%;
     border-radius: 0 0 50% 50%;
     transform: translateX(-50%) translateY(20px) rotate(4deg);
   }
@@ -236,13 +224,13 @@
 
 @media (max-width: 575px) {
   #hero::after {
-    left: 40%;
     top: 0;
     width: 200%;
-    height: 95%;
-    border-radius: 0 0 50% 50%;
-    transform: translateX(-50%) rotate(0deg);
+    height: 100%;
+    /*border-radius: 0 0 50% 50%;*/
+    /*transform: translateX(-50%) rotate(0deg);*/
   }
+
   #hero::before {
     left: 50%;
     top: 0;
@@ -252,4 +240,5 @@
     transform: translateX(-50%) translateY(20px) rotate(4deg);
   }
 }
+
 

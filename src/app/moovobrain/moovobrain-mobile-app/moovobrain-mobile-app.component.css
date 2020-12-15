@@ -199,3 +199,7 @@ h3, h5
     margin-top:1rem;
   }
 }
+
+.disabled-cursor {
+  cursor: not-allowed;
+}

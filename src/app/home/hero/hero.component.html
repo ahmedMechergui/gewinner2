@@ -1,5 +1,6 @@
-<span [class.is-moovobrain-page]="!isOnHome" >
-<section class="d-flex justify-cntent-center bg-fixed align-items-center p-0" id="hero" [class.bg-moovobrain-hero]="!isOnHome"
+<span [class.is-moovobrain-page]="!isOnHome">
+<section class="d-flex justify-cntent-center bg-fixed align-items-center p-0" id="hero"
+         [class.bg-moovobrain-hero]="!isOnHome"
          [ngClass]="isOnHome ? 'bg-home-hero' : 'bg-moovobrain-hero'" #herosection>
   <div class="container carousel carousel-fade" data-ride="carousel" data-pause="hover" id="heroCarousel">
 
@@ -13,22 +14,24 @@
           <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'voice'}" class="btn-get-started animated fadeInUp">
             Know more</a>
 
-<!-- Uncomment the code below when you want to show two buttons -->
-<!--          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'brain'}" class="btn-get-started animated fadeInUp">-->
-<!--            Moovobrain BRAIN mode</a>-->
+          <!-- Uncomment the code below when you want to show two buttons -->
+          <!--          <a [routerLink]="'/moovobrain'" [queryParams]="{mode : 'brain'}" class="btn-get-started animated fadeInUp">-->
+          <!--            Moovobrain BRAIN mode</a>-->
         </div>
       </div>
     </div>
 
     <!-- Slides for MOOVOBRAIN page -->
     <div *ngIf="!isOnHome">
-      <div *ngFor="let slide of isVoiceMode ? slidesMoovobrainVoice : slidesMoovobrainBrain; let i=index" [class.active]="i===0" class="carousel-item">
+      <div *ngFor="let slide of isVoiceMode ? slidesMoovobrainVoice : slidesMoovobrainBrain; let i=index"
+           [class.active]="i===0" class="carousel-item">
         <div class="carousel-container">
           <h2 class="animated fadeInDown">{{slide.title}}</h2>
           <p class="animated fadeInUp">{{slide.description}}</p>
           <a [routerLink]="'/moovobrain'" class="btn-get-started animated fadeInUp" data-target="#order-modal"
              data-toggle="modal">{{isVoiceMode ? 'Pre-order' : 'Pre-order'}}</a>
-          <a [routerLink]="'/moovobrain'" *ngIf="isVoiceMode" class="btn-get-started animated fadeInUp" data-target="#test-modal"
+          <a [routerLink]="'/moovobrain'" *ngIf="isVoiceMode" class="btn-get-started animated fadeInUp"
+             data-target="#test-modal"
              data-toggle="modal">Test</a>
         </div>
       </div>
@@ -43,8 +46,14 @@
 
 </section><!-- End Hero -->
 </span>
+
+
+<!--
+    section disabled for now since we disabled the "Accessories" section
+    when you return to the accessories , enable this section
+ -->
 <!-- ======= Logo on SD Section======= -->
-<div *ngIf="isOnHome" class="logo float-left show-on-sd" data-aos="fade-down" id="logoSD">
+<div *ngIf="false" class="logo float-left show-on-sd" data-aos="fade-down" id="logoSD">
   <a href="index.html"><img alt="logo missing..." class="img-fluid" src="assets/img/logo-black.png"></a>
 </div>
 <!-- End logo on SD  -->
